@@ -12,18 +12,3 @@ Requirement moneyReward(Double amount, Currency currency)
 Reward singleItemReward(ItemStack itemStack)
 ```
 
-## registerQuest
-
-### Signature: 
-```javascript
-Boolean registerQuest(Quest quest)
-```
-
-## registerDialogTree
-
-### Signature: 
-```javascript
- registerDialogTree
-```
-
-

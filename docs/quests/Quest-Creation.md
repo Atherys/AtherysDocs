@@ -40,3 +40,10 @@ Boolean addQuestRequirements(Quest quest, Requirement[] requirements)
 Boolean addQuestRewards(Quest quest, Reward[] rewards)
 ```
 
+## registerQuest
+
+### Signature: 
+```javascript
+Boolean registerQuest(Quest quest)
+```
+
