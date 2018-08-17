@@ -1,2 +1,2 @@
 # AtherysDocs
-Documentation for [AtherysScript](https://github.com/Atherys-Horizons/AtherysScripting) and its modules.
+Documentation for [AtherysScript](https://github.com/Atherys-Horizons/AtherysScript) and its modules.
