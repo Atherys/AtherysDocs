@@ -1,3 +1,5 @@
+# Dialog Functions
+
 ## registerDialogTree
 
 ### Signature: 

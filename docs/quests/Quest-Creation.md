@@ -1,3 +1,5 @@
+# Quest Creation Functions
+
 ## createSimpleQuest
 
 ### Signature: 

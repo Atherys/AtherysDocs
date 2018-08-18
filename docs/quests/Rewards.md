@@ -1,3 +1,5 @@
+# Reward Functions
+
 ## moneyReward
 
 ### Signature: 

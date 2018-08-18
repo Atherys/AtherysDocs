@@ -1,3 +1,5 @@
+# Event functions
+
 ## onDialogRegistration
 
 ### Signature: 

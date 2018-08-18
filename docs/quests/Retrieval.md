@@ -1,3 +1,5 @@
+# Quest Information Functions
+
 ## getQuestStages
 
 ### Signature: 
