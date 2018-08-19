@@ -1,5 +1,5 @@
 ---
-title: A barebones introduction to JavaScript
+title: An introduction to JavaScript
 lang: en-US
 ---
 ## What is JavaScript?

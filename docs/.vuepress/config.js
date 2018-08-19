@@ -1,7 +1,7 @@
 module.exports = {
 	title: 'A\'therys Scripting',
 	description: 'Documentation for the A\'therys Scripting plugin',
-	base: "/docs/",
+	base: "/Exploder/",
 	themeConfig: {
 		nav: [
 			{text: 'Quests', link: '/quests/'},
@@ -15,7 +15,8 @@ module.exports = {
 				 'Quest-Creation',
 				 'Requirements',
 				 'Retrieval',
-				 'Rewards'
+				 'Rewards',
+				 'Examples'
 			],
 			'/': [
 				 'A-bear-bones-introduction-to-JavaScript',
