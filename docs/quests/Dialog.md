@@ -2,6 +2,8 @@
 
 ## registerDialogTree
 
+Registers a dialog tree. This must be called on a dialog for it to be usable in the game.
+
 ### Signature: 
 ```javascript
 Boolean registerDialogTree(DialogTree dialogTree)
@@ -15,6 +17,8 @@ DialogNode dialogNode(Integer id, Requirement[] requirements, Text player, Quest
 ```
 
 ## createDialogTree
+
+Creates a dialog tree given a String and a DialogNode. The ID must be unique.
 
 ### Signature
 ```javascript
