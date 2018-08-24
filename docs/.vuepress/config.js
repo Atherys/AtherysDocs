@@ -1,7 +1,7 @@
 module.exports = {
 	title: 'A\'therys Scripting',
 	description: 'Documentation for the A\'therys Scripting plugin',
-	base: "/docs/",
+	base: "/AtherysDocs/",
 	themeConfig: {
 		nav: [
 			{text: 'Quests', link: '/quests/'},
