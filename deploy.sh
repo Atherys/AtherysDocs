@@ -1,13 +1,18 @@
-vuepress build
-mkdir ../temp/
-rm -R ../temp/*
-mv .vuepress/dist/* ../temp/
-git checkout gh-pages
-rm -Rf *
-git rm *
-mv ../temp/* .
-rm -R ../temp/
-git add *
-git commit -m 'Deploy'
+# Run from master branch with clean state
+echo "Building site..."
+cd docs
+vuepress build > lastlog.log 2> error.log
+echo "Moving files..."
+mkdir ../../temp/ >> lastlog.log 2> /dev/null
+rm -R ../../temp/* >> lastlog.log
+mv .vuepress/dist/* ../../temp/ >> lastlog.log
+git checkout gh-pages > /dev/null
+rm -Rf * >> lastlog.log
+git rm * >> lastlog.log
+mv ../../temp/* . >> lastlog.log
+rm -R ../../temp/ >> lastlog.log
+echo "Committing..."
+git add * >> lastlog.log
+git commit -m 'Deploy' >> lastlog.log
+echo "Pushing..."
 git push origin gh-pages
-git checkout master
