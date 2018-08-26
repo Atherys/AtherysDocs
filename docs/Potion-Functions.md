@@ -1,5 +1,6 @@
 ---
 title: Potion Functions
+module: potion
 ---
 # Potion Functions
 

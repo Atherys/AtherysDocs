@@ -1,3 +1,6 @@
+---
+module: retrieval
+---
 # Quest Information Functions
 
 ## getQuestStages

@@ -1,3 +1,6 @@
+---
+module: quest
+---
 # Quest Creation Functions
 
 ## createSimpleQuest

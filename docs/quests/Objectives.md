@@ -1,3 +1,6 @@
+---
+module: objective
+---
 # Objective Functions
 
 Objectives are what players have to accomplish in order to finish a quest. Objective descriptions/names are how the objective will be described in the player's quest log.

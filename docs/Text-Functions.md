@@ -1,5 +1,6 @@
 ---
 title: Text Functions
+module: text
 ---
 # Text Functions
 

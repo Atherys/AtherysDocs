@@ -1,3 +1,6 @@
+---
+module: dialog
+---
 # Dialog Functions
 
 ## registerDialogTree

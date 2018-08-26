@@ -1,5 +1,6 @@
 ---
 title: Sound Functions
+module: sound
 ---
 #Sound Functions
 

@@ -1,5 +1,6 @@
 ---
 title: Block Functions
+module: block
 ---
 # Block Functions
 
