@@ -1,7 +1,59 @@
 ---
-title: An introduction to JavaScript
+title: An introduction to programming, with JavaScript
 lang: en-US
 ---
+# The Basics
+
+Programming seems intimidating at first, but most languages base themselves on a common set of rules.
+
+No matter what language you code with, you will need to know these basic rules. And if you one day pick up enough languages, you yourself will notice all the similarities.
+
+This introduction to programming will guide you through the basics you will need to get going, using JavaScript.
+
+## Statements
+
+The very basic idea of a computer program is that you want to tell the CPU of your machine to do something. This is done by sequentially telling your machine's processor what to do, step by step, in a carefully controlled manner. This guarantees that you will not only get it to do what you want, but that it will also be error-free.
+
+The smallest step that you can instruct your computer in doing, is called a _statement_. Each one is a wholly independent instruction which can be equated in and of itself, based on context. Every statement has a result.
+
+To give an example of this, see the blow codeblock:
+```
+2 + 2 == 4
+```
+
+What has been _stated_ here is that 2 added to 2 is equal to 4. We don't need to be computers to know this is true, and in fact, the above statement equates to a special type of result called a `boolean`.
+
+`booleans` are the simplest type there is in programming. A `boolean` can be either `true`, or `false`. In the above example, `2 + 2 == 4` equates to `true`.
+
+This means that if we were to feed this into a theoretical computer which takes in nothing but a single statement, and spits out the result, it would result in a `true` being returned.
+
+So then, what can we say about this?
+```
+2 + 3 == 6
+```
+
+As you can see, this statement is essentially the same as the above, with a key difference. It's result is `false`. 2 added to 3 does not equal 6, but we _state_ that it does. When our computer looks at this statement, it knows that this is a `false` statement, and thus it spits that back at us.
+
+Another statement is `2 + 2` by itself, or `4 == 4`, or even just `4`. That's right, so far what we examined was in fact not a simple statement, but instead a collection of statements put together to form a larger one.
+
+If we put each of the above into our computer one-by-one, we would get the following results:
+
+```
+2 + 2 -> 4
+
+4 == 4 -> true
+
+4 -> 4
+```
+
+And with the very first one, we move on to the next type of result we can get. A number.
+
+```
+( (4 + 4) * 8 ) - 9
+```
+
+This of course equates to 55. 
+
 ## What is JavaScript?
 
 JavaScript is a programming language. Specifically, it was created for use with the Netscape web browser in the 1990s, and it's primary goal was to help with the gluing together of different elements on a web page. Soon after it's creation, a licensing agreement between Sun Microsystems and Netscape caused the language to be renamed from Mocha or LiveScript, to JavaScript.
