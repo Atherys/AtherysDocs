@@ -146,17 +146,9 @@ cool!
 
 The above 2 strings are identical. The difference is that in the frist, we had to explicitly say where we want our newlines, while in the second, we could just press `Enter`, and it would read that automatically as a special `\n` character.
 
-### Summary
+### Comments
 
-To summarize thus far, we went through:
-1. What is a statement
-2. How statements works
-3. Different types of data
-    * Boolean
-    * Number
-    * String
-
-Next up...
+Real quick, we will be using the following combination of characters some after this ( `//` ). This denotes a comment in the code. It is ignored and not evaluated. We will be using them to point out things about the code inside the code blocks themselves for the sake of brevity. Another style are multi-line comments, where the comment begins with `/*` and ends with a closing `*/`.
 
 ## Operators
 
@@ -439,13 +431,116 @@ person + " was born on the " + dayOfMonth + " of " + month + " at " + time + " i
 
 That's a bit better, isn't it? Now, instead of having to scan through the big line of code for a single thing to change, we can quickly glance at the variables instead, and change one of them.
 
-## Scope
+## Arrays
 
-## Keywords
+So now that we've gone about how we can store a single value somewhere, what abotu multiple values?
 
-## Data Structures
+Imagine the situation. You want to create string variables containing all numbers between 1 and 10, and you'd like to store them somewhere for later use. So, what do you do?
+
+```js
+var num1 = "1";
+var num2 = "2";
+var num3 = "3";
+...
+```
+Ok that's going to get boring real quick. and what if it was up to 100? There's got to be a better way, right?
+
+An array is a data structure ( which we will be covering in more detail later on ), which contains many of the same type of variable in 1 place. 
+
+All arrays have a size. You access each element of the array via an index, which is a number between 0 and the size of your array. See below
+
+```js
+var arr = [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" ];
+// Need the 3rd element?
+var thirdElement = arr[2] // Wait, what? 2?
+```
+
+2? Why 2? An important thing to remember with arrays is that element indecies begin at 0. The first element of `arr` is located at `arr[0]`, the second at `arr[1]`, third at `arr[2]` and so forth.
+
+The **square brackets** operator is used to both create and access an array.
+When used like this:
+
+```js
+var arr = [ 1, 2, 3, 4, ... ];
+```
+
+This indicates array creation. While the following
+
+```js
+arr[0];
+```
+
+indicates we are access an element of the array at the specified index.
 
 ## Control Flow
+
+Now that we've gone through and have a general idea of variables and arrays, we can step deeper into JavaScript by talking about control flow. 
+
+This is a term used to describe how code is read by the computer. Generally speaking, code is read from top-to-bottom, left-to-right. Therefore, it makes sense to say that if you have code which looks like this:
+
+```js
+var someString = "Hello " + name;
+var name = "John";
+```
+
+It's going to error. Why? Well, because we're using a variable called `name`, before it has been declared. Imagine this is a book, and you're going through reading it line by line. You see suddenly the author talk in detail about a character, without having introduced the character in any way beforehand. That wouldn't make much logical sense, would it?
+
+The same is true in programming. We have to be aware of where we place variables, while taking into consideration where we're going to be using them later on in our program.
+
+But, this has nothing to do with control flow. This is general knowledge which has to be kept in mind when talking about it.
+
+### Definition
+
+So, to get to the point, what is control flow? Well, since we now know how code is read, the question arises: Can we manipulate that? And the answer is, yes, of course we can. And that's what control flow is.
+
+The simplest definition to be given is that control flow is a way to manipulate the order in which code is read.
+
+Imagine a situation where we have a variable `b`, the value of which we want to change depending on the value of a variable `a`. 
+
+In simple terms, we want to say something along the lines of 
+> "If the value of `a` is `2`, then set the value of the variable `b` to `2`. Otherwise, set the value of `b` to `3`."
+
+Without control flow, this would be impossible.
+
+All control flow statements have a _definition_ and a _body_. The definition is dependent on the statement itself, while the body will usually contain some code we would like to execute.
+
+### If-statements
+
+And moving on to the first control flow statement we're going to be look at, it's actually the exact one we need to solve the problem we posited above.
+
+The way we define an if-statement is as follows:
+```js
+if ( /* condition */ ) {
+    // body
+}
+```
+
+Going back to `booleans` really quickly, remember that a boolean statement returns either `true` or `false`. Well, with an if-statement, the condition has to return a boolean. And if the resulting boolean is `true`, then the code within the body will be executed.
+
+```js
+var condition = (4 == 4);
+var aString = "something";
+if ( condition ) {
+    aString = "something else";
+}
+
+var someOtherString = aString; // "something else"
+```
+
+### else
+
+### else-if
+
+### switch-case
+
+### Loops
+
+#### For Loops
+
+#### While Loops
+
+
+## Data Structures
 
 ## Functions
 
