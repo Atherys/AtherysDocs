@@ -1,5 +1,6 @@
 ---
 title: Event Functions
+module: event
 ---
 # Event Functions
 Functions responsible for attaching handling functions to events. These are best placed in the global scope, such that upon initial execution of the script ( see: onScriptStart ), the event handlers are registered appropriately.

@@ -1,5 +1,6 @@
 ---
 title: Items Functions
+module: item
 ---
 # Item Functions
 Item functions allow you to create and manipulate items easily. 

@@ -1,3 +1,6 @@
+---
+module: reward
+---
 # Reward Functions
 
 ## moneyReward

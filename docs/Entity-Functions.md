@@ -1,5 +1,6 @@
 ---
 title: Entity Functions
+module: entity
 ---
 # Entity Functions
 Entity functions allow you to interact with entities. 

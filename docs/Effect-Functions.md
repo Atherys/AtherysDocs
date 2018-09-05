@@ -1,5 +1,6 @@
 ---
 title: Particle Functions
+module: effect
 ---
 # Particle Functions
 Particle functions allow you to build and spawn particles. 

@@ -1,5 +1,6 @@
 ---
 title: Damage Functions
+module: damage
 ---
 # Damage Functions
 Damage functions let you create sources of damage with which to damage entities, using the [damageEntity](https://github.com/Atherys-Horizons/AtherysScript/wiki/Entity-Functions#damageentity) function.

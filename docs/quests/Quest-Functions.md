@@ -1,3 +1,6 @@
+---
+module: quest
+---
 # Quest Creation Functions
 
 ## createSimpleQuest
@@ -47,5 +50,26 @@ Boolean addQuestRewards(Quest quest, Reward[] rewards)
 ### Signature: 
 ```javascript
 Boolean registerQuest(Quest quest)
+```
+
+## addQuestReward
+
+### Signature:
+```javascript
+  addQuestReward(Quest quest, Reward reward, )
+```
+
+## getQuestById
+
+### Signature:
+```javascript
+  getQuestById(String questId)
+```
+
+## addQuestObjective
+
+### Signature:
+```javascript
+  addQuestObjective(SimpleQuest simpleQuest, Objective objective, )
 ```
 
