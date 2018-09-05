@@ -41,3 +41,10 @@ An objective that requires reaching a specific location, within a radius.
 Objective reachLocationObjective(Location<World> location, Text name, Double radius)
 ```
 
+## itemDeliveryObjective
+
+### Signature:
+```javascript
+  itemDeliveryObjective(ItemStack itemStack, String targetUUID, Text targetName, )
+```
+

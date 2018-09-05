@@ -9,13 +9,13 @@ module.exports = {
 		],
 		sidebar: {
 			'/quests/': [
-				 'Dialog',
-				 'Events',
-				 'Objectives',
+				 'Dialog-Functions',
+				 'Events-Functions',
+				 'Objective-Functions',
 				 'Quest-Creation',
 				 'Requirements',
 				 'Retrieval',
-				 'Rewards',
+				 'Reward-Functions',
 				 'Examples'
 			],
 			'/': [

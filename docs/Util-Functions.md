@@ -1,5 +1,5 @@
 ---
-module: utility
+module: util
 title: Utility Functions
 ---
 # Utility Functions
