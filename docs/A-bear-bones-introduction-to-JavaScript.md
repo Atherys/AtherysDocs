@@ -17,7 +17,7 @@ The very basic idea of a computer program is that you want to tell the CPU of yo
 The smallest step that you can instruct your computer in doing, is called a _statement_. Each one is a wholly independent instruction which can be equated in and of itself, based on context. Every statement has a result.
 
 To give an example of this, see the blow codeblock:
-```
+```js
 2 + 2 == 4
 ```
 
@@ -30,7 +30,7 @@ What has been _stated_ here is that 2 added to 2 is equal to 4. We don't need to
 This means that if we were to feed this into a theoretical computer which takes in nothing but a single statement, and spits out the result, it would result in a `true` being returned.
 
 So then, what can we say about this?
-```
+```js
 2 + 3 == 6
 ```
 
@@ -40,7 +40,7 @@ Another statement is `2 + 2` by itself, or `4 == 4`, or even just `4`. That's ri
 
 If we put each of the above into our computer one-by-one, we would get the following results:
 
-```
+```js
 2 + 2 -> 4
 
 4 == 4 -> true
@@ -50,7 +50,7 @@ If we put each of the above into our computer one-by-one, we would get the follo
 
 And with the very first one, we move on to the next type of result we can get. A number.
 
-```
+```js
 ( (4 + 4) * 8 ) - 9
 ```
 
@@ -65,20 +65,20 @@ In JavaScript, numbers are not as complex. There is really only a single number 
 ### Strings
 
 Next, we can move on to the next commonly found type in programming: a string.
-```
+```js
 "Hello World!"
 ```
 
 A string is a way to represent text in code. Much like we can add numbers together, we can "add" strings together, in a process called _concatenation_
 
-```
+```js
 "Hello " + "World!"
 ```
 
 The above will result in `Hello World!` as a single string.
 
 In JavaScript, there are 3 ways to create a new string:
-```
+```js
 "This is my new single-line string!"
 
 'This is my new single-line string!'
@@ -112,14 +112,14 @@ The first of which, is `\0`. The `\` in front of a character signifies to the st
 Nowadays, null terminators have become less and less relevant, however when working with lower-level languages like C, they are of great importance. This character symbolizes the end of a string. The reasons behind it's existence is to do with how memory works in detail, which I won't be getting into. Needless to say, this is a good starting point on our introduction to ASCII.
 
 The following string:
-```
+```js
 "Hello \0World!"
 ```
 In the C programming language, the above would be printed only as `Hello `, with the space after the o. The `World!` part would be omitted, as C would only read up until the special `\0` character, at which point it will stop reading, beliving it has reached the end of the string.
 
 As mentioned, this is not relevant in JavaScript. What is relevant, however, is the next character:
 
-```
+```js
 "Hello \nWorld!"
 ```
 
@@ -132,7 +132,7 @@ World!
 With the newline. That's what `\n` represents, a newline character. It tells the printer that we want whatever comes after this special character to be on the next line below.
 
 And so, finally, we get to raw string literals:
-```
+```js
 "Hello \nEveryone! \nThis \nis \ncool!"
 
 `
@@ -163,7 +163,7 @@ Next up...
 So as we saw from the above examples, the simplest statement consists of just a value. `"Hello World!"`, `4`, `true`, etc. These are all statements in and of themselves, which equate to a value of a certain type.
 
 But, going back to our first ever example, it's a bit more complicated than that
-```
+```js
 2 + 2 == 4
 ```
 
@@ -183,7 +183,6 @@ Below you will find a table relating common operators to their meanings
 |     -    |   Subtraction  |
 |     /    |    Division    |
 |     *    | Multiplication |
-|     =    |   Assignment   |
 
 This is by no means an exhaustive list.
 
@@ -196,7 +195,7 @@ The first operator we'll take a look at is the equals, `==`.
 All it does is check whether something is equal to something else. When surrounded by 2 values on either side, called _operands_, it becomes a statement which equates to a `boolean`.
 
 See the below examples
-```
+```js
 true == true -> true
 true == false -> false
 
@@ -213,7 +212,7 @@ Next we have the Not operator, `!`.
 
 It's job is to negate any boolean which has been placed on the right-hand side of the operator. See examples below
 
-```
+```js
 !true -> false
 !false -> true
 
@@ -229,13 +228,13 @@ The Not Equals operator ( `!=` ) is used as shorthand for what we saw in the exa
 
 Instead of writing
 
-```
+```js
 !("Hello" == "world")
 ```
 
 We may instead use Not Equals to write
 
-```
+```js
 "Hello" != "world"
 ```
 
@@ -243,13 +242,65 @@ Which is the same statement as we had before, except easier to read, and easier 
 
 ### Addition ( `+` )
 
+The Addition operator ( `+` ) is used to combine 2 operands together. I say _combine_ instead of _add_ and _operands_ instead of _numbers_ because `+` can be used to do more than just that.
+
+Going back to our introduction to strings, you may remember a brief mention to something called _concatenation_. Well, the addition operator is used for that as well.
+
+Therefore, what `+` finally equates to is dependent on the types of the operands on either side. Take the below examples:
+
+```js
+1 + 1 -> 2
+
+23.06 + 41.44 -> 64.5
+
+"Hello " + "World!" -> "Hello World!" // concatenation
+
+"The number " + 3 -> "The number 3" // also concatenation
+
+4 + " + " + 4 + " = " + (4 + 4) -> "4 + 4 = 8" // concatenation, combined with actual integer addition
+```
+
+As you can see above, the first 2 examples will give you a number. That means the statements _return_ a number type. The word _return_ is used instead of _equates to_ when talking about statements, as it is shorter and more concise.
+
+the 3rd and 4th examples _return_ a string, but in the 4th we actually combine a string with a number. Many languages have this, where instead of having to convert a number to a string, it will be done automatically when the `+` operator is used with a string as one operand, and a number as the other.
+
+Going to the final example, we actually have a more complicated combination of statements which eventually result in a string being returned.
+
 ### Subtraction ( `-` )
+
+The subtraction operator ( `-` ) works similarly to `+`, however it has no meaning when applied to a string.
+
+When applied to numbers, it simply subtracts the right-hand value from the left-hand one, returning a number.
+
+```js
+1 - 1 -> 0
+
+10.067 - 0.067 -> 10.0
+```
 
 ### Division ( `/` )
 
+Division ( `/` ) works quite the same as `+` and `-` when applied to numbers, and it has no meaningful application when used on strings or booleans.
+
+It simply divides the left-hand side by whatever is on the right-hand side.
+
+```js
+4 / 2 -> 2
+
+16 / 4 -> 4
+
+15.3 / 3 -> 5.1
+```
+
 ### Multiplication ( `*` )
 
-### Assignment ( `=` )
+The same is true for multiplication ( `*` ).
+
+```js
+4 * 2 -> 8
+
+0.5 * 8 -> 4
+```
 
 ## Structures
 
