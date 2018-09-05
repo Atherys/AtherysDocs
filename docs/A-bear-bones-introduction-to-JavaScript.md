@@ -156,7 +156,100 @@ To summarize thus far, we went through:
     * Number
     * String
 
+Next up...
+
 ## Operators
+
+So as we saw from the above examples, the simplest statement consists of just a value. `"Hello World!"`, `4`, `true`, etc. These are all statements in and of themselves, which equate to a value of a certain type.
+
+But, going back to our first ever example, it's a bit more complicated than that
+```
+2 + 2 == 4
+```
+
+You don't just have a number, or a string, or even a boolean, you have a combination of numbers, which somehow equate down to a boolean. How does that work?
+
+Well, while the numbers themselves are values, everything in between them is what is called an _operator_. In programming, there are many different operators we can use, each representing a very simple _operation_.
+
+Below you will find a table relating common operators to their meanings
+
+
+| Operator |     Meaning    |
+|:--------:|:--------------:|
+|    ==    |     Equals     |
+|     !    |       Not      |
+|    !=    |   Not Equals   |
+|     +    |    Addition    |
+|     -    |   Subtraction  |
+|     /    |    Division    |
+|     *    | Multiplication |
+|     =    |   Assignment   |
+
+This is by no means an exhaustive list.
+
+Hopefully with this information you can begin piecing together what is happening in the very first statement you saw here.
+
+### Equals ( `==` )
+
+The first operator we'll take a look at is the equals, `==`.
+
+All it does is check whether something is equal to something else. When surrounded by 2 values on either side, called _operands_, it becomes a statement which equates to a `boolean`.
+
+See the below examples
+```
+true == true -> true
+true == false -> false
+
+1 == 1 -> true
+1 == 2 -> false
+
+"Hello" == "Hello" -> true
+"Hello" == "World" -> false
+```
+
+### Not ( `!` )
+
+Next we have the Not operator, `!`.
+
+It's job is to negate any boolean which has been placed on the right-hand side of the operator. See examples below
+
+```
+!true -> false
+!false -> true
+
+!(1 == 1) -> false
+!(1 == 2) -> true
+
+!("Hello" == "World") -> true
+```
+
+### Not Equals ( `!=` )
+
+The Not Equals operator ( `!=` ) is used as shorthand for what we saw in the examples of the previous.
+
+Instead of writing
+
+```
+!("Hello" == "world")
+```
+
+We may instead use Not Equals to write
+
+```
+"Hello" != "world"
+```
+
+Which is the same statement as we had before, except easier to read, and easier to write.
+
+### Addition ( `+` )
+
+### Subtraction ( `-` )
+
+### Division ( `/` )
+
+### Multiplication ( `*` )
+
+### Assignment ( `=` )
 
 ## Structures
 
