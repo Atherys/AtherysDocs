@@ -10,11 +10,11 @@ module.exports = {
 		sidebar: {
 			'/quests/': [
 				 'Dialog-Functions',
-				 'Events-Functions',
+				 'Event-Functions',
 				 'Objective-Functions',
-				 'Quest-Creation',
-				 'Requirements',
-				 'Retrieval',
+				 'Quest-Functions',
+				 'Requirement-Functions',
+				 'Retrieval-Functions',
 				 'Reward-Functions',
 				 'Examples'
 			],
@@ -27,13 +27,13 @@ module.exports = {
 				 'Event-Functions',
 				 'Item-Functions',
 				 'Location-Functions',
-				 'Particle-Functions',
+				 'Effect-Functions',
 				 'Player-Functions',
 				 'Potion-Functions',
 				 'Sound-Functions',
 				 'Task-Functions',
 				 'Text-Functions',
-				 'Utility-Functions',
+				 'Util-Functions',
 				 'The-srun-Command'
 			]
 		},
