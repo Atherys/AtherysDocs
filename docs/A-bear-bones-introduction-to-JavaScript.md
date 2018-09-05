@@ -186,8 +186,6 @@ Below you will find a table relating common operators to their meanings
 
 This is by no means an exhaustive list.
 
-Hopefully with this information you can begin piecing together what is happening in the very first statement you saw here.
-
 ### Equals ( `==` )
 
 The first operator we'll take a look at is the equals, `==`.
