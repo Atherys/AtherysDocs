@@ -32,7 +32,20 @@ The function description is a simple-to-understand written description of what t
 
 The function signature is pseudo-code and written in the following format:
 ```
-ReturnValue functionName(Type1 firstArgument, Type2 secondArgument, ...)
+<return-type> <function-name>([arguments...])
 ```
+
+Where each argument will take the form of
+```
+<argument-type> <argument-name>
+```
+
+So, a function which takes 2 arguments will look like:
+
+```
+<return-type> <function-name>(<first-argument-type> <first-argument-name>, <second-argument-type> <second-argument-name>)
+```
+
+Where each argument is separated by a comma.
 
 The example is written in the default implementation of AScript, which is JavaScript.
