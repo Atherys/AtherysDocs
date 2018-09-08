@@ -1,1 +1,0 @@
-curl https://jenkins.atherys.com/git/notifyCommit?url=https://github.com/Atherys-Horizons/AtherysDocs.git[&branches=master][&sha1=<commit ID>]
