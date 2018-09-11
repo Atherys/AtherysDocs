@@ -3,3 +3,5 @@ dist/
 .idea/
 out/
 .gradle/
+*.class
+*.jar
