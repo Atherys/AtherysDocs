@@ -10,7 +10,7 @@ import java.util.*;
 public class MarkdownDoclet {
 
     private static Map<String, Module> modules = new HashMap<>();
-    private static final String functionTag = "jsfunction";
+    private static final String functionTag = "jsfunc";
 
     private static final Set<String> functionNames = new HashSet<>();
 
