@@ -91,7 +91,7 @@ public class ScriptFunction {
         });
         if (returnDesc != null) {
             module.writeln("");
-            module.writeln("__**" + returnType + "**__: " + returnDesc);
+            module.writeln("Returns a _**" + returnType + "**_: " + returnDesc);
         }
         if (example.size() > 0) {
             module.writeln("");
