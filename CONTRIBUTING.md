@@ -9,8 +9,8 @@ class BlockOf implements Function<String,BlockState> {
   /**
    * Used to create a new BlockState from a block type id.
    * 
-   * @example var location = locationOf( getWorldFromName("world"), 100, 50, 100 );
-   * @example var block = getBlockFromLocation(location);
+   * @ex var location = locationOf( getWorldFromName("world"), 100, 50, 100 );
+   * @ex var block = getBlockFromLocation(location);
    * 
    * @param blockTypeId The minecraft block id to create
    * @returns A representation of the final block
@@ -34,7 +34,7 @@ Used to create a new BlockState from a block type id.
 
 **blockTypeId**: The minecraft block id to create
 
-**BlockState**: A representation of the final block
+Returns a _**BlockState**_: A representation of the final block
 
 ##### Example:
 
