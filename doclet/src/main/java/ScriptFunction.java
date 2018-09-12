@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ScriptFunction {
     private static final String jsNameTag = "jsname";
-    private static final String exampleTag = "example";
+    private static final String exampleTag = "ex";
     private String name;
     private String description;
     private String returnType;
