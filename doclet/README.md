@@ -16,7 +16,7 @@ A directory named 'docs' with a markdown file for each package will be placed th
 
 ### Supported tags
 
-* @func - Tells the doclet that the class contains a scripting function
+* @jsfunc - Tells the doclet that the class contains a scripting function
 * @jsname - The default name for the JavaScript function is the name of the class with the first letter lowercase. If it differs, use this tag.
 * @ex - Use this tag for the JavaScript example; the lines with this tag will be printed after one another.
 
