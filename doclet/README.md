@@ -1,16 +1,10 @@
 # AtherysDoclet
 
-This is the Javadoc Doclet for generating documentation for AtherysScript from the Java code. To run it, download the latest [release](https://github.com/Atherys-Horizons/AtherysDocs/releases) and run it with the following command:
+This is the Javadoc Doclet for generating documentation for AtherysScript from the Java code. To run it, you will need Python. Download the latest [release](https://github.com/Atherys-Horizons/AtherysDocs/releases) and run it with the following command:
 ```
-javadoc -cp $JAVA_HOME/lib/tools.jar -doclet MarkdownDoclet -docletpath path/to/jar source-files
+python docgen.py paths/to/other/jar/dependencies path/to/target/project
 ```
-
-Alternatively, and more easily: download the Python script found in [doclet/docgen.py](https://github.com/Atherys-Horizons/AtherysDocs/blob/master/doclet/docgen.py) and run with the following command:
-
-```
-python docgen.py path/to/jar path/to/source-files
-```
-It will run javadoc on all the java files found in the given directory.
+Other dependencies would be any A'therys projects that your target project depends on. It will run javadoc on all the java files found in the given project.
 
 A directory named 'docs' with a markdown file for each package will be placed there.
 
