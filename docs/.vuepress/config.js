@@ -16,6 +16,7 @@ module.exports = {
 				 'Requirement-Functions',
 				 'Retrieval-Functions',
 				 'Reward-Functions',
+				 'Writing-a-Quest',
 				 'Examples'
 			],
 			'/': [
