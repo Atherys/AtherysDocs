@@ -17,6 +17,7 @@ module.exports = {
 				 'Retrieval-Functions',
 				 'Reward-Functions',
 				 'Writing-a-Quest',
+				 'Writing-a-Dialog',
 				 'Examples'
 			],
 			'/': [
