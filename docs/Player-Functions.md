@@ -2,7 +2,7 @@
 title: Player Functions
 module: player
 ---
-#Player Functions
+# Player Functions
 Player functions allow you to deal with players, and provide multiple ways of retrieving a player.
 
 ## getPlayerFromName
