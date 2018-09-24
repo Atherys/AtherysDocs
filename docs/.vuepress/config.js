@@ -9,16 +9,28 @@ module.exports = {
 		],
 		sidebar: {
 			'/quests/': [
-				 'Dialog-Functions',
-				 'Event-Functions',
-				 'Objective-Functions',
-				 'Quest-Functions',
-				 'Requirement-Functions',
-				 'Retrieval-Functions',
-				 'Reward-Functions',
-				 'Writing-a-Quest',
-				 'Writing-a-Dialog',
-				 'Examples'
+				{
+					title: 'Guides',
+					collapsable: false,
+					children: [
+						'Writing-a-Quest',
+						'Writing-a-Dialog',
+						'Examples'
+					]
+				},
+				{
+					title: 'Function Reference',
+					collapsable: false,
+					children: [	
+						'Dialog-Functions',
+						'Event-Functions',
+						'Objective-Functions',
+						'Quest-Functions',
+						'Requirement-Functions',
+						'Retrieval-Functions',
+						'Reward-Functions'
+					]
+				}
 			],
 			'/': [
 				 'A-bear-bones-introduction-to-JavaScript',
