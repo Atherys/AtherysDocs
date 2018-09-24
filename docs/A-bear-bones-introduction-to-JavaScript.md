@@ -171,6 +171,8 @@ Below you will find a table relating common operators to their meanings
 |    ==    |     Equals     |
 |     !    |       Not      |
 |    !=    |   Not Equals   |
+|    \|\|  |   Logical OR   |
+|    &&    |   Logical AND  |
 |     +    |    Addition    |
 |     -    |   Subtraction  |
 |     /    |    Division    |
@@ -229,6 +231,32 @@ We may instead use Not Equals to write
 ```
 
 Which is the same statement as we had before, except easier to read, and easier to write.
+
+### Logical OR ( `||` )
+
+The Logical OR operator ( `||` ) is yet another which is applicable to booleans.
+
+Say we have 2 statements, A and B. A is `true`, and B is `false`. Now, say we have a third statement C, which is either A OR B. What is the value of C?
+
+According to the definition of an OR, we must always choose the value of the `true` statement. In essence, we're asking "which one of these is true?", and if neither is, then obviously the new statement is also `false`. Therefore, `A || B` in this case would be equal to `true`. Below, you will find a table describing all possible cases for an OR statement.
+
+|  A  |  B  |Result|
+|:---:|:---:|:----:|
+|true |true | true |
+|true |false| true |
+|false|true | true |
+|false|false| false|
+
+### Logical AND ( `&&` )
+
+Now imagine the mirror opposite of Logical OR. Instead of asking "which one of these is true?" we ask "which one of these is false?", and if neither is, then the new statement is true.
+
+|  A  |  B  |Result|
+|:---:|:---:|:----:|
+|true |true | true |
+|true |false| false|
+|false|true | false|
+|false|false| false|
 
 ### Addition ( `+` )
 
@@ -515,11 +543,12 @@ if ( /* condition */ ) {
 }
 ```
 
-Going back to `booleans` really quickly, remember that a boolean statement returns either `true` or `false`. Well, with an if-statement, the condition has to return a boolean. And if the resulting boolean is `true`, then the code within the body will be executed.
+The _condition_ part is simply a statement which equates to a `boolean` value. And if the resulting boolean is `true`, then the body will be executed.
 
 ```js
 var condition = (4 == 4);
 var aString = "something";
+
 if ( condition ) {
     aString = "something else";
 }
@@ -527,11 +556,90 @@ if ( condition ) {
 var someOtherString = aString; // "something else"
 ```
 
-### else
+And to finally solve the initial problem we started with:
 
-### else-if
+```js
+var a = 2;
+var b;
+
+// if the value of a is 2, set b to 2
+if ( a == 2 ) {
+    b = 2;
+}
+
+// otherwise, if the value of a is 3, set b to 3
+if ( a == 3 ) {
+    b = 3;
+}
+```
+
+#### else
+
+To refine the above problem, let's instead say...
+
+> "if the value of `a` is `2`, set `b` to `2`, otherwise set `b` to the value of `a`"
+
+Suddenly, our approach from above is no longer practical. The naive way would be to start creating if-statements for each and very possible case of `a`. if a is 3, set b to 3, if a is 4, set be to 4, etc. etc.
+
+This can never work. Which is why, instead, we can append our if-statement with an else, the combination of which is called an _**if-else statement**_
+
+```js
+var a = 4;
+var b;
+
+if ( a == 2 ) {
+    b = 2;
+} else {
+    b = a;
+}
+```
+
+#### else-if
+
+Ok, but what if we _do_ want to account for several different possibilities at once? What if the case of `a == 2` is not the only one of importance to us? What if...
+
+> "if the value of `a` is `2`, set `b` to `2`. If the value of `c` is `5`, set `b` to `10`, otherwise set `b` to `100`"
+
+```js
+var a = 7;
+var b;
+var c = 5;
+
+if ( a == 2 ) { // a != 2, this is not executed
+    b = 2;
+} else if ( c == 5 ) { // true, this is executed
+    b = 10;
+} else { // this will not be executed, because the one above was true
+    b = 100;
+}
+```
 
 ### switch-case
+
+Sometimes we have a lot of cases to go through, and an `else-if` statement becomes too burdensome to deal with. This is where a `switch-case` statement may come in handy.
+
+This is simply a way to execute different code, depending on the value of a variable. We can only look up the value of a single variable this way, so there are some clear limitations.
+
+For example, take the following problem:
+
+> "If a string is equal to "hello " ( with the space at the end ), concatenate it with "world!" such that the resulting string is "hello world!"."
+
+```js
+var someString = "hello ";
+switch (someString) {
+    case "hello ":
+        someString = someString + "world!"; // this is what gets executed
+        break; // we add a break statement here to prevent any further checks.
+    case "not hello":
+        break;
+    case "something else":
+        break;
+    case "":
+        break;
+    default: // the default case will be executed if no other case is triggered
+
+}
+```
 
 ### Loops
 
@@ -543,61 +651,3 @@ var someOtherString = aString; // "something else"
 ## Data Structures
 
 ## Functions
-
----
-
-Everything below this line is to be rewritten
-
----
-
-## What is JavaScript?
-
-JavaScript is a programming language. Specifically, it was created for use with the Netscape web browser in the 1990s, and it's primary goal was to help with the gluing together of different elements on a web page. Soon after it's creation, a licensing agreement between Sun Microsystems and Netscape caused the language to be renamed from Mocha or LiveScript, to JavaScript.
-
-Nowadays, JavaScript has become much more than that. It can be used a general-purpose programming language, and in the case of AtherysScript, it's used as a scripting language, whose main purpose is to interact with and modify the Mineraft server in a variety of ways.
-
-## How does JavaScript work?
-
-JavaScript is an interpreted language. What this means is that a Just-In-Time Compiler ( JIT Compiler ) takes in the JavaScript code, and transforms it into something which the computer can understand. The details of this system are far more complicated, but I'm not going to be talking about that here, since it's beyond the scope of this article.
-
-## So how do I write JavaScript?
-
-Well, before we start off on JavaScript, I'd like to go over the simplest of basics of programming.
-
-### Firstly, variables.
-
-`var num = 5.0;`
-
-This is a **variable** called `num`, which is assigned a value of `5.0`. You can store any value in a variable, and that variable can be used later on in your program to refer back to the value you assigned it. This means anytime you refer to `num`, you are in fact refering to the value `5.0`.
-
-Variables can take up a number of possible types of values ( including user-defined ones, but I'm not going to be covering those here ). In javascript, the types that a variable can take are one of the following:
-
-* Boolean ( `true`/`false` )
-* Null ( represents nothingness )
-* Undefined ( represents the type of a variable which hasn't been initialized, we'll get to that later )
-* Number ( a number such as `5`, `4.3`, `-0.00041` and so on )
-* String ( Representation of a text, of a collection of characters, such as `"Text"`, `"Hello World"` )
-* Object ( A hierarchical collection of data. More on that later )
-
-### Next, a function.
-
-`log("ERROR", num);`
-
-Here, we are executing what's known as a **function call**. You do this by typing out the name of the function, followed by an opening and closing pair of parenthesis, with the arguments with which to call the function within, seperated by a comma.
-
-Specifically, what the above snippet does is it calls a function with the name `log`, providing the arguments `"ERROR"` and `num`. `num` is defined as `5.0`, so in fact what the above evaluates to is `log("ERROR", 5.0)`. `"ERROR"` is a string, and that is a representation of written text, or a collection of characters.
-
-### What about a custom function?
-
-```javascript
-function logError(message) {
-    log("ERROR", message);
-    return true;
-}
-```
-
-A function in javascript can be defined by using the `function` keyword, followed by the name of the function, a pair of parenthesis, within which are described the arguments which the function expects. If the function is called mismatching arguments ( for example `logError()` or `logError("argument 1", "argument 2")` ), it will throw an error.
-
-Functions can also return values. That is the purpose of the `return` keyword. The value returned can be a literal ( like `5.0`, `true`, `"Hello"`, etc. ), or a variable.
-
-The primary use of user-defined functions is to simplify your code. It is much more readable to call a function, than to copy-paste the same code all over. AScript defines many functions that can be used to interact with the Minecraft world. These range from getting the block from a location to teleporting a player.
