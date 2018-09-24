@@ -33,22 +33,34 @@ module.exports = {
 				}
 			],
 			'/': [
-				 'A-bear-bones-introduction-to-JavaScript',
-				 'Functions',
-				 'Block-Functions',
-				 'Damage-Functions',
-				 'Entity-Functions',
-				 'Event-Functions',
-				 'Item-Functions',
-				 'Location-Functions',
-				 'Effect-Functions',
-				 'Player-Functions',
-				 'Potion-Functions',
-				 'Sound-Functions',
-				 'Task-Functions',
-				 'Text-Functions',
-				 'Util-Functions',
-				 'The-srun-Command'
+				{
+					title: 'Guides & Tutorials',
+					collapsable: false,
+					children: [
+						'A-bear-bones-introduction-to-JavaScript'
+					]
+				},
+				{
+					title: 'Function Reference',
+					collapsable: false,
+					children: [
+						'Functions',
+						'Block-Functions',
+						'Damage-Functions',
+						'Entity-Functions',
+						'Event-Functions',
+						'Item-Functions',
+						'Location-Functions',
+						'Effect-Functions',
+						'Player-Functions',
+						'Potion-Functions',
+						'Sound-Functions',
+						'Task-Functions',
+						'Text-Functions',
+						'Util-Functions',
+						'The-srun-Command'
+					]
+				}
 			]
 		},
 		repo: 'Atherys-Horizons/AtherysScript'
