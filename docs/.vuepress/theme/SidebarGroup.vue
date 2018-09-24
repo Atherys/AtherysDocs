@@ -47,7 +47,7 @@ export default {
   // text-transform uppercase
   padding 0 1.5rem
   margin-top 0
-  margin-bottom 0.5rem
+  margin-bottom 0
   &.open, &:hover
     color inherit
   .arrow
