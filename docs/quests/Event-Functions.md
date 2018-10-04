@@ -1,4 +1,5 @@
 ---
+title: Event Functions
 module: event
 ---
 # Event functions

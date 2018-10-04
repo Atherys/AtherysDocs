@@ -70,6 +70,13 @@ module.exports = {
 						'Util-Functions',
 						'The-srun-Command'
 					]
+				},
+				{
+					title: 'Other',
+					collapsable: false,
+					children: [
+						'The-srun-Command'
+					]
 				}
 			]
 		},

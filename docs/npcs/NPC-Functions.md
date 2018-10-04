@@ -1,3 +1,6 @@
+---
+title: NPC Functions
+---
 ## createNPC
 
 Creates an NPC of the given type at the given location.

@@ -1,5 +1,5 @@
 ---
-title: Items Functions
+title: Item Functions
 module: item
 ---
 # Item Functions
