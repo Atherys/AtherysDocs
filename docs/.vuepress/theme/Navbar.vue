@@ -40,7 +40,10 @@ export default {
 
 <style lang="stylus">
 @import './styles/config.styl'
-
+@font-face {
+  font-family: Chancery;
+  src: url('styles/black-chancery.ttf');
+}
 .navbar
   padding 0.7rem 1.5rem
   line-height $navbarHeight - 1.4rem
@@ -53,10 +56,11 @@ export default {
     margin-right 0.8rem
     vertical-align top
   .site-name
-    font-size 1.3rem
-    font-weight 600
+    font-size 2.2rem
+    font-weight 300
     color $accentColor
     position relative
+    font-family Chancery 
   .links
     font-size 0.9rem
     position absolute

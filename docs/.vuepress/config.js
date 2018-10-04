@@ -68,7 +68,6 @@ module.exports = {
 						'Task-Functions',
 						'Text-Functions',
 						'Util-Functions',
-						'The-srun-Command'
 					]
 				},
 				{
