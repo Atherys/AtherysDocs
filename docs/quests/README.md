@@ -1,1 +1,3 @@
-This is the page for the AtherysQuests module of AtherysScript.
+# Quests
+
+The Quests module allows you to create quests with scripts. 

@@ -5,6 +5,7 @@ module.exports = {
 	themeConfig: {
 		nav: [
 			{text: 'Quests', link: '/quests/'},
+			{text: 'NPCs', link: '/npcs/'},
 			{text: 'A\'therys', link: 'https://atherys.com'},
 		],
 		sidebar: {
@@ -29,6 +30,15 @@ module.exports = {
 						'Requirement-Functions',
 						'Retrieval-Functions',
 						'Reward-Functions'
+					]
+				}
+			],
+			'/npcs/': [
+				{
+					title: 'Function Reference',
+					collapsable: false,
+					children: [
+						'NPC-Functions'
 					]
 				}
 			],
