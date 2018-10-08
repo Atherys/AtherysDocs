@@ -45,3 +45,12 @@ UUID getNPCUuid(NPCFile npc)
 
 Returns a _**UUID**_: The NPC's UUID.
 
+## getNPCEntity
+
+Gets the entity object from the NPC, or null.
+
+#### Signature:
+```js
+Entity getNPCEntity(NPCFile npcFile)
+```
+

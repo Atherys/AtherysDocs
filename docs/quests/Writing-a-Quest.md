@@ -25,7 +25,7 @@ Our quest will have one objective: to kill five five zombies. We call the `addQu
 addQuestObjective(quest, killEntityObjective("zombie", 5));
 ```
 
-Next, we will add a reward to our quest. We create an item stack representing 7 anvils, and set its display name to "Anvil Reward". For other item manipulation functions, see [here](Item-Functions.html). 
+Next, we will add a reward to our quest. We create an item stack representing 7 anvils, and set its display name to "Anvil Reward". For other item manipulation functions, see [here](../Item-Functions.html). 
 ```js
 var anvil = createItemStack("minecraft:anvil", 7);
 setItemStackDisplayName(anvil, textOf("Anvil Reward"));
