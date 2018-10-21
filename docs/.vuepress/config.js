@@ -61,13 +61,13 @@ module.exports = {
 						'Event-Functions',
 						'Item-Functions',
 						'Location-Functions',
-						'Effect-Functions',
+						'Particle-Functions',
 						'Player-Functions',
 						'Potion-Functions',
 						'Sound-Functions',
 						'Task-Functions',
 						'Text-Functions',
-						'Util-Functions',
+						'Utility-Functions',
 					]
 				},
 				{

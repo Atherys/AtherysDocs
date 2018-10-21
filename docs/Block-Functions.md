@@ -1,23 +1,22 @@
----
-title: Block Functions
-module: block
----
 # Block Functions
-
-Block functions are meant to create, modify and remove blocks from a World. It may be useful to take a look at the [Location functions](Location-Functions.html) prior to this to familiarize yourself with how to get a world, and a location within said world.
+ Block functions are meant to create, modify and remove blocks from a World.
+ It may be useful to take a look at the [Location functions](Location-Functions.html) prior to this to
+ familiarize yourself with how to get a world, and a location within said world.
 
 ## blockOf
 
 Used to create a new [`BlockState`](https://jd.spongepowered.org/7.0.0/org/spongepowered/api/block/BlockState.html) from a block type id.
 
 #### Signature:
-```javascript
-BlockState blockOf(String blockTypeId);
+```js
+BlockState blockOf(String blockTypeId)
 ```
+
+**blockTypeId**: The block id.
 
 #### Example:
 
-```javascript
+```js
 var block = blockOf("minecraft:anvil");
 ```
 
@@ -26,12 +25,15 @@ var block = blockOf("minecraft:anvil");
 Used to get the `BlockState` present at the specified location.
 
 #### Signature:
-```javascript
-BlockState getBlockFromLocation(Location location);
+```js
+BlockState getBlockFromLocation(Location worldLocation)
 ```
 
+**worldLocation**: The location to get the block from.
+
 #### Example:
-```javascript
+
+```js
 var location = locationOf( getWorldFromName("world"), 100, 50, 100 );
 var block = getBlockFromLocation(location);
 ```
@@ -41,12 +43,18 @@ var block = getBlockFromLocation(location);
 Used to change the `BlockState` at the specified location
 
 #### Signature:
-```javascript
-boolean setBlockAtLocation(Location location, BlockState block);
+```js
+Boolean setBlockAtLocation(Location worldLocation, BlockState state)
 ```
 
+**worldLocation**: The location to change.
+
+**state**: The BlockState to change the location to.
+
 #### Example:
-```javascript
+
+```js
 var location = locationOf( getWorldFromName("world"), 100, 50, 100 );
 var success = setBlockAtLocation( location, blockOf("minecraft:anvil") );
 ```
+

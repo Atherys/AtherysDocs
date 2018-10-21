@@ -1,55 +1,51 @@
----
-title: Sound Functions
-module: sound
----
-#Sound Functions
+# Sound Functions
+ Sound functions allow you to create and play sounds to the player.
 
-## soundBuilder
+## buildSound
 
-### Signature: 
-```javascript
-Sound.Builder soundBuilder(String soundType, Double volume)
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Sound buildSound(Sound.Builder builder)
 ```
 
 ## playSound
 
-### Signature: 
-```javascript
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
 Boolean playSound(Viewer viewer, Sound sound, Vector3d position)
-```
-
-## buildSound
-
-### Signature: 
-```javascript
-Sound buildSound(Sound.Builder builder)
-```
-
-## setSound
-
-### Signature: 
-```javascript
-Sound.Builder setSound(String soundType, Double volume)
 ```
 
 ## setSoundCategory
 
-### Signature: 
-```javascript
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
 Sound.Builder setSoundCategory(Sound.Builder builder, String soundCategory)
 ```
 
 ## setSoundMinVolume
 
-### Signature: 
-```javascript
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
 Sound.Builder setSoundMinVolume(Sound.Builder builder, Double minVolume)
+```
+
+## soundBuilder
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Sound.Builder soundBuilder(String soundType, Double volume)
 ```
 
 ## setSoundPitch
 
-### Signature: 
-```javascript
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
 Sound.Builder setSoundPitch(Sound.Builder builder, Double pitch)
 ```
 

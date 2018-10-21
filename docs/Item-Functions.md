@@ -1,77 +1,75 @@
----
-title: Item Functions
-module: item
----
 # Item Functions
-Item functions allow you to create and manipulate items easily. 
+ Item functions allow you to create and manipulate items easily.
 
-## createItemStack
+## setItemStackEnchants
 
-### Signature: 
-```javascript
-ItemStack createItemStack(String itemTypeId, Integer amount)
-```
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
 
-## getItemStackEnchants
-
-### Signature: 
-```javascript
-Enchantment[] getItemStackEnchants(ItemStack itemStack)
-```
-
-## getItemStackDisplayName
-
-### Signature: 
-```javascript
-Text getItemStackDisplayName(ItemStack itemStack)
+```js
+Boolean setItemStackEnchants(ItemStack itemStack, Enchantment enchantments)
 ```
 
 ## getItemStackLore
 
-### Signature: 
-```javascript
-Text[] getItemStackLore(ItemStack itemStack)
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+List getItemStackLore(ItemStack itemStack)
 ```
 
-## setItemStackEnchants
+## getItemStackEnchants
 
-### Signature: 
-```javascript
-Boolean setItemStackEnchants(ItemStack itemStack, Enchantment... enchantments)
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+List getItemStackEnchants(ItemStack itemStack)
 ```
 
 ## setItemStackDisplayName
 
-### Signature: 
-```javascript
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
 Boolean setItemStackDisplayName(ItemStack itemStack, Text text)
-```
-
-## setItemStackLore
-
-### Signature: 
-```javascript
-Boolean setItemStackLore(ItemStack itemStack, Text[] lore)
-```
-
-## isItemStack
-
-### Signature: 
-```javascript
- isItemStack
-```
-
-## compareItemStacks
-
-### Signature: 
-```javascript
-Boolean compareItemStacks(ItemStack first, ItemStack second)
 ```
 
 ## dropItemStackOnGround
 
-### Signature: 
-```javascript
-Entity dropItemStackOnGround(ItemStack itemStack, Location<World> location)
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Entity dropItemStackOnGround(ItemStack itemStack, Location location)
+```
+
+## getItemStackDisplayName
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Text getItemStackDisplayName(ItemStack itemStack)
+```
+
+## createItemStack
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+ItemStack createItemStack(String itemTypeId, Integer amount)
+```
+
+## setItemStackLore
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Boolean setItemStackLore(ItemStack itemStack, Text lore)
+```
+
+## createEnchantment
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Enchantment createEnchantment(String enchantmentType, Integer level)
 ```
 

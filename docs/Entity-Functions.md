@@ -1,190 +1,203 @@
----
-title: Entity Functions
-module: entity
----
 # Entity Functions
-Entity functions allow you to interact with entities. 
-
-## createEntity
-
-### Signature: 
-```javascript
-Entity createEntity(String entityType, Location<World> worldLocation)
-```
-
-## spawnEntity
-
-### Signature: 
-```javascript
-Boolean spawnEntity(Entity entity)
-```
-
-## healEntity
-
-### Signature: 
-```javascript
-Boolean healEntity(Entity entity, Double amount)
-```
-
-## damageEntity
-
-### Signature: 
-```javascript
-Boolean damageEntity(Entity entity, DamageSource src, Double damage)
-```
+ Entity functions allow you to create interact with entities.
 
 ## addEntityPotionEffect
 
-### Signature: 
-```javascript
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
 Boolean addEntityPotionEffect(Entity entity, PotionEffect potionEffect)
 ```
 
-## setEntityPotionEffects
+## createEntity
 
-### Signature: 
-```javascript
-Boolean setEntityPotionEffects(Entity entity, PotionEffect[] effects)
-```
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
 
-## getEntityPotionEffects
-
-### Signature: 
-```javascript
-PotionEffect[] getEntityPotionEffects(Entity entity)
-```
-
-## getEntityHealth
-
-### Signature: 
-```javascript
-Double getEntityHealth(Entity entity)
-```
-
-## getEntityBoots
-
-### Signature: 
-```javascript
-ItemStack getEntityBoots(Entity entity)
-```
-
-## getEntityChestplate
-
-### Signature: 
-```javascript
-ItemStack getEntityChestplate(Entity entity)
+```js
+Entity createEntity(String entityType, Location worldLocation)
 ```
 
 ## getEntityHelmet
 
-### Signature: 
-```javascript
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
 ItemStack getEntityHelmet(Entity entity)
-```
-
-## getEntityLeggings
-
-### Signature: 
-```javascript
-ItemStack getEntityLeggings(Entity entity)
-```
-
-## getEntityMainHand
-
-### Signature: 
-```javascript
-ItemStack getEntityMainHand(Entity entity)
-```
-
-## getEntityOffHand
-
-### Signature: 
-```javascript
-ItemStack getEntityOffHand(Entity entity)
-```
-
-## getEntityHealth
-
-### Signature: 
-```javascript
-Double getEntityHealth(Entity entity)
-```
-
-## getEntityMaxHealth
-
-### Signature: 
-```javascript
-Double getEntityMaxHealth(Entity entity)
-```
-
-## getEntityUUID
-
-### Signature: 
-```javascript
-UUID getEntityUUID(Entity entity)
-```
-
-## getEntityName
-
-### Signature: 
-```javascript
-Text getEntityName(Entity entity)
-```
-
-## setEntityBoots
-
-### Signature: 
-```javascript
-Boolean setEntityBoots(Entity entity, ItemStack boots)
-```
-
-## setEntityChestplate
-
-### Signature: 
-```javascript
-Boolean setEntityChestplate(Entity entity, ItemStack chestplate)
 ```
 
 ## setEntityHelmet
 
-### Signature: 
-```javascript
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
 Boolean setEntityHelmet(Entity entity, ItemStack helmet)
 ```
 
-## setEntityLeggings
+## getEntityOffhand
 
-### Signature: 
-```javascript
-Boolean setEntityLeggings(Entity entity, ItemStack leggings)
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+ItemStack getEntityOffhand(Entity entity)
 ```
 
-## setEntityMainHand
+## getEntityBoots
 
-### Signature: 
-```javascript
-Boolean setEntityMainHand(Entity entity, ItemStack item)
-```
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
 
-## setEntityOffHand
-
-### Signature: 
-```javascript
-Boolean setEntityOffHand(Entity entity, ItemStack item)
-```
-
-## setEntityMaxHealth
-
-### Signature: 
-```javascript
-Boolean setEntityMaxHealth(Entity entity, Double maxHealth)
+```js
+ItemStack getEntityBoots(Entity entity)
 ```
 
 ## setEntityName
 
-### Signature: 
-```javascript
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
 Boolean setEntityName(Entity entity, Text name)
 ```
 
+## setEntityOffhand
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Boolean setEntityOffhand(Entity entity, ItemStack item)
+```
+
+## getEntityLeggings
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+ItemStack getEntityLeggings(Entity entity)
+```
+
+## setEntityMainHand
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Boolean setEntityMainHand(Entity entity, ItemStack item)
+```
+
+## setEntityBoots
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Boolean setEntityBoots(Entity entity, ItemStack boots)
+```
+
+## setEntityMaxHealth
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Boolean setEntityMaxHealth(Entity entity, Double maxHealth)
+```
+
+## getEntityUUID
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+UUID getEntityUUID(Entity entity)
+```
+
+## setEntityPotionEffects
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Boolean setEntityPotionEffects(Entity entity, PotionEffect effects)
+```
+
+## getEntityMainHand
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+ItemStack getEntityMainHand(Entity entity)
+```
+
+## healEntity
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Boolean healEntity(Entity entity, Double amount)
+```
+
+## spawnEntity
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Boolean spawnEntity(Entity entity)
+```
+
+## damageEntity
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Boolean damageEntity(Entity entity, DamageSource src, Double damage)
+```
+
+## getEntityMaxHealth
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Double getEntityMaxHealth(Entity entity)
+```
+
+## getEntityName
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Text getEntityName(Entity entity)
+```
+
+## getEntityChestplate
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+ItemStack getEntityChestplate(Entity entity)
+```
+
+## setEntityLeggings
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Boolean setEntityLeggings(Entity entity, ItemStack leggings)
+```
+
+## getEntityHealth
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Double getEntityHealth(Entity entity)
+```
+
+## getEntityPotionEffects
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+List getEntityPotionEffects(Entity entity)
+```
+
+## setEntityChestplate
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Boolean setEntityChestplate(Entity entity, ItemStack chestplate)
+```
 

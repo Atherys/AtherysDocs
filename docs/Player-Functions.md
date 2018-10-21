@@ -1,42 +1,43 @@
----
-title: Player Functions
-module: player
----
 # Player Functions
-Player functions allow you to deal with players, and provide multiple ways of retrieving a player.
-
-## getPlayerFromName
-
-### Signature: 
-```javascript
-Player getPlayerFromName(String playerName)
-```
-
-## getPlayerFromUUID
-
-### Signature: 
-```javascript
-Player getPlayerFromUUID(UUID uuid)
-```
+ Player functions allow you to deal with players, and provide multiple ways of retrieving a player.
 
 ## getPlayerLocation
 
-### Signature: 
-```javascript
-Location<World> getPlayerLocation(Player player)
-```
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
 
-## getPlayerUUID
-
-### Signature: 
-```javascript
-UUID getPlayerUUID(Player player)
+```js
+Location getPlayerLocation(Player player)
 ```
 
 ## teleportPlayer
 
-### Signature: 
-```javascript
-Boolean teleportPlayer(Player player, Location<World> location)
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Boolean teleportPlayer(Player player, Location location)
+```
+
+## getPlayerFromUUID
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Player getPlayerFromUUID(UUID uuid)
+```
+
+## getPlayerFromName
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Player getPlayerFromName(String playerName)
+```
+
+## getPlayerUUID
+
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+UUID getPlayerUUID(Player player)
 ```
 

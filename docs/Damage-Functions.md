@@ -1,133 +1,148 @@
----
-title: Damage Functions
-module: damage
----
 # Damage Functions
-Damage functions let you create sources of damage with which to damage entities, using the [damageEntity](https://github.com/Atherys-Horizons/AtherysScript/wiki/Entity-Functions#damageentity) function.
+ Damage functions let you create sources of damage with which to damage entities,
+ using the [damageEntity](https://atherys.com/docs/Entity-Functions.html#damageentity) function.
 
-## buildDamage
+## setDamageSourceFallingBlock
 
-### Signature: 
-```javascript
-DamageSource buildDamage(DamageSource.DamageSourceBuilder builder)
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+DamageSourceBuilder setDamageSourceFallingBlock(ImmutableFallingBlockData immutableFallingBlockData, DamageSourceBuilder builder)
 ```
 
-## blockDamageBuilder
+## setDamageSourceExplosion
 
-### Signature: 
-```javascript
-BlockDamageSource.Builder blockDamageBuilder()
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+DamageSourceBuilder setDamageSourceExplosion(DamageSourceBuilder builder)
 ```
 
-## fallingBlockDamageBuilder
+## setDamageSourceAbsolute
 
-### Signature: 
-```javascript
-FallingBlockDamageSource.Builder fallingBlockDamageBuilder()
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+DamageSourceBuilder setDamageSourceAbsolute(DamageSourceBuilder builder)
 ```
 
-## indirectEntityDamageBuilder
+## setDamageSourceMagical
 
-### Signature: 
-```javascript
-IndirectEntityDamageSource.Builder indirectEntityDamageBuilder()
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+DamageSourceBuilder setDamageSourceMagical(DamageSourceBuilder builder)
 ```
 
-## entityDamageBuilder
+## fallingBlockDamageSourceBuilder
 
-### Signature: 
-```javascript
-EntityDamageSource.Builder entityDamageBuilder()
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Builder fallingBlockDamageSourceBuilder()
 ```
 
-## setDamageAbsolute
+## setDamageSourceType
 
-### Signature: 
-```javascript
-DamageSource.DamageSourceBuilder setDamageAbsolute(DamageSource.DamageSourceBuilder builder)
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+DamageSourceBuilder setDamageSourceType(String damageType)
 ```
 
-## setDamageBlock
+## setDamageSourceEntity
 
-### Signature: 
-```javascript
-DamageSource.DamageSourceBuilder setDamageBlock(BlockSnapshot blockSnapshot, DamageSource.DamageSourceBuilder builder)
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+DamageSourceBuilder setDamageSourceEntity(Entity entity, DamageSourceBuilder builder)
 ```
 
-## setDamageBlockLocation
+## setDamageSourceProxySource
 
-### Signature: 
-```javascript
-BlockDamageSource.Builder setDamageBlockLocation(Location blockLocation, DamageSource.DamageSourceBuilder builder)
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+DamageSourceBuilder setDamageSourceProxySource(Entity entity, DamageSourceBuilder builder)
 ```
 
-## setDamageBypass
+## setDamageSourceBlock
 
-### Signature: 
-```javascript
-DamageSource.DamageSourceBuilder setDamageBypass(DamageSource.DamageSourceBuilder damageSourceBuilder)
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+DamageSourceBuilder setDamageSourceBlock(BlockSnapshot blockSnapshot, DamageSourceBuilder builder)
 ```
 
-## setDamageCreative
+## buildDamageSource
 
-### Signature: 
-```javascript
-DamageSource.DamageSourceBuilder setDamageCreative(DamageSource.DamageSourceBuilder damageSourceBuilder)
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+DamageSource buildDamageSource(DamageSourceBuilder builder)
 ```
 
-## setDamageEntity
+## blockDamageSourceBuilder
 
-### Signature: 
-```javascript
-DamageSource.DamageSourceBuilder setDamageEntity(Entity entity, DamageSource.DamageSourceBuilder builder)
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Builder blockDamageSourceBuilder()
 ```
 
-## setDamageExhaustion
+## setDamageSourceCreative
 
-### Signature: 
-```javascript
-DamageSource.DamageSourceBuilder setDamageExhaustion(DamageSource.DamageSourceBuilder damageSourceBuilder, Double exhaustion)
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+DamageSourceBuilder setDamageSourceCreative(DamageSourceBuilder damageSourceBuilder)
 ```
 
-## setDamageExplosive
+## setDamageSourceExhaustion
 
-### Signature: 
-```javascript
-DamageSource.DamageSourceBuilder setDamageExplosive(DamageSource.DamageSourceBuilder builder)
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+DamageSourceBuilder setDamageSourceExhaustion(DamageSourceBuilder damageSourceBuilder, Double exhaustion)
 ```
 
-## setDamageFallingBlock
+## entityDamageSourceBuilder
 
-### Signature: 
-```javascript
-DamageSource.DamageSourceBuilder setDamageFallingBlock(ImmutableFallingBlockData immutableFallingBlockData, DamageSource.DamageSourceBuilder builder)
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Builder entityDamageSourceBuilder()
 ```
 
-## setDamageMagical
+## setDamageSourceBlockLocation
 
-### Signature: 
-```javascript
-DamageSource.DamageSourceBuilder setDamageMagical(DamageSource.DamageSourceBuilder builder)
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Builder setDamageSourceBlockLocation(Location blockLocation, DamageSourceBuilder builder)
 ```
 
-## setDamageProxy
+## setDamageSourceBypassArmor
 
-### Signature: 
-```javascript
-DamageSource.DamageSourceBuilder setDamageProxy(Entity entity, DamageSource.DamageSourceBuilder builder)
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+DamageSourceBuilder setDamageSourceBypassArmor(DamageSourceBuilder damageSourceBuilder)
 ```
 
-## setDamageScale
+## indirectEntityDamageSourceBuilder
 
-### Signature: 
-```javascript
-DamageSource.DamageSourceBuilder setDamageScale(DamageSource.DamageSourceBuilder damageSourceBuilder)
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Builder indirectEntityDamageSourceBuilder()
 ```
 
-## setDamageType
+## setDamageSourceScale
 
-### Signature: 
-```javascript
-DamageSource.DamageSourceBuilder setDamageType(String damageType)
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+DamageSourceBuilder setDamageSourceScale(DamageSourceBuilder damageSourceBuilder)
 ```
 

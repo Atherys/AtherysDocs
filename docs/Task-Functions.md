@@ -1,48 +1,44 @@
----
-title: Task Functions
-module: task
----
-#Task Functions
+# Task Functions
+ Tasks are functions that run on an interval.
+ You can give them an inital delay and time between each run.
 
-## buildTask
+## startTask
 
-### Signature: 
-```javascript
-Task.Builder buildTask(String name)
-```
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
 
-## setTaskDelay
-
-### Signature: 
-```javascript
-Boolean setTaskDelay(Task.Builder builder, Long ticks)
+```js
+Task startTask(Builder builder)
 ```
 
 ## setTaskInterval
 
-### Signature: 
-```javascript
-Boolean setTaskInterval(Task.Builder builder, Long ticks)
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Boolean setTaskInterval(Builder builder, Long ticks)
 ```
 
 ## setTaskExecutable
 
-### Signature: 
-```javascript
-Boolean setTaskExecutable(Task.Builder builder, Consumer<Task> runnable)
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Boolean setTaskExecutable(Builder builder, Consumer runnable)
 ```
 
-## startTask
+## setTaskDelay
 
-### Signature: 
-```javascript
-Task startTask(Task.Builder builder)
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Boolean setTaskDelay(Builder builder, Long ticks)
 ```
 
-## cancelTask
+## taskOf
 
-### Signature: 
-```javascript
-Boolean cancelTask(Task task)
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
+```js
+Builder taskOf(String name)
 ```
 
