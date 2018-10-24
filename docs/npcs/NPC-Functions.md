@@ -1,6 +1,7 @@
----
-title: NPC Functions
----
+# NPC Functions
+ NPC Functions allow you to create and manipulate NPCs through scripting. An
+ `NPCFile` is equivalent to an NPC. It wraps an `Entity` object and customizes it.
+
 ## createNPC
 
 Creates an NPC of the given type at the given location.
@@ -47,7 +48,7 @@ Returns a _**UUID**_: The NPC's UUID.
 
 ## getNPCEntity
 
-Gets the entity object from the NPC, or null.
+Gets the `Entity` from the NPC, or null.
 
 #### Signature:
 ```js
