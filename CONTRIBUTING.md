@@ -1,3 +1,8 @@
+# Basics
+To edit the documentation simply edit the markdown file. Any commits made to this repository will automatically update the site at https://atherys.com/docs. If you add, delete, or change the name of a file you will have to edit the [config.js](https://github.com/Atherys-Horizons/AtherysDocs/blob/master/docs/.vuepress/config.js) file. 
+
+If you find any typos or outdated information please create a pull request or leave an issue.
+
 # Writing Javadoc
 Here is an example of how to write Javadoc for a function:
 ```java
