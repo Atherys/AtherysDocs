@@ -1,46 +1,84 @@
----
-module: requirement
----
 # Requirement Functions
+ Requirements are things that must be met for the player to receive a quest or proceed in a dialogue.
+ You can combine requirements with logic using the and, or, and not requirements. These should allow you
+ to create any kind of requirement.
 
-## andRequirement
+## hasQuestRequirementFunc
 
-### Signature: 
-```javascript
-Requirement andRequirement(Requirement requirement, Requirement requirement2)
+A requirement for a player to have a quest.
+
+#### Signature:
+```js
+Requirement hasQuestRequirementFunc(String questId)
 ```
 
-## orRequirement
+**questId**: The quest's ID.
 
-### Signature: 
-```javascript
-Requirement orRequirement(Requirement requirement, Requirement requirement2)
+## levelRequirementFunc
+
+A requirement for the player to be a certain level (experience).
+
+#### Signature:
+```js
+Requirement levelRequirementFunc(Integer level)
 ```
 
-## notRequirement
+**level**: The level, as an integer.
 
-### Signature: 
-```javascript
-Requirement notRequirement(Requirement requirement)
+## orRequirementFunc
+
+A requirement for the player to have either requirement, or both.
+
+#### Signature:
+```js
+Requirement orRequirementFunc(Requirement requirement, Requirement requirement2)
 ```
 
-## questRequirement
+## notRequirementFunc
 
-### Signature: 
-```javascript
-Requirement questRequirement(String questId)
+A requirement for the player _not_ to have a requirement.
+
+#### Signature:
+```js
+Requirement notRequirementFunc(Requirement requirement)
 ```
 
-## moneyRequirement
+**requirement**: The requirement for them not to have.
 
-### Signature: 
-```javascript
-Requirement moneyRequirement(Double amount, Currency currency)
+## moneyRequirementFunc
+
+A requirement for the player to have a certain amount of money.
+
+#### Signature:
+```js
+Requirement moneyRequirementFunc(Double amount, Currency currency)
 ```
 
-## levelRequirement
+**amount**: The amount of money.
 
-### Signature: 
-```javascript
-Requirement levelRequirement(Integer level)
+**currency**: The money's currency.
+
+## andRequirementFunc
+
+A requirement that requires two requirements to be met.
+
+#### Signature:
+```js
+Requirement andRequirementFunc(Requirement requirement, Requirement requirement2)
 ```
+
+**requirement**: The first requirement.
+
+**requirement2**: The second requirement.
+
+## completedQuestRequirementFunc
+
+A requirement for completing a quest.
+
+#### Signature:
+```js
+Requirement completedQuestRequirementFunc(String questId)
+```
+
+**questId**: The quest's ID.
+
