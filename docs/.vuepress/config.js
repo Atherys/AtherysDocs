@@ -28,7 +28,6 @@ module.exports = {
 						'Objective-Functions',
 						'Quest-Functions',
 						'Requirement-Functions',
-						'Retrieval-Functions',
 						'Reward-Functions'
 					]
 				}
