@@ -14,6 +14,8 @@ BlockState blockOf(String blockTypeId)
 
 **blockTypeId**: The block id.
 
+Returns a _**BlockState**_: The BlockState for the given id, or null.
+
 #### Example:
 
 ```js
@@ -31,6 +33,8 @@ BlockState getBlockFromLocation(Location worldLocation)
 
 **worldLocation**: The location to get the block from.
 
+Returns a _**BlockState**_: A BlockState representing the block at the location.
+
 #### Example:
 
 ```js
@@ -40,7 +44,7 @@ var block = getBlockFromLocation(location);
 
 ## setBlockAtLocation
 
-Used to change the `BlockState` at the specified location
+Used to change the BlockState at the specified location
 
 #### Signature:
 ```js
@@ -50,6 +54,8 @@ Boolean setBlockAtLocation(Location worldLocation, BlockState state)
 **worldLocation**: The location to change.
 
 **state**: The BlockState to change the location to.
+
+Returns a _**Boolean**_: Whether the application worked.
 
 #### Example:
 

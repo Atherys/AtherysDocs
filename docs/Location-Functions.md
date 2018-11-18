@@ -4,14 +4,16 @@
 
 ## locationOf
 
-#### Signature:
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
 ```js
 Location locationOf(World world, Double x, Double y, Double z)
 ```
 
 ## getWorldFromName
 
-#### Signature:
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
 ```js
 World getWorldFromName(String worldName)
 ```

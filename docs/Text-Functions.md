@@ -3,21 +3,24 @@
 
 ## textOf
 
-#### Signature:
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
 ```js
 Text textOf(Object objects)
 ```
 
 ## color
 
-#### Signature:
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
 ```js
 TextColor color(String textColorId)
 ```
 
 ## style
 
-#### Signature:
+<h4 style="padding-top: 4.6rem"> Signature: </h4>
+
 ```js
 TextStyle style(String textStyleId)
 ```
