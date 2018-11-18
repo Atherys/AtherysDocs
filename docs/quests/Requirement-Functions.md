@@ -14,6 +14,8 @@ Requirement hasQuestRequirementFunc(String questId)
 
 **questId**: The quest's ID.
 
+Returns a _**Requirement**_: 
+
 ## levelRequirementFunc
 
 A requirement for the player to be a certain level (experience).
