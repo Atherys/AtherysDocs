@@ -4,9 +4,21 @@ module.exports = {
 	base: "/docs/",
 	themeConfig: {
 		nav: [
-			{text: 'Quests', link: '/quests/'},
-			{text: 'NPCs', link: '/npcs/'},
-			{text: 'A\'therys', link: 'https://atherys.com'},
+			{ text: 'Quests', link: '/quests/' },
+			{ text: 'NPCs', link: '/npcs/' },
+			{ text: 'A\'therys', link: 'https://atherys.com' },
+			{
+				text: 'Javadocs',
+				items: [
+					{ text: "Core", link: 'https://atherys.com/docs/AtherysCore' },
+					{ text: "Parties", link: 'https://atherys.com/docs/AtherysParties' },
+					{ text: "Quests", link: 'https://atherys.com/docs/AtherysQuests' },
+					{ text: "Roleplay", link: 'https://atherys.com/docs/AtherysRoleplay' },
+					{ text: "RPG", link: 'https://atherys.com/docs/AtherysRPG' },
+					{ text: "Script", link: 'https://atherys.com/docs/AtherysScript' },
+					{ text: "Towns", link: 'https://atherys.com/docs/AtherysTowns' },
+				]
+			}
 		],
 		sidebar: {
 			'/quests/': [
