@@ -6,7 +6,6 @@ module.exports = {
 		nav: [
 			{ text: 'Quests', link: '/quests/' },
 			{ text: 'NPCs', link: '/npcs/' },
-			{ text: 'A\'therys', link: 'https://atherys.com' },
 			{
 				text: 'Javadocs',
 				items: [
@@ -18,7 +17,8 @@ module.exports = {
 					{ text: "Script", link: 'https://atherys.com/docs/AtherysScript' },
 					{ text: "Towns", link: 'https://atherys.com/docs/AtherysTowns' },
 				]
-			}
+			},
+			{ text: 'A\'therys', link: 'https://atherys.com' }
 		],
 		sidebar: {
 			'/quests/': [
