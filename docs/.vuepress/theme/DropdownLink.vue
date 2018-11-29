@@ -86,7 +86,7 @@ export default {
         padding 0 1.5rem 0 1.25rem
         &:hover
           color $accentColor
-        &.router-link-active
+        &.router-link-exact-active
           color $accentColor
           &::after
             content ""

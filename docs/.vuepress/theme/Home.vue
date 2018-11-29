@@ -45,6 +45,11 @@ export default {
 <style lang="stylus">
 @import './styles/config.styl'
 
+@font-face {
+  font-family: Chancery;
+  src: url('styles/black-chancery.ttf');
+}
+
 .home
   padding $navbarHeight 2rem 0
   max-width 960px
@@ -57,6 +62,7 @@ export default {
       margin 3rem auto 1.5rem
     h1
       font-size 3rem
+      font-family Chancery
     h1, .description, .action
       margin 1.8rem auto
     .description
@@ -88,7 +94,7 @@ export default {
   .feature
     flex-grow 1
     flex-basis 30%
-    max-width 30%
+    max-width 40%
     h2
       font-size 1.4rem
       font-weight 500

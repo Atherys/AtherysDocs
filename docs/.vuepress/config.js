@@ -1,27 +1,34 @@
 module.exports = {
-	title: 'A\'therys Scripting',
-	description: 'Documentation for the A\'therys Scripting plugin',
+	title: 'A\'therys Docs',
+	description: 'Documentation for all things A\'therys',
 	base: "/docs/",
 	themeConfig: {
 		nav: [
-			{ text: 'Quests', link: '/quests/' },
-			{ text: 'NPCs', link: '/npcs/' },
+			{ 
+				text: 'Scripting',
+				items: [
+					{ text: 'Base', link: '/scripting/' },
+					{ text: 'Quests', link: '/scripting/quests/' },
+					{ text: 'NPCs', link: '/scripting/npcs/' }
+				]
+			},
 			{
 				text: 'Javadocs',
 				items: [
-					{ text: "Core", link: 'https://atherys.com/docs/AtherysCore' },
-					{ text: "Parties", link: 'https://atherys.com/docs/AtherysParties' },
-					{ text: "Quests", link: 'https://atherys.com/docs/AtherysQuests' },
-					{ text: "Roleplay", link: 'https://atherys.com/docs/AtherysRoleplay' },
-					{ text: "RPG", link: 'https://atherys.com/docs/AtherysRPG' },
-					{ text: "Script", link: 'https://atherys.com/docs/AtherysScript' },
-					{ text: "Towns", link: 'https://atherys.com/docs/AtherysTowns' },
+					{ text: 'Core', link: 'https://atherys.com/docs/AtherysCore' },
+					{ text: 'Parties', link: 'https://atherys.com/docs/AtherysParties' },
+					{ text: 'Quests', link: 'https://atherys.com/docs/AtherysQuests' },
+					{ text: 'Roleplay', link: 'https://atherys.com/docs/AtherysRoleplay' },
+					{ text: 'RPG', link: 'https://atherys.com/docs/AtherysRPG' },
+					{ text: 'Script', link: 'https://atherys.com/docs/AtherysScript' },
+					{ text: 'Towns', link: 'https://atherys.com/docs/AtherysTowns' }
 				]
 			},
-			{ text: 'A\'therys', link: 'https://atherys.com' }
+			{ text: 'A\'therys', link: 'https://atherys.com' },
+			{ text: 'GitHub', link: 'https://github.com/Atherys-Horizons/' }
 		],
 		sidebar: {
-			'/quests/': [
+			'/scripting/quests/': [
 				{
 					title: 'Guides',
 					collapsable: false,
@@ -44,7 +51,7 @@ module.exports = {
 					]
 				}
 			],
-			'/npcs/': [
+			'/scripting/npcs/': [
 				{
 					title: 'Function Reference',
 					collapsable: false,
@@ -53,7 +60,7 @@ module.exports = {
 					]
 				}
 			],
-			'/': [
+			'/scripting/': [
 				{
 					title: 'Guides & Tutorials',
 					collapsable: false,
@@ -78,7 +85,7 @@ module.exports = {
 						'Sound-Functions',
 						'Task-Functions',
 						'Text-Functions',
-						'Utility-Functions',
+						'Utility-Functions'
 					]
 				},
 				{
@@ -89,7 +96,6 @@ module.exports = {
 					]
 				}
 			]
-		},
-		repo: 'Atherys-Horizons/AtherysScript'
+		}
 	}
 }
