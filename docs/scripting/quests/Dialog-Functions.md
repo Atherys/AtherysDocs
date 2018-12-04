@@ -1,5 +1,6 @@
 # Dialog Functions
- Dialog functions allow you to create and attach dialogs. See (Writing a Dialog)[https://atherys.com/docs/quests/Writing-a-Dialog.html]
+ Dialog functions allow you to create and attach dialogs.
+ See (Writing a Dialog)[https://atherys.com/docs/scripting/quests/Writing-a-Dialog.html]
  for an example of how to write a dialog.
 
 ## attachDialog
@@ -13,27 +14,27 @@ Boolean attachDialog(Entity entity, String dialogId)
 
 Returns a _**Boolean**_: Whether the attachment was successful.
 
-## createDialogTree
+## dialogTree
 
 Creates a dialog tree.
 
 #### Signature:
 ```js
-DialogTree createDialogTree(String id, DialogNode root)
+DialogTree dialogTree(String id, DialogNode root)
 ```
 
 **id**: A unique string ID.
 
 **root**: The starting dialog node.
 
-## createDialogNode
+## dialogNode
 
 Creates a new dialog node. See
- [Writing a Dialog](https://atherys.com/docs/quests/Writing-a-Dialog.html) for how to use it.
+ [Writing a Dialog](https://atherys.com/docs/scripting/quests/Writing-a-Dialog.html) for how to use it.
 
 #### Signature:
 ```js
-DialogNode createDialogNode(Integer id, List requirements, Text player, List npc, Quest quest, List responses)
+DialogNode dialogNode(Integer id, List requirements, Text player, List npc, Quest quest, List responses)
 ```
 
 **id**:           The numerical id of the node ( must be unique within the Dialog Tree )

@@ -3,83 +3,83 @@
  You can combine requirements with logic using the and, or, and not requirements. These should allow you
  to create any kind of requirement.
 
-## hasQuestRequirementFunc
+## hasQuestRequirement
 
 A requirement for a player to have a quest.
 
 #### Signature:
 ```js
-Requirement hasQuestRequirementFunc(String questId)
+Requirement hasQuestRequirement(String questId)
 ```
 
 **questId**: The quest's ID.
 
 Returns a _**Requirement**_: 
 
-## levelRequirementFunc
+## levelRequirement
 
 A requirement for the player to be a certain level (experience).
 
 #### Signature:
 ```js
-Requirement levelRequirementFunc(Integer level)
+Requirement levelRequirement(Integer level)
 ```
 
 **level**: The level, as an integer.
 
-## orRequirementFunc
+## orRequirement
 
 A requirement for the player to have either requirement, or both.
 
 #### Signature:
 ```js
-Requirement orRequirementFunc(Requirement requirement, Requirement requirement2)
+Requirement orRequirement(Requirement requirement, Requirement requirement2)
 ```
 
-## notRequirementFunc
+## notRequirement
 
 A requirement for the player _not_ to have a requirement.
 
 #### Signature:
 ```js
-Requirement notRequirementFunc(Requirement requirement)
+Requirement notRequirement(Requirement requirement)
 ```
 
 **requirement**: The requirement for them not to have.
 
-## moneyRequirementFunc
+## moneyRequirement
 
 A requirement for the player to have a certain amount of money.
 
 #### Signature:
 ```js
-Requirement moneyRequirementFunc(Double amount, Currency currency)
+Requirement moneyRequirement(Double amount, Currency currency)
 ```
 
 **amount**: The amount of money.
 
 **currency**: The money's currency.
 
-## andRequirementFunc
+## andRequirement
 
 A requirement that requires two requirements to be met.
 
 #### Signature:
 ```js
-Requirement andRequirementFunc(Requirement requirement, Requirement requirement2)
+Requirement andRequirement(Requirement requirement, Requirement requirement2)
 ```
 
 **requirement**: The first requirement.
 
 **requirement2**: The second requirement.
 
-## completedQuestRequirementFunc
+## completedQuestRequirement
 
 A requirement for completing a quest.
 
 #### Signature:
 ```js
-Requirement completedQuestRequirementFunc(String questId)
+Requirement completedQuestRequirement(String questId)
 ```
 
 **questId**: The quest's ID.

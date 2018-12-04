@@ -2,26 +2,26 @@
  Objectives are what players must accomplish to complete quests. These are the functions
  that allow you to create them.
 
-## killEntityObjectiveFunc
+## killEntityObjective
 
 An objective that requires killing a number of entities. The entity name is in the format "minecraft:entity".
 
 #### Signature:
 ```js
-Objective killEntityObjectiveFunc(String entityName, Integer amount)
+Objective killEntityObjective(String entityName, Integer amount)
 ```
 
 **entityName**: The name of the entity. ie: "minecraft:zombie".
 
 **amount**: The number of entities to kill.
 
-## dialogObjectiveFunc
+## dialogObjective
 
 An objective that requires the player to meet a specific dialog node in a dialog tree.
 
 #### Signature:
 ```js
-Objective dialogObjectiveFunc(String treeId, Integer dialogNode, Text description)
+Objective dialogObjective(String treeId, Integer dialogNode, Text description)
 ```
 
 **treeId**: The dialog tree's ID.
@@ -30,24 +30,28 @@ Objective dialogObjectiveFunc(String treeId, Integer dialogNode, Text descriptio
 
 **description**: The objective's description.
 
-## interactWithBlockFunc
+## reachLocationObjective
 
-An objective that requires interacting with a specific block.
+An objective that requires reaching a specific location, within a radius.
 
 #### Signature:
 ```js
-Objective interactWithBlockFunc(Location location)
+Objective reachLocationObjective(Location location, Text name, Double radius)
 ```
 
-**location**: The block the player has to interact with.
+**location**: The location to reach.
 
-## itemDeliveryFunc
+**name**: The name of the location.
+
+**radius**: The radius around the location.
+
+## itemDeliveryObjective
 
 An objective that requires delivering an item to an entity.
 
 #### Signature:
 ```js
-ItemDeliveryObjective itemDeliveryFunc(ItemStack itemStack, String targetUUID, Text targetName)
+ItemDeliveryObjective itemDeliveryObjective(ItemStack itemStack, String targetUUID, Text targetName)
 ```
 
 **itemStack**: The item to deliver.
@@ -56,18 +60,14 @@ ItemDeliveryObjective itemDeliveryFunc(ItemStack itemStack, String targetUUID, T
 
 **targetName**: The name of the entity.
 
-## reachLocationObjectiveFunc
+## interactWithBlockObjective
 
-An objective that requires reaching a specific location, within a radius.
+An objective that requires interacting with a specific block.
 
 #### Signature:
 ```js
-Objective reachLocationObjectiveFunc(Location location, Text name, Double radius)
+Objective interactWithBlockObjective(Location location)
 ```
 
-**location**: The location to reach.
-
-**name**: The name of the location.
-
-**radius**: The radius around the location.
+**location**: The block the player has to interact with.
 
