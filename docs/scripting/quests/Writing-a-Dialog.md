@@ -24,10 +24,11 @@ Next, we define what the first thing the NPC will say with the `npc` method. It 
     .npc([textOf(["Hello, friend!"])])
 ```
 
-After that, we start creating the responses to the initial node. The `responses` function takes a parameter of dialog nodes. The `player` function accepts a `Text` object that the player will "say" to the NPC.
+After that, we start creating the responses to the initial node. The `requirements` function takes an array of `Requirement` objects. We will give it a requirement to have at least 5 levels of experience. The `responses` function takes an array of dialog nodes, and the `player` function accepts a `Text` object that the player will "say" to the NPC.
 ```javascript
     .responses([
         dialogNode(1)
+	    .requirements([levelRequirement(5)])
             .player(textOf(["Greetings, Merchant! Have you any work for me today?"]))
                 .npc(textOf([
                     "Work? Oh, you bet.",
