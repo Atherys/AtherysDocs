@@ -29,27 +29,17 @@ DialogTree dialogTree(String id, DialogNode root)
 
 ## dialogNode
 
-Creates a new dialog node. See
+Returns a `DialogNodeBuilder`, which is used to create a `DialogNode`. See
  [Writing a Dialog](https://atherys.com/docs/scripting/quests/Writing-a-Dialog.html) for how to use it.
 
 #### Signature:
 ```js
-DialogNode dialogNode(Integer id, List requirements, Text player, List npc, Quest quest, List responses)
+DialogNodeBuilder dialogNode(Integer id)
 ```
 
 **id**:           The numerical id of the node ( must be unique within the Dialog Tree )
 
-**requirements**: The list of requirements the player must fulfill in order to select this as a response ( can be null )
-
-**player**:       The text that the player will say to the npc ( if this is the root node, this should be null )
-
-**npc**:          the npc's text response
-
-**quest**:        the quest that will be offered to the player upon selecting this node ( can be null )
-
-**responses**:    The responses that the player can select ( Can be null. Should be null if this is a leaf node )
-
-Returns a _**DialogNode**_: A new DialogNode object
+Returns a _**DialogNodeBuilder**_: A new DialogNode object
 
 ## registerDialogTree
 
