@@ -5,9 +5,9 @@ allowing for interaction between players and NPCs.
 
 ## API
 
-You can find the reference documentation for the Dialog API here: https://atherys.com/docs/scripting/quests/reference/Dialog-Functions.html
+You can find the reference documentation for the Dialog API here: https://atherys.com/docs/scripting/quests/Dialog-Functions.html
 
-For the duration of this guide, we will be utilizing the function described there, alongside those of the Quest API ( found here: https://atherys.com/docs/scripting/quests/reference/Quest-Functions.html )
+For the duration of this guide, we will be utilizing the function described there, alongside those of the Quest API ( found here: https://atherys.com/docs/scripting/quests/Quest-Functions.html )
 
 ## Hello Dialog!
 
