@@ -93,8 +93,8 @@ var rootNode = dialogNode(0)
     .npc([textOf("Hello, friend!")])
     .responses([
         dialogNode(1)
-            .player(textOf(["Greetings, Merchant! Have you any work for me today?"]))
-            .npc(textOf([
+            .player(textOf("Greetings, Merchant! Have you any work for me today?"))
+            .npc([
                 textOf("Work? Oh, you bet."),
                 textOf("This morning, as I was setting up my stall, a bunch of children went by and stole an entire stack of cocoa beans!"),
                 textOf("I reported this to the guards, of course, but they're either incapable or apathetic to the trouble that has befallen me."),
@@ -122,7 +122,9 @@ var rootNode = dialogNode(0)
             .build(),
         dialogNode(2)
             .player(textOf("Sorry merchant, don't have the time right now."))
-            .npc(textOf("Oh that's alright, some other time perhaps!"))
+            .npc([
+                textOf("Oh that's alright, some other time perhaps!")
+            ])
             .build()
     ])
     .build();
