@@ -231,7 +231,7 @@ Once the player has killed 10 entities with the name "charlie", they will be tel
 
 // TODO
 
-# Putting It All Together
+## Putting It All Together
 
 // TODO
 
