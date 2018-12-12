@@ -2,7 +2,7 @@
 
 Quests in the AtherysQuest plugin are representative of the work-reward process. We want the player to invest a certain amount of work, in order to attain a reward at the end. Of course, if we were to condense it to this simple explanation, we would end up with quests which are dull and far too grindy to hold the player's interest. Therefore, a quest should offer some sort of story to the player, wherein the process in and of itself is interesting, and the reward is simply the icing on the cake.
 
-# Structure Of A Quest
+# Components Of A Quest
 
 There are 2 broadly defined types of quests, and they are both a variation of the same simple plan:
 
@@ -228,6 +228,10 @@ Once the player has killed 10 entities with the name "charlie", they will be tel
 // TODO
 
 ### Deliverable Staged Quests
+
+// TODO
+
+# Putting It All Together
 
 // TODO
 
