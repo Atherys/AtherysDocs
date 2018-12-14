@@ -39,6 +39,7 @@ Sets the skin of the NPC given a player's UUID.
 ```js
 Boolean setNPCSkin(NPCFile npcFile, UUID uuid)
 ```
+#### Arguments
 
 **npcFile**: A humanoid NPC.
 
@@ -52,6 +53,7 @@ Gets the UUID from an NPC. This will be invalidated after a world restart.
 ```js
 UUID getNPCUuid(NPCFile npc)
 ```
+#### Arguments
 
 **npc**: The NPC.
 
