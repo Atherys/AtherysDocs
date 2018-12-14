@@ -37,6 +37,7 @@ Used to create a new BlockState from a block type id.
   BlockState blockOf(String blockTypeId)
 ```
 
+#### Arguments
 **blockTypeId**: The minecraft block id to create
 
 Returns a _**BlockState**_: A representation of the final block

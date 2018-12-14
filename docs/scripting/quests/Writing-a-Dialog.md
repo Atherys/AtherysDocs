@@ -99,7 +99,7 @@ var rootNode = dialogNode(0)
                 textOf("This morning, as I was setting up my stall, a bunch of children went by and stole an entire stack of cocoa beans!"),
                 textOf("I reported this to the guards, of course, but they're either incapable or apathetic to the trouble that has befallen me."),
                 textOf("Do me a favor, and find those kids. I want my cocoa beans back!")
-            ]))
+            ])
             .responses([
                 dialogNode(3)
                     .player(textOf(
@@ -128,8 +128,8 @@ var rootNode = dialogNode(0)
             .build()
     ])
     .build();
-
-var dialogTree = dialogTree("test-dialog", rootNode);
+var DIALOG_ID = "test-dialog";
+var tree = dialogTree(DIALOG_ID, rootNode);
 ```
 
 And with that, we're finished, our dialog tree has been created. But now, we have to register it with the plugin, otherwise it would not be available for us to access in-game and attach to an NPC using the `/dialog set <dialog-id>` command.
@@ -141,7 +141,8 @@ Here we have to take a look at the function `onDialogRegistration`. This is part
 ```js
 onDialogRegistration( function(event) {
 
-    var dialogTree = ... // dialogTree from above
+    var DIALOG_ID = "test-dialog";
+    var tree = ... // dialogTree from above
 
     if (tree !== null) { // if the tree has been successfully created
         info("Dialog " + DIALOG_ID + "successfully created");

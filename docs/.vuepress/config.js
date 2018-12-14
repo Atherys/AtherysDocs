@@ -4,6 +4,12 @@ module.exports = {
 	base: "/docs/",
 	themeConfig: {
 		nav: [
+			{
+				text: 'Plugins',
+				items: [
+					{ text: 'AtherysRoleplay', link: 'plugins/AtherysRoleplay/' }
+				]
+			},
 			{ 
 				text: 'Scripting',
 				items: [
