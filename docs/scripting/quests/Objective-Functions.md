@@ -6,10 +6,11 @@
 
 An objective that requires killing a number of entities. The entity name is in the format "minecraft:entity".
 
-#### Signature:
+### Signature:
 ```js
 Objective killEntityObjective(String entityName, Integer amount)
 ```
+### Arguments:
 
 **entityName**: The name of the entity. ie: "minecraft:zombie".
 
@@ -19,10 +20,11 @@ Objective killEntityObjective(String entityName, Integer amount)
 
 An objective that requires the player to meet a specific dialog node in a dialog tree.
 
-#### Signature:
+### Signature:
 ```js
 Objective dialogObjective(String treeId, Integer dialogNode, Text description)
 ```
+### Arguments:
 
 **treeId**: The dialog tree's ID.
 
@@ -34,10 +36,11 @@ Objective dialogObjective(String treeId, Integer dialogNode, Text description)
 
 An objective that requires reaching a specific location, within a radius.
 
-#### Signature:
+### Signature:
 ```js
 Objective reachLocationObjective(Location location, Text name, Double radius)
 ```
+### Arguments:
 
 **location**: The location to reach.
 
@@ -49,10 +52,11 @@ Objective reachLocationObjective(Location location, Text name, Double radius)
 
 An objective that requires delivering an item to an entity.
 
-#### Signature:
+### Signature:
 ```js
 ItemDeliveryObjective itemDeliveryObjective(ItemStack itemStack, String targetUUID, Text targetName)
 ```
+### Arguments:
 
 **itemStack**: The item to deliver.
 
@@ -64,10 +68,11 @@ ItemDeliveryObjective itemDeliveryObjective(ItemStack itemStack, String targetUU
 
 An objective that requires interacting with a specific block.
 
-#### Signature:
+### Signature:
 ```js
 Objective interactWithBlockObjective(Location location)
 ```
+### Arguments:
 
 **location**: The block the player has to interact with.
 

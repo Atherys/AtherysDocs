@@ -7,10 +7,11 @@
 
 A requirement for a player to have a quest.
 
-#### Signature:
+### Signature:
 ```js
 Requirement hasQuestRequirement(String questId)
 ```
+### Arguments:
 
 **questId**: The quest's ID.
 
@@ -20,10 +21,11 @@ Returns a _**Requirement**_:
 
 A requirement for the player to be a certain level (experience).
 
-#### Signature:
+### Signature:
 ```js
 Requirement levelRequirement(Integer level)
 ```
+### Arguments:
 
 **level**: The level, as an integer.
 
@@ -31,7 +33,7 @@ Requirement levelRequirement(Integer level)
 
 A requirement for the player to have either requirement, or both.
 
-#### Signature:
+### Signature:
 ```js
 Requirement orRequirement(Requirement requirement, Requirement requirement2)
 ```
@@ -40,10 +42,11 @@ Requirement orRequirement(Requirement requirement, Requirement requirement2)
 
 A requirement for the player _not_ to have a requirement.
 
-#### Signature:
+### Signature:
 ```js
 Requirement notRequirement(Requirement requirement)
 ```
+### Arguments:
 
 **requirement**: The requirement for them not to have.
 
@@ -51,10 +54,11 @@ Requirement notRequirement(Requirement requirement)
 
 A requirement for the player to have a certain amount of money.
 
-#### Signature:
+### Signature:
 ```js
 Requirement moneyRequirement(Double amount, Currency currency)
 ```
+### Arguments:
 
 **amount**: The amount of money.
 
@@ -64,10 +68,11 @@ Requirement moneyRequirement(Double amount, Currency currency)
 
 A requirement that requires two requirements to be met.
 
-#### Signature:
+### Signature:
 ```js
 Requirement andRequirement(Requirement requirement, Requirement requirement2)
 ```
+### Arguments:
 
 **requirement**: The first requirement.
 
@@ -77,10 +82,11 @@ Requirement andRequirement(Requirement requirement, Requirement requirement2)
 
 A requirement for completing a quest.
 
-#### Signature:
+### Signature:
 ```js
 Requirement completedQuestRequirement(String questId)
 ```
+### Arguments:
 
 **questId**: The quest's ID.
 
