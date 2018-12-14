@@ -3,7 +3,7 @@
 
 ## warningOutput
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 void warningOutput(String msg)
@@ -11,7 +11,7 @@ void warningOutput(String msg)
 
 ## listOf
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 List listOf(Object array)
@@ -19,7 +19,7 @@ List listOf(Object array)
 
 ## errorOutput
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 void errorOutput(String msg)
@@ -27,7 +27,7 @@ void errorOutput(String msg)
 
 ## debugOutput
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 void debugOutput(String msg)
@@ -35,7 +35,7 @@ void debugOutput(String msg)
 
 ## uUIDOf
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 UUID uUIDOf(String s)
@@ -43,7 +43,7 @@ UUID uUIDOf(String s)
 
 ## infoOutput
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 void infoOutput(String msg)
@@ -51,7 +51,7 @@ void infoOutput(String msg)
 
 ## randomUUID
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 UUID randomUUID()

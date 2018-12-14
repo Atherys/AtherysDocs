@@ -3,7 +3,7 @@
 
 ## textOf
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Text textOf(Object objects)
@@ -11,7 +11,7 @@ Text textOf(Object objects)
 
 ## color
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 TextColor color(String textColorId)
@@ -19,7 +19,7 @@ TextColor color(String textColorId)
 
 ## style
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 TextStyle style(String textStyleId)

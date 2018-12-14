@@ -4,7 +4,7 @@
 
 ## startTask
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Task startTask(Builder builder)
@@ -12,7 +12,7 @@ Task startTask(Builder builder)
 
 ## setTaskInterval
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean setTaskInterval(Builder builder, Long ticks)
@@ -20,7 +20,7 @@ Boolean setTaskInterval(Builder builder, Long ticks)
 
 ## setTaskExecutable
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean setTaskExecutable(Builder builder, Consumer runnable)
@@ -28,7 +28,7 @@ Boolean setTaskExecutable(Builder builder, Consumer runnable)
 
 ## setTaskDelay
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean setTaskDelay(Builder builder, Long ticks)
@@ -36,7 +36,7 @@ Boolean setTaskDelay(Builder builder, Long ticks)
 
 ## taskOf
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Builder taskOf(String name)
