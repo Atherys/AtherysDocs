@@ -6,7 +6,7 @@
 
 Get the `EntityType` of an entity.
 
-#### Signature:
+### Signature:
 ```js
 EntityType getNPCType(NPCFile npcFile)
 ```
@@ -17,7 +17,7 @@ Returns a _**EntityType**_: The type of entity, or null if it doesn't have one.
 
 Creates an NPC of the given type at the given location.
 
-#### Signature:
+### Signature:
 ```js
 NPCFile createNPC(String entityTypeId, Location location)
 ```
@@ -26,7 +26,7 @@ NPCFile createNPC(String entityTypeId, Location location)
 
 Sets the name of the given NPC.
 
-#### Signature:
+### Signature:
 ```js
 Boolean setNPCName(NPCFile npcFile, Text name)
 ```
@@ -35,11 +35,11 @@ Boolean setNPCName(NPCFile npcFile, Text name)
 
 Sets the skin of the NPC given a player's UUID.
 
-#### Signature:
+### Signature:
 ```js
 Boolean setNPCSkin(NPCFile npcFile, UUID uuid)
 ```
-#### Arguments
+### Arguments
 
 **npcFile**: A humanoid NPC.
 
@@ -49,11 +49,11 @@ Returns a _**Boolean**_: False if the NPC was not humanoid.
 
 Gets the UUID from an NPC. This will be invalidated after a world restart.
 
-#### Signature:
+### Signature:
 ```js
 UUID getNPCUuid(NPCFile npc)
 ```
-#### Arguments
+### Arguments
 
 **npc**: The NPC.
 
@@ -64,7 +64,7 @@ Returns a _**UUID**_: The NPC's UUID.
 Gets the `Entity` object from the NPC, or null. This is for functions that might require
  an `Entity` object instead of an npc.
 
-#### Signature:
+### Signature:
 ```js
 Entity getNPCEntity(NPCFile npcFile)
 ```
