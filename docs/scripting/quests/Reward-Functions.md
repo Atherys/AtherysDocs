@@ -5,10 +5,11 @@
 
 A reward to give the player an item.
 
-#### Signature:
+### Signature:
 ```js
 Reward singleItemReward(ItemStack itemStack)
 ```
+### Arguments:
 
 **itemStack**: The item to reward the player.
 
@@ -16,10 +17,11 @@ Reward singleItemReward(ItemStack itemStack)
 
 A reward to give the player money.
 
-#### Signature:
+### Signature:
 ```js
 Reward moneyReward(Double amount, Currency currency)
 ```
+### Arguments:
 
 **amount**: The amount of money.
 
@@ -29,10 +31,11 @@ Reward moneyReward(Double amount, Currency currency)
 
 Performs a command as the reward for a quest.
 
-#### Signature:
+### Signature:
 ```js
 Reward commandReward(String command, Text description)
 ```
+### Arguments:
 
 **command**: The command to perform.
 

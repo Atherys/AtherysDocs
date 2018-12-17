@@ -4,7 +4,7 @@
 
 ## setDamageSourceFallingBlock
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 DamageSourceBuilder setDamageSourceFallingBlock(ImmutableFallingBlockData immutableFallingBlockData, DamageSourceBuilder builder)
@@ -12,7 +12,7 @@ DamageSourceBuilder setDamageSourceFallingBlock(ImmutableFallingBlockData immuta
 
 ## setDamageSourceExplosion
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 DamageSourceBuilder setDamageSourceExplosion(DamageSourceBuilder builder)
@@ -20,7 +20,7 @@ DamageSourceBuilder setDamageSourceExplosion(DamageSourceBuilder builder)
 
 ## setDamageSourceAbsolute
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 DamageSourceBuilder setDamageSourceAbsolute(DamageSourceBuilder builder)
@@ -28,7 +28,7 @@ DamageSourceBuilder setDamageSourceAbsolute(DamageSourceBuilder builder)
 
 ## setDamageSourceMagical
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 DamageSourceBuilder setDamageSourceMagical(DamageSourceBuilder builder)
@@ -36,7 +36,7 @@ DamageSourceBuilder setDamageSourceMagical(DamageSourceBuilder builder)
 
 ## fallingBlockDamageSourceBuilder
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Builder fallingBlockDamageSourceBuilder()
@@ -44,7 +44,7 @@ Builder fallingBlockDamageSourceBuilder()
 
 ## setDamageSourceType
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 DamageSourceBuilder setDamageSourceType(String damageType)
@@ -52,7 +52,7 @@ DamageSourceBuilder setDamageSourceType(String damageType)
 
 ## setDamageSourceEntity
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 DamageSourceBuilder setDamageSourceEntity(Entity entity, DamageSourceBuilder builder)
@@ -60,7 +60,7 @@ DamageSourceBuilder setDamageSourceEntity(Entity entity, DamageSourceBuilder bui
 
 ## setDamageSourceProxySource
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 DamageSourceBuilder setDamageSourceProxySource(Entity entity, DamageSourceBuilder builder)
@@ -68,7 +68,7 @@ DamageSourceBuilder setDamageSourceProxySource(Entity entity, DamageSourceBuilde
 
 ## setDamageSourceBlock
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 DamageSourceBuilder setDamageSourceBlock(BlockSnapshot blockSnapshot, DamageSourceBuilder builder)
@@ -76,7 +76,7 @@ DamageSourceBuilder setDamageSourceBlock(BlockSnapshot blockSnapshot, DamageSour
 
 ## buildDamageSource
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 DamageSource buildDamageSource(DamageSourceBuilder builder)
@@ -84,7 +84,7 @@ DamageSource buildDamageSource(DamageSourceBuilder builder)
 
 ## blockDamageSourceBuilder
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Builder blockDamageSourceBuilder()
@@ -92,7 +92,7 @@ Builder blockDamageSourceBuilder()
 
 ## setDamageSourceCreative
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 DamageSourceBuilder setDamageSourceCreative(DamageSourceBuilder damageSourceBuilder)
@@ -100,7 +100,7 @@ DamageSourceBuilder setDamageSourceCreative(DamageSourceBuilder damageSourceBuil
 
 ## setDamageSourceExhaustion
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 DamageSourceBuilder setDamageSourceExhaustion(DamageSourceBuilder damageSourceBuilder, Double exhaustion)
@@ -108,7 +108,7 @@ DamageSourceBuilder setDamageSourceExhaustion(DamageSourceBuilder damageSourceBu
 
 ## entityDamageSourceBuilder
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Builder entityDamageSourceBuilder()
@@ -116,7 +116,7 @@ Builder entityDamageSourceBuilder()
 
 ## setDamageSourceBlockLocation
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Builder setDamageSourceBlockLocation(Location blockLocation, DamageSourceBuilder builder)
@@ -124,7 +124,7 @@ Builder setDamageSourceBlockLocation(Location blockLocation, DamageSourceBuilder
 
 ## setDamageSourceBypassArmor
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 DamageSourceBuilder setDamageSourceBypassArmor(DamageSourceBuilder damageSourceBuilder)
@@ -132,7 +132,7 @@ DamageSourceBuilder setDamageSourceBypassArmor(DamageSourceBuilder damageSourceB
 
 ## indirectEntityDamageSourceBuilder
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Builder indirectEntityDamageSourceBuilder()
@@ -140,7 +140,7 @@ Builder indirectEntityDamageSourceBuilder()
 
 ## setDamageSourceScale
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 DamageSourceBuilder setDamageSourceScale(DamageSourceBuilder damageSourceBuilder)

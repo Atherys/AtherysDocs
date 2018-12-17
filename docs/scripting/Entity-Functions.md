@@ -3,7 +3,7 @@
 
 ## addEntityPotionEffect
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean addEntityPotionEffect(Entity entity, PotionEffect potionEffect)
@@ -11,7 +11,7 @@ Boolean addEntityPotionEffect(Entity entity, PotionEffect potionEffect)
 
 ## createEntity
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Entity createEntity(String entityType, Location worldLocation)
@@ -19,7 +19,7 @@ Entity createEntity(String entityType, Location worldLocation)
 
 ## getEntityHelmet
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 ItemStack getEntityHelmet(Entity entity)
@@ -27,7 +27,7 @@ ItemStack getEntityHelmet(Entity entity)
 
 ## setEntityHelmet
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean setEntityHelmet(Entity entity, ItemStack helmet)
@@ -35,7 +35,7 @@ Boolean setEntityHelmet(Entity entity, ItemStack helmet)
 
 ## getEntityOffhand
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 ItemStack getEntityOffhand(Entity entity)
@@ -43,7 +43,7 @@ ItemStack getEntityOffhand(Entity entity)
 
 ## getEntityBoots
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 ItemStack getEntityBoots(Entity entity)
@@ -51,7 +51,7 @@ ItemStack getEntityBoots(Entity entity)
 
 ## setEntityName
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean setEntityName(Entity entity, Text name)
@@ -59,7 +59,7 @@ Boolean setEntityName(Entity entity, Text name)
 
 ## setEntityOffhand
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean setEntityOffhand(Entity entity, ItemStack item)
@@ -67,7 +67,7 @@ Boolean setEntityOffhand(Entity entity, ItemStack item)
 
 ## getEntityLeggings
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 ItemStack getEntityLeggings(Entity entity)
@@ -75,7 +75,7 @@ ItemStack getEntityLeggings(Entity entity)
 
 ## setEntityMainHand
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean setEntityMainHand(Entity entity, ItemStack item)
@@ -83,7 +83,7 @@ Boolean setEntityMainHand(Entity entity, ItemStack item)
 
 ## setEntityBoots
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean setEntityBoots(Entity entity, ItemStack boots)
@@ -91,7 +91,7 @@ Boolean setEntityBoots(Entity entity, ItemStack boots)
 
 ## setEntityMaxHealth
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean setEntityMaxHealth(Entity entity, Double maxHealth)
@@ -99,7 +99,7 @@ Boolean setEntityMaxHealth(Entity entity, Double maxHealth)
 
 ## getEntityUUID
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 UUID getEntityUUID(Entity entity)
@@ -107,7 +107,7 @@ UUID getEntityUUID(Entity entity)
 
 ## setEntityPotionEffects
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean setEntityPotionEffects(Entity entity, PotionEffect effects)
@@ -115,7 +115,7 @@ Boolean setEntityPotionEffects(Entity entity, PotionEffect effects)
 
 ## getEntityMainHand
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 ItemStack getEntityMainHand(Entity entity)
@@ -123,7 +123,7 @@ ItemStack getEntityMainHand(Entity entity)
 
 ## healEntity
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean healEntity(Entity entity, Double amount)
@@ -131,7 +131,7 @@ Boolean healEntity(Entity entity, Double amount)
 
 ## spawnEntity
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean spawnEntity(Entity entity)
@@ -139,7 +139,7 @@ Boolean spawnEntity(Entity entity)
 
 ## damageEntity
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean damageEntity(Entity entity, DamageSource src, Double damage)
@@ -147,7 +147,7 @@ Boolean damageEntity(Entity entity, DamageSource src, Double damage)
 
 ## getEntityMaxHealth
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Double getEntityMaxHealth(Entity entity)
@@ -155,7 +155,7 @@ Double getEntityMaxHealth(Entity entity)
 
 ## getEntityName
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Text getEntityName(Entity entity)
@@ -163,7 +163,7 @@ Text getEntityName(Entity entity)
 
 ## getEntityChestplate
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 ItemStack getEntityChestplate(Entity entity)
@@ -171,7 +171,7 @@ ItemStack getEntityChestplate(Entity entity)
 
 ## setEntityLeggings
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean setEntityLeggings(Entity entity, ItemStack leggings)
@@ -179,7 +179,7 @@ Boolean setEntityLeggings(Entity entity, ItemStack leggings)
 
 ## getEntityHealth
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Double getEntityHealth(Entity entity)
@@ -187,7 +187,7 @@ Double getEntityHealth(Entity entity)
 
 ## getEntityPotionEffects
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 List getEntityPotionEffects(Entity entity)
@@ -195,7 +195,7 @@ List getEntityPotionEffects(Entity entity)
 
 ## setEntityChestplate
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean setEntityChestplate(Entity entity, ItemStack chestplate)

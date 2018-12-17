@@ -7,16 +7,17 @@
 
 Used to create a new [`BlockState`](https://jd.spongepowered.org/7.0.0/org/spongepowered/api/block/BlockState.html) from a block type id.
 
-#### Signature:
+### Signature:
 ```js
 BlockState blockOf(String blockTypeId)
 ```
+### Arguments:
 
 **blockTypeId**: The block id.
 
 Returns a _**BlockState**_: The `BlockState` for the given id, or null.
 
-#### Example:
+### Example:
 
 ```js
 var block = blockOf("minecraft:anvil");
@@ -26,16 +27,17 @@ var block = blockOf("minecraft:anvil");
 
 Used to get the `BlockState` present at the specified location.
 
-#### Signature:
+### Signature:
 ```js
 BlockState getBlockFromLocation(Location worldLocation)
 ```
+### Arguments:
 
 **worldLocation**: The location to get the block from.
 
 Returns a _**BlockState**_: A `BlockState` representing the block at the location.
 
-#### Example:
+### Example:
 
 ```js
 var location = locationOf( getWorldFromName("world"), 100, 50, 100 );
@@ -46,10 +48,11 @@ var block = getBlockFromLocation(location);
 
 Used to change the BlockState at the specified location
 
-#### Signature:
+### Signature:
 ```js
 Boolean setBlockAtLocation(Location worldLocation, BlockState state)
 ```
+### Arguments:
 
 **worldLocation**: The location to change.
 
@@ -57,7 +60,7 @@ Boolean setBlockAtLocation(Location worldLocation, BlockState state)
 
 Returns a _**Boolean**_: Whether the application worked.
 
-#### Example:
+### Example:
 
 ```js
 var location = locationOf( getWorldFromName("world"), 100, 50, 100 );

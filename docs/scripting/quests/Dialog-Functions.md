@@ -7,7 +7,7 @@
 
 Attaches a dialog to an `Entity`.
 
-#### Signature:
+### Signature:
 ```js
 Boolean attachDialog(Entity entity, String dialogId)
 ```
@@ -18,10 +18,11 @@ Returns a _**Boolean**_: Whether the attachment was successful.
 
 Creates a dialog tree.
 
-#### Signature:
+### Signature:
 ```js
 DialogTree dialogTree(String id, DialogNode root)
 ```
+### Arguments:
 
 **id**: A unique string ID.
 
@@ -32,20 +33,21 @@ DialogTree dialogTree(String id, DialogNode root)
 Returns a `DialogNodeBuilder`, which is used to create a `DialogNode`. See
  [Writing a Dialog](https://atherys.com/docs/scripting/quests/Writing-a-Dialog.html) for how to use it.
 
-#### Signature:
+### Signature:
 ```js
 DialogNodeBuilder dialogNode(Integer id)
 ```
+### Arguments:
 
 **id**:           The numerical id of the node ( must be unique within the Dialog Tree )
 
-Returns a _**DialogNodeBuilder**_: A new DialogNode object
+Returns a _**DialogNodeBuilder**_: A DialogNodeBuilder object
 
 ## registerDialogTree
 
 Registers a dialog tree for use.
 
-#### Signature:
+### Signature:
 ```js
 Boolean registerDialogTree(DialogTree dialogTree)
 ```

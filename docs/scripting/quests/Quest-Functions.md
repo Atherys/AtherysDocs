@@ -4,7 +4,7 @@
 
 ## getQuestById
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Quest getQuestById(String questId)
@@ -12,7 +12,7 @@ Quest getQuestById(String questId)
 
 ## getQuestStages
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Stage getQuestStages(StagedQuest quest)
@@ -20,7 +20,7 @@ Stage getQuestStages(StagedQuest quest)
 
 ## addQuestObjective
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean addQuestObjective(SimpleQuest simpleQuest, Objective objective)
@@ -28,7 +28,7 @@ Boolean addQuestObjective(SimpleQuest simpleQuest, Objective objective)
 
 ## addQuestObjectives
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean addQuestObjectives(SimpleQuest simpleQuest, Objective objectives)
@@ -36,7 +36,7 @@ Boolean addQuestObjectives(SimpleQuest simpleQuest, Objective objectives)
 
 ## getQuestObjectives
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Objective getQuestObjectives(Quest quest)
@@ -44,7 +44,7 @@ Objective getQuestObjectives(Quest quest)
 
 ## addQuestReward
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean addQuestReward(Quest quest, Reward reward)
@@ -52,7 +52,7 @@ Boolean addQuestReward(Quest quest, Reward reward)
 
 ## addQuestRewards
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean addQuestRewards(Quest quest, Reward rewards)
@@ -60,7 +60,7 @@ Boolean addQuestRewards(Quest quest, Reward rewards)
 
 ## addQuestStages
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean addQuestStages(StagedQuest stagedQuest, Stage stages)
@@ -68,7 +68,7 @@ Boolean addQuestStages(StagedQuest stagedQuest, Stage stages)
 
 ## getQuestRewards
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Reward getQuestRewards(Quest quest)
@@ -76,7 +76,7 @@ Reward getQuestRewards(Quest quest)
 
 ## registerQuest
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean registerQuest(Quest quest)
@@ -84,7 +84,7 @@ Boolean registerQuest(Quest quest)
 
 ## createSimpleQuest
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 SimpleQuest createSimpleQuest(String id, Text name, Text description, Integer version)
@@ -92,7 +92,7 @@ SimpleQuest createSimpleQuest(String id, Text name, Text description, Integer ve
 
 ## addQuestRequirements
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean addQuestRequirements(Quest quest, Requirement requirements)
@@ -100,7 +100,7 @@ Boolean addQuestRequirements(Quest quest, Requirement requirements)
 
 ## stageOf
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Stage stageOf(Objective objective, Reward rewards)
@@ -108,7 +108,7 @@ Stage stageOf(Objective objective, Reward rewards)
 
 ## createStagedQuest
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 StagedQuest createStagedQuest(String id, Text name, Text description, Integer version)
@@ -116,7 +116,7 @@ StagedQuest createStagedQuest(String id, Text name, Text description, Integer ve
 
 ## getQuestRequirements
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Requirement getQuestRequirements(Quest quest)

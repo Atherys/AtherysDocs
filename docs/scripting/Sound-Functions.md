@@ -3,7 +3,7 @@
 
 ## buildSound
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Sound buildSound(Sound.Builder builder)
@@ -11,7 +11,7 @@ Sound buildSound(Sound.Builder builder)
 
 ## playSound
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean playSound(Viewer viewer, Sound sound, Vector3d position)
@@ -19,7 +19,7 @@ Boolean playSound(Viewer viewer, Sound sound, Vector3d position)
 
 ## setSoundCategory
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Sound.Builder setSoundCategory(Sound.Builder builder, String soundCategory)
@@ -27,7 +27,7 @@ Sound.Builder setSoundCategory(Sound.Builder builder, String soundCategory)
 
 ## setSoundMinVolume
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Sound.Builder setSoundMinVolume(Sound.Builder builder, Double minVolume)
@@ -35,7 +35,7 @@ Sound.Builder setSoundMinVolume(Sound.Builder builder, Double minVolume)
 
 ## soundBuilder
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Sound.Builder soundBuilder(String soundType, Double volume)
@@ -43,7 +43,7 @@ Sound.Builder soundBuilder(String soundType, Double volume)
 
 ## setSoundPitch
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Sound.Builder setSoundPitch(Sound.Builder builder, Double pitch)

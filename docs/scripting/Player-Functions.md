@@ -3,7 +3,7 @@
 
 ## getPlayerLocation
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Location getPlayerLocation(Player player)
@@ -11,7 +11,7 @@ Location getPlayerLocation(Player player)
 
 ## teleportPlayer
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Boolean teleportPlayer(Player player, Location location)
@@ -19,7 +19,7 @@ Boolean teleportPlayer(Player player, Location location)
 
 ## getPlayerFromUUID
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Player getPlayerFromUUID(UUID uuid)
@@ -27,7 +27,7 @@ Player getPlayerFromUUID(UUID uuid)
 
 ## getPlayerFromName
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 Player getPlayerFromName(String playerName)
@@ -35,7 +35,7 @@ Player getPlayerFromName(String playerName)
 
 ## getPlayerUUID
 
-<h4 style="padding-top: 4.6rem"> Signature: </h4>
+<h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
 UUID getPlayerUUID(Player player)

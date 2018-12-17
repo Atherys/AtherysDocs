@@ -6,12 +6,12 @@
 
 Creates a new location from the provided parameters.
 
-#### Signature:
+### Signature:
 ```js
 Location locationOf(World world, Double x, Double y, Double z)
 ```
 
-#### Example:
+### Example:
 
 ```js
 var world = getWorldByName("world");
@@ -22,14 +22,15 @@ var location = locationOf(world, 160, 50.3, -100.43);
 
 Used to get a world by it's name. The default world name is usually world.
 
-#### Signature:
+### Signature:
 ```js
 World getWorldFromName(String worldName)
 ```
+### Arguments:
 
 Returns a _**World**_: 
 
-#### Example:
+### Example:
 
 ```js
 var world = getWorldByName("world");
