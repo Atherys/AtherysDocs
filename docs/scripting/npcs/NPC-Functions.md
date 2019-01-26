@@ -19,7 +19,7 @@ Creates an NPC of the given type at the given location.
 
 ### Signature:
 ```js
-NPCFile createNPC(String entityTypeId, Location location)
+NPCFile createNPC(String entityTypeId, String id, Location location)
 ```
 
 ## setNPCName
