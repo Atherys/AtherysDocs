@@ -31,7 +31,7 @@ Boolean addQuestObjective(SimpleQuest simpleQuest, Objective objective)
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
-Boolean addQuestObjectives(SimpleQuest simpleQuest, Objective objectives)
+Boolean addQuestObjectives(SimpleQuest simpleQuest, Objective[] objectives)
 ```
 
 ## getQuestObjectives
@@ -55,7 +55,7 @@ Boolean addQuestReward(Quest quest, Reward reward)
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
-Boolean addQuestRewards(Quest quest, Reward rewards)
+Boolean addQuestRewards(Quest quest, Reward[] rewards)
 ```
 
 ## addQuestStages
@@ -63,7 +63,7 @@ Boolean addQuestRewards(Quest quest, Reward rewards)
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
-Boolean addQuestStages(StagedQuest stagedQuest, Stage stages)
+Boolean addQuestStages(StagedQuest stagedQuest, Stage[] stages)
 ```
 
 ## getQuestRewards
@@ -95,7 +95,7 @@ SimpleQuest createSimpleQuest(String id, Text name, Text description, Integer ve
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
-Boolean addQuestRequirements(Quest quest, Requirement requirements)
+Boolean addQuestRequirements(Quest quest, Requirement[] requirements)
 ```
 
 ## stageOf
@@ -103,7 +103,7 @@ Boolean addQuestRequirements(Quest quest, Requirement requirements)
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
 ```js
-Stage stageOf(Objective objective, Reward rewards)
+Stage stageOf(Objective objective, Reward[] rewards)
 ```
 
 ## createStagedQuest
