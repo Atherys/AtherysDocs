@@ -1,6 +1,13 @@
 {
+	"name": "AtherysDocs",
+	"description": "Documentation for all things A'therys",
+	"license": "GPL",
 	"scripts": {
 		"docs:dev": "vuepress dev docs",
 		"docs:build": "vuepress build docs"
+	},
+	"dependencies": {
+		"npm": "^6.8.0",
+		"vuepress": "0.14.9"
 	}
 }

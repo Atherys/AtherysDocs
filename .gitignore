@@ -5,3 +5,4 @@ out/
 .gradle/
 *.class
 *.jar
+package-lock.json
