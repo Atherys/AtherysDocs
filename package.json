@@ -7,6 +7,6 @@
 		"docs:build": "vuepress build docs"
 	},
 	"dependencies": {
-		"vuepress": "0.14.9"
+		"vuepress": "1.0.0-alpha.39"
 	}
 }
