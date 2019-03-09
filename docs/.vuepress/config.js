@@ -19,6 +19,12 @@ module.exports = {
 				]
 			},
 			{
+				text: 'For Developers',
+				items: [
+					{ text: 'Plugin Architecture', link: 'developers/Plugin-Architecture }
+				]
+			},
+			{
 				text: 'Javadocs',
 				items: [
 					{ text: 'Core', link: 'https://atherys.com/docs/AtherysCore' },
