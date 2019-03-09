@@ -4,7 +4,7 @@ A'therys plugins should all follow the same basic code architecture.
 
 ## Architecture Overview
 
-![Diagram](images/pluginArchitecture.png)
+![Diagram](./pluginArchitecture.png)
 
 ## General Rules
 
