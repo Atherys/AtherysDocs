@@ -1,17 +1,17 @@
 {
-	"name": "AtherysDocs",
-	"description": "Documentation for all things A'therys",
+   "name": "AtherysDocs",
+   "description": "Documentation for all things A'therys",
    "license": "GPL-3.0",
    "repository": {
       "type": "git",
       "url": "https://github.com/Atherys-Horizons/AtherysDocs"
    },
    "homepage": "https://atherys.com/docs",
-	"scripts": {
-		"docs:dev": "vuepress dev docs",
-		"docs:build": "vuepress build docs"
-	},
-	"dependencies": {
-		"vuepress": "0.14.9"
+   "scripts": {
+      "docs:dev": "vuepress dev docs",
+      "docs:build": "vuepress build docs"
+   },
+   "dependencies": {
+      "vuepress": "0.14.9"
 	}
 }
