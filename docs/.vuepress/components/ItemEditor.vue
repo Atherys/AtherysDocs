@@ -53,7 +53,10 @@
 </template>
 
 <script>
+<<<<<<< Updated upstream
 import ItemAttribute from './ItemAttribute.vue'
+=======
+>>>>>>> Stashed changes
 export default {
    data () {
       return {
