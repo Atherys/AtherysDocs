@@ -8,7 +8,7 @@ module.exports = {
 				text: 'Plugins',
 				items: [
 					{ text: 'AtherysRoleplay', link: 'plugins/AtherysRoleplay/' },
-					{ text: 'AtherysItems', link: 'plugins/AtherysItems/' }
+					{ text: 'AtherysItems', link: 'plugins/AtherysItems/Item-Editor' }
 				]
 			},
 			{ 
@@ -22,7 +22,7 @@ module.exports = {
 			{
 				text: 'For Developers',
 				items: [
-					{ text: 'Plugin Architecture', link: 'developers/Plugin-Architecture' }
+					{ text: 'Plugin Architecture', link: '/developers/Plugin-Architecture' }
 				]
 			},
 			{
