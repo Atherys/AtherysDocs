@@ -16,37 +16,51 @@ Commands and events are _the_ way that minecraft plugins hook into and interact 
 
 Because of this, it is very difficult to create multi-platform plugins. But more importantly, if any significant logic _is_ written inside EventHandlers and CommandExecutors, then it becomes very difficult for a third party ( such as another plugin ) to utilize that logic in their own code.
 
-This is where the next layer, the facade layer, comes in.
+For this reason, all CommandExecutors and EventHandlers should do the bare minimum in filtering and validation in order to ensure the data they receive is at the very least present and relevant, and at the very most valid, before sending it off to the next layer below, which is the Facade layer.
 
 ### 2. Facades
 
-Facades are what's known as an object-oriented design pattern. It's goal is to provide a unified single interface for executing very specific actions with a system, without having to worry about further implementation details.
-
-An analogy to use here would be that of a remote control and a TV. In order to change the channel or raise the volume on a TV, a specific electric signal must be applied to a specific location located somewhere inside of it's electronics. This is far too much to know ( or care about ) from the point of view of a simple consumer, thus the remote control simply offers you a single button to press which will do that for you. 
-
-A Facade works much in the same way, you need not be concerned with the internals of a system in order to do anything with it. You may simply use it's facade in order to accomplish a certain task.
+Facades are a well-known object-oriented design pattern. It's goal is to provide a unified single interface for executing very specific actions with a system, without having to worry about further implementation details. You may simply call a method belonging to a facade, and rest easy in the thought that the plugin will do exactly what you have told it to, without having to make any supporting calls to other layers such as services or repositories.
 
 **Facades in A'therys plugins** are used to represent actions which would occur when a player executes a command or during a certain event. The methods you would find within a Facade class would be highly focused and will execute a very specific task.
 
-### 3. API ( Optional )
+Furthermore, _modifying_ entities directly using setter methods should be avoided at the Facade level. Reading data using getters is fine and expected, but entities should only be modified at the Service layer and below. This means, in order to change a mutable entity object, you should have to call a service method.
+
+The reason for this so the Facade doesn't need to concern itself with lower-level logic related to synchronizing with the database and updating other entities.
+
+This convention results in a 2-layered approach to business logic. Both Services and Facades contain logic which is considered to be part of the business layer. Code in the Facades should be higher-level, and should concern itself with accomplishing the specific task that it has to, using the API.
+
+### 3. Services
+
+In the 2-layered approach, what remains for the Service layer then are very simple, straight-forward actions, usually to do with mutating entities, their relatives, and updating the database using Repositories.
+
+Services are expected to offer basic CRUD operations, methods to update different parts of an entity, and sometimes more complicated operations depending on the requirements of the project. What is sure though, is that a Service will work very closely with the Repository layer, to ensure all changes are persisted properly.
+
+It is acceptable for Service methods to have to be supported by other method calls ( perhaps even to methods in other services ). At this lower level of a plugin's architecture, it's all about making the smallest changes with the least amount of logic possible inside a method's body.
+
+A service should not have to validate any of it's input. It should be the job of the caller to ensure the correct data is being passed to the method. As such, all validation is done at the Facade layer, and if any errors occur within the Service layer, it should be reported to the Facade layer using custom checked exceptions.
+
+### 4. Entities
+
+The entities themselves are the most basic building blocks of a plugin's architecture. They represent the data that the plugin is in charge of handling.
+
+This is also where the player wrapper class lives ( if one is needed ). Entities in and of themselves **should never** contain any business logic whatsoever. They should provide getters, setters and other basic encapsulation methods which Services can use to modify the object.
+
+### 5. Repositories
+
+At the very bottom of the architecture sit Repository classes. These are responsible for keeping the database up-to-date on the latest changed to entities. 
+
+It should never be the concern of a Service method how an entity is stored or updated in the database, that is a question answered by the implementation of the Repository.
+
+From this layer, queries may be prepared and sent, entities may be persisted or deleted directly from the database.
+
+### [ 6. API ] ( Optional )
 
 Often times, third-parties want to accomplish more than what a Facade will offer. To do this, they would have to delve deeper into the architecture, down into the Service layer and perhaps even lower. 
 
 However, it is a possibility for there to be multiple implementations for the same functionality. For such cases, it is recommended for there to be an API layer which sits above all Services, Entities and Repositories.
 
-Thus, when a third-party wishes to do something lower level than a Facade might offer, they need not be concerned with further implementation details.
-
-### 4. Services
-
-// TODO
-
-### 5. Entities
-
-// TODO
-
-### 6. Repositories
-
-// TODO
+Thus, when a third-party wishes to do something lower level than a Facade might offer, they need not be concerned with further implementation details. 
 
 ## General Rules
 
