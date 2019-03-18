@@ -36,6 +36,26 @@
                   <input class="attribute-input" v-model.number="item.attributes[name]" type="number" step="any">
             </div>
          </fieldset>
+
+         <fieldset id="enchantments">
+            <legend> Enchantments </legend>
+            <div class="enchantment" v-for="n in item.enchantments.length"> 
+               <div>
+                  <div class="label"> Type </div>
+                  <input v-model="item.enchantments[n-1].type"> 
+               </div>
+               <div>
+                  <div class="label"> Level </div> 
+                  <input class="level" type="number" v-model.number="item.enchantments[n-1].level">
+               </div>
+            </div>
+            <button @click="addEnchantment">
+               Add Enchantment
+            </button>
+            <button @click="removeEnchantment">
+               Remove Enchantment
+            </button>
+         </fieldset>
       </div>
 
       <button @click="generate">Generate Item</button>
@@ -75,7 +95,8 @@ export default {
                intelligence: 0,
                wisdom: 0,
                willpower: 0
-            }
+            },
+            enchantments: []
          },
          generated: ""
       }
@@ -91,39 +112,47 @@ export default {
       generate () {
          let info = "{\n";
          Object.keys(this.item).forEach(option => {
-            if (this.item[option] && typeof this.item[option] !== 'object') {
-               info += "\t" + option + "=" + this.optionToString(option, this.item[option]) + "\n";
+            if (this.item[option]) {
+               info += "\t" + option + this.optionToString(option, this.item[option]) + "\n";
             }
          });
-         info += "\tattributes {\n"
-         Object.keys(this.item.attributes).forEach(attribute => {
-            if (this.item.attributes[attribute]) {
-               info += "\t\t" + attribute + "=" + this.item.attributes[attribute] + "\n";
-            }
-         })
-         info += "\t}\n"
          info += "}";
          this.generated = info;
       },
       optionToString(option, value) {
-         let prepared;
+         let prepared = "\t";
          switch(option) {
             case "name": case "type":
-               prepared = "\"" + value + "\"";
+               prepared = "=\"" + value + "\"";
                break;
             case "id":
-               prepared = value.split(' ').join('-');
+               prepared = "=" + value.split(' ').join('-');
                break;
             case "lore":
-               prepared = "[";
+               prepared = "=[";
                value.split('\n').forEach(line => {
                   prepared += "\n\t\t\"" + line + "\",";
                })
                prepared = prepared.replace(/.$/,"");
                prepared += "\n\t]";
                break;
+            case "enchantments":
+               prepared = value[0].type + value[0].level
+               break;
+            case "attributes":
+               Object.keys(value).forEach(attribute => {
+                  if (value[attribute]) {
+                     prepared = "\t\t" + attribute + "=" + value[attribute] + "\n";
+                  }
+               })
+               if (prepared === "\t") {
+                  prepared = "";
+               } else {
+                  prepared = " {\n" + prepared + "}"
+               }
+               break;
             default:
-               prepared = value;
+               prepared = "=" + value;
          }
          return prepared;
       },
@@ -136,6 +165,14 @@ export default {
          copied.select();
          let bool = document.execCommand("copy");
          console.log(bool);
+      },
+      addEnchantment() {
+         this.item.enchantments.push({type:"", level:""});
+      },
+      removeEnchantment() {
+         if (this.item.enchantments.length > 0) {
+            this.item.enchantments.pop();
+         }
       }
    },
    filters: {
@@ -181,22 +218,49 @@ textarea
    left: -9999px
 
 .label 
+   display: flex
+   align-items: center
    margin-right: 5px
    width: 30%
-   min-width: 100px
+   min-width: 60px
+
+#enchantments 
+   padding-right: 20px
+
+.enchantment
+   display: grid 
+   grid-template-columns: 1fr 1fr
+   margin-bottom: 10px
+   > .label
+      min-width: 50px
+      max-width: 50px
+   > input:first-of-type
+      margin-right: 10px
+   > div
+      display: flex
+   > div:last-of-type 
+      margin-left: 10px
+
+.level
+   max-width: 50px
 
 .attribute, .option 
+   align-items: center
    display: flex
+
+.attribute .label 
+   min-width 100px
 
 #options 
    display: grid 
    grid-template-columns: 1fr 1fr
+   grid-gap: 10px
+   margin-bottom: 10px
 
 #general-options 
    display: grid
    grid-template-columns: repeat(2, 1fr)
    grid-gap: 10px
-   margin-bottom: 10px
    > div
       margin-bottom: 5px
       > input, textarea
@@ -207,7 +271,6 @@ textarea
    display: grid
    grid-template-columns: repeat(2, 1fr)
    grid-gap: 10px
-   margin-bottom: 10px
 
 .attribute-input 
    width: 10%
