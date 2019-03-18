@@ -112,7 +112,9 @@ export default {
       generate () {
          let info = "{\n";
          Object.keys(this.item).forEach(option => {
-            if (this.item[option]) {
+            if (option === "enchantments" || option === "attributes") {
+               info += this.optionToString(option, this.item[option]);
+            } else if(this.item[option]) {
                info += "\t" + option + this.optionToString(option, this.item[option]) + "\n";
             }
          });
@@ -137,18 +139,26 @@ export default {
                prepared += "\n\t]";
                break;
             case "enchantments":
-               prepared = value[0].type + value[0].level
+               prepared = "";
+               value.forEach(enchantment => {
+                  prepared += '\n\t\t"' + enchantment.type + '"=' + enchantment.level + ",";
+               });
+               prepared = prepared.replace(/.$/, "");
+               if (prepared === "") {
+                  prepared = "";
+               } else {
+                  prepared = "\tenchantments=[" + prepared + "\n\t]\n";
+               }
                break;
             case "attributes":
+               prepared = "";
                Object.keys(value).forEach(attribute => {
                   if (value[attribute]) {
                      prepared = "\t\t" + attribute + "=" + value[attribute] + "\n";
                   }
                })
-               if (prepared === "\t") {
-                  prepared = "";
-               } else {
-                  prepared = " {\n" + prepared + "}"
+               if (prepared !== "") {
+                  prepared = " {\n" + prepared + "}";
                }
                break;
             default:
