@@ -5,27 +5,27 @@
             <legend> Item Options </legend>
             <div class="option">
                <div class="label">ID</div>
-               <input v-model.trim="item.id">
+               <input v-model.trim.lazy="item.id">
             </div>
             <div class="option">
                <div class="label">Name</div>
-               <input v-model="item.name">
+               <input v-model.lazy="item.name">
             </div>
             <div class="option">
                <div class="label">Durability</div>
-               <input v-model.number="item.durability" type="number" step="any">
+               <input v-model.number.lazy="item.durability" type="number" step="any">
             </div>
             <div class="option">
                <div class="label">Quantity</div>
-               <input v-model.number="item.quantity" type="number">
+               <input v-model.number.lazy="item.quantity" type="number">
             </div>
             <div class="option">
                <div class="label">Item Type</div>
-               <input v-model="item.type">
+               <input v-model.lazy="item.type">
             </div>
             <div class="option">
                <div class="label">Lore</div>
-               <textarea rows="2" v-model="item.lore"></textarea>
+               <textarea rows="2" v-model.lazy="item.lore"></textarea>
             </div>
          </fieldset>
 
@@ -33,20 +33,20 @@
             <legend> Attributes </legend>
             <div class="attribute" v-for="(amount, name) in item.attributes">
                   <div class="label">{{ name | capitalize }}</div>
-                  <input class="attribute-input" v-model.number="item.attributes[name]" type="number" step="any">
+                  <input class="attribute-input" v-model.number.lazy="item.attributes[name]" type="number" step="any">
             </div>
          </fieldset>
 
          <fieldset id="enchantments">
             <legend> Enchantments </legend>
-            <div class="enchantment" v-for="n in item.enchantments.length"> 
+            <div class="enchantment" v-for="enchantment in item.enchantments"> 
                <div>
                   <div class="label"> Type </div>
-                  <input v-model="item.enchantments[n-1].type"> 
+                  <input v-model.lazy="enchantment.type"> 
                </div>
                <div>
                   <div class="label"> Level </div> 
-                  <input class="level" type="number" v-model.number="item.enchantments[n-1].level">
+                  <input class="level" type="number" v-model.number.lazy="enchantment.level">
                </div>
             </div>
             <button @click="addEnchantment">
@@ -73,6 +73,7 @@
 </template>
 
 <script>
+import BasicOption from './BasicOption.vue'
 export default {
    data () {
       return {
@@ -153,11 +154,11 @@ export default {
                prepared = "";
                Object.keys(value).forEach(attribute => {
                   if (value[attribute]) {
-                     prepared = "\t\t" + attribute + "=" + value[attribute] + "\n";
+                     prepared += "\t\t" + attribute + "=" + value[attribute] + "\n";
                   }
                })
                if (prepared !== "") {
-                  prepared = " {\n" + prepared + "}";
+                  prepared = "\tattributes {\n" + prepared + "\t}\n";
                }
                break;
             default:
