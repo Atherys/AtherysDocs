@@ -1,7 +1,7 @@
 module.exports = {
 	title: 'A\'therys Docs',
 	description: 'Documentation for all things A\'therys',
-	base: "/docs/",
+	base: "/",
 	themeConfig: {
 		nav: [
 			{
