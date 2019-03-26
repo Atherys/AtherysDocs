@@ -73,7 +73,6 @@
 </template>
 
 <script>
-import BasicOption from './BasicOption.vue'
 export default {
    data () {
       return {
