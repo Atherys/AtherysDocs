@@ -7,8 +7,8 @@ module.exports = {
 			{
 				text: 'Plugins',
 				items: [
-					{ text: 'AtherysRoleplay', link: 'plugins/AtherysRoleplay/' },
-					{ text: 'AtherysItems', link: 'plugins/AtherysItems/Item-Editor' }
+					{ text: 'AtherysRoleplay', link: '/plugins/AtherysRoleplay/' },
+					{ text: 'AtherysItems', link: '/plugins/AtherysItems/Item-Editor' }
 				]
 			},
 			{ 
