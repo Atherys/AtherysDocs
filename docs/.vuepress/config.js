@@ -1,15 +1,14 @@
 module.exports = {
 	title: 'A\'therys Docs',
 	description: 'Documentation for all things A\'therys',
-	base: "/docs/",
+	base: "/",
 	themeConfig: {
 		nav: [
 			{
 				text: 'Plugins',
 				items: [
 					{ text: 'AtherysRoleplay', link: '/plugins/AtherysRoleplay/' },
-               { text: 'AtherysItems', link: '/plugins/AtherysItems/Item-Editor' },
-               { text: 'AtherysRPG', link: '/plugins/AtherysRPG/'}
+					{ text: 'AtherysItems', link: '/plugins/AtherysItems/Item-Editor' }
 				]
 			},
 			{ 
