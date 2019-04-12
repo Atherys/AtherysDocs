@@ -12,6 +12,8 @@
       "docs:build": "vuepress build docs"
    },
    "dependencies": {
-      "vuepress": "0.14.9"
+      "hocon-parser": "^1.0.1",
+      "vis": "^4.21.0",
+      "vuepress": "^0.14.10"
    }
 }
