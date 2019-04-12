@@ -3,26 +3,11 @@
       <div id="options">
          <fieldset id="general-options">
             <legend> Item Options </legend>
-            <div class="option">
-               <div class="label">ID</div>
-               <input v-model.trim.lazy="item.id">
-            </div>
-            <div class="option">
-               <div class="label">Name</div>
-               <input v-model.lazy="item.name">
-            </div>
-            <div class="option">
-               <div class="label">Durability</div>
-               <input v-model.number.lazy="item.durability" type="number" step="any">
-            </div>
-            <div class="option">
-               <div class="label">Quantity</div>
-               <input v-model.number.lazy="item.quantity" type="number">
-            </div>
-            <div class="option">
-               <div class="label">Item Type</div>
-               <input v-model.lazy="item.type">
-            </div>
+            <BasicOption id="ID" v-model="item.id"/>
+            <BasicOption id="Name" v-model="item.name"/>
+            <BasicOption id="Durability" v-model.number="item.durability" type="number"/>
+            <BasicOption id="Quantity" v-model.number="item.quantity" type="number"/>
+            <BasicOption id="Item Type" v-model="item.type"/>
             <div class="option">
                <div class="label">Lore</div>
                <textarea rows="2" v-model.lazy="item.lore"></textarea>
