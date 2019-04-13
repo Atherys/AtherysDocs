@@ -118,7 +118,8 @@ export default {
             },
             font: {
                size: 18
-            }
+            },
+            mass: 2.3
          };
       },
 
@@ -132,8 +133,7 @@ export default {
             },
             font: {
                strokeColor: "#aa3300"
-            },
-            mass: -1.0
+            }
          };
 
          if (raw.type == "UNIDIRECTIONAL") {
