@@ -175,7 +175,8 @@ export default {
 <style lang="stylus">
 #skill-tree
    height 75vh
-   background #12110f url(https://atherys.com/assets_v5/bp/layer1.jpg) no-repeat
+   background #12110f url(https://www.onlygfx.com/wp-content/uploads/2015/12/simple-old-paper-2-transparent.jpg) no-repeat
+   background-size cover
 
 #network-pop-up 
    position:absolute
@@ -193,7 +194,6 @@ export default {
 
 .vis-network
    position relative
-   border 1px solid lightgray
    font-size 28px
 
 .vis-button 
