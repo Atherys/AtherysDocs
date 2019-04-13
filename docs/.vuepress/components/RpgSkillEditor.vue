@@ -19,6 +19,7 @@
 <script>
 import Vis from "vis";
 import Hocon from "hocon-parser";
+
 const locales = {
    en: {
       edit: 'Edit Skill Tree',
@@ -46,6 +47,7 @@ const options = {
    },
    locales: locales
 };
+
 export default {
    data () {
       return {
@@ -90,12 +92,13 @@ export default {
             return; 
          }
 
+         const fileExtension = files[0].name.split(".").pop().toLowerCase();
+
          const skillTreeFile = files[0];
          const reader = new FileReader();
-         let data = null;
 
          reader.onload = (e) => {
-            this.loadSkillTree(reader.result);
+            this.loadSkillTree(reader.result, fileExtension);
          }
 
          reader.readAsText(skillTreeFile);
@@ -129,7 +132,8 @@ export default {
             },
             font: {
                strokeColor: "#aa3300"
-            }
+            },
+            mass: -1.0
          };
 
          if (raw.type == "UNIDIRECTIONAL") {
@@ -145,13 +149,28 @@ export default {
          return edge;
       },
 
-      loadSkillTree(hocon) {
-         let skillTree = Hocon(hocon.trim());
+      loadSkillTree(contents, format) {
+         var skillTree = {};
+
+         const skillGraphKey = 'skill-graph';
+         const skillNodesKey = 'skill-nodes';
+         var skillLinksKey = 'skill-links';
+
+         if (format == "json") {
+            skillTree = JSON.parse(contents);
+            skillLinksKey = 'skill-links';
+         } else if (format == "conf" || format == "hocon") {
+            skillTree = Hocon(contents);
+            skillLinksKey = 'skill-links '; // the space is required because hocon-parser interprets this as a valid key...
+         } else {
+            alert("Unsupported file format. Please provide either a JSON ( ending in .json ) or HOCON ( ending in .conf ).");
+            throw "Unsupported file format.";
+         }
 
          if (skillTree['skill-graph']) {
 
-            let rawNodes = skillTree['skill-graph']['skill-nodes'];
-            let rawEdges = skillTree['skill-graph']['skill-links '];
+            let rawNodes = skillTree[skillGraphKey][skillNodesKey];
+            let rawEdges = skillTree[skillGraphKey][skillLinksKey];
 
             let nodes = [];
             let edges = [];
