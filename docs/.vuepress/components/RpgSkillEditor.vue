@@ -141,6 +141,10 @@ export default {
                   edge.arrows = 'to, from';
                }
 
+               if (edge.cost != null) {
+                  edge.label = "" + edge.cost;
+               }
+
                edge.smooth = false;
             });
 
