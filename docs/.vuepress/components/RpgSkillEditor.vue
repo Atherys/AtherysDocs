@@ -101,52 +101,66 @@ export default {
          reader.readAsText(skillTreeFile);
       },
 
+      processNode(rawId, raw) {
+         return {
+            id: rawId,
+            label: raw['skill-id'],
+            shape: 'box',
+            shadow: {
+               enabled: true
+            },
+            color: {
+               background: '#aa3300',
+               border: '#000000'
+            },
+            font: {
+               size: 18
+            }
+         };
+      },
+
+      processEdge(raw) {
+         const edge = {
+            from: raw['parent-node'],
+            to: raw['child-node'],
+            smooth: false,
+            color: {
+               color: "#957e4c"
+            },
+            font: {
+               strokeColor: "#aa3300"
+            }
+         };
+
+         if (raw.type == "UNIDIRECTIONAL") {
+            edge.arrows = 'to';
+         } else {
+            edge.arrows = 'to, from';
+         }
+
+         if (raw.cost != null) {
+            edge.label = "" + raw.cost;
+         }
+
+         return edge;
+      },
+
       loadSkillTree(hocon) {
-         let skillTree = Hocon(hocon);
+         let skillTree = Hocon(hocon.trim());
 
          if (skillTree['skill-graph']) {
 
-            let lastUsedColor = 0x000000;
-            let nodesObject = skillTree['skill-graph']['skill-nodes'];
+            let rawNodes = skillTree['skill-graph']['skill-nodes'];
+            let rawEdges = skillTree['skill-graph']['skill-links '];
+
             let nodes = [];
+            let edges = [];
 
-            Object.keys(nodesObject).forEach( (key) => {
-               const node = nodesObject[key];
-               nodes.push(Object.assign(node, {
-                  id: key, 
-                  label: node['skill-id'],
-                  shape: 'box',
-                  shadow: {
-                     enabled: true
-                  },
-                  color: {
-                     background: '#aa3300',
-                     border: '#000000'
-                  },
-                  font: {
-                     size: 18
-                  }
-               }));
-            });
+            // Iterate over all nodes as provided in configuration, process them and push them into the nodes collection
+            Object.keys(rawNodes).forEach((key) => nodes.push(this.processNode(key, rawNodes[key])));
 
-            let edges = skillTree['skill-graph']['skill-links '];
-
-            edges.forEach( (edge) => {
-               edge.from = edge['parent-node'];
-               edge.to = edge['child-node'];
-
-               if (edge.type == "UNIDIRECTIONAL") {
-                  edge.arrows = 'to';
-               } else {
-                  edge.arrows = 'to, from';
-               }
-
-               if (edge.cost != null) {
-                  edge.label = "" + edge.cost;
-               }
-
-               edge.smooth = false;
-            });
+            // Iterate over all links as provided in configuration, process them and push them into the edges collection
+            rawEdges.forEach((rawEdge) => edges.push(this.processEdge(rawEdge)));
 
             this.skillNodes = new Vis.DataSet(nodes);
             this.skillLinks = new Vis.DataSet(edges);
@@ -161,6 +175,7 @@ export default {
 <style lang="stylus">
 #skill-tree
    height 75vh
+   background #12110f url(https://atherys.com/assets_v5/bp/layer1.jpg) no-repeat
 
 #network-pop-up 
    position:absolute
@@ -178,8 +193,6 @@ export default {
 
 .vis-network
    position relative
-   width 800px
-   height 600px
    border 1px solid lightgray
    font-size 28px
 
