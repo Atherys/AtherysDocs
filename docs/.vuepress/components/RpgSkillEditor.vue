@@ -19,6 +19,7 @@
 <script>
 import Vis from "vis";
 import Hocon from "hocon-parser";
+import { loadSkillTree } from "./util";
 
 const locales = {
    en: {
@@ -98,95 +99,16 @@ export default {
          const reader = new FileReader();
 
          reader.onload = (e) => {
-            this.loadSkillTree(reader.result, fileExtension);
+            let skillTree = loadSkillTree(reader.result, fileExtension);
+            if (skillTree) {
+               this.skillNodes = new Vis.DataSet(skillTree.skillNodes);
+               this.skillLinks = new Vis.DataSet(skillTree.skillLinks);
+               this.buildSkillTree();
+            }
          }
 
          reader.readAsText(skillTreeFile);
       },
-
-      processNode(rawId, raw) {
-         return {
-            id: rawId,
-            label: raw['skill-id'],
-            shape: 'box',
-            shadow: {
-               enabled: true
-            },
-            color: {
-               background: '#aa3300',
-               border: '#000000'
-            },
-            font: {
-               size: 18
-            },
-            mass: 2.3
-         };
-      },
-
-      processEdge(raw) {
-         const edge = {
-            from: raw['parent-node'],
-            to: raw['child-node'],
-            smooth: false,
-            color: {
-               color: "#957e4c"
-            },
-            font: {
-               strokeColor: "#aa3300"
-            }
-         };
-
-         if (raw.type == "UNIDIRECTIONAL") {
-            edge.arrows = 'to';
-         } else {
-            edge.arrows = 'to, from';
-         }
-
-         if (raw.cost != null) {
-            edge.label = "" + raw.cost;
-         }
-
-         return edge;
-      },
-
-      loadSkillTree(contents, format) {
-         var skillTree = {};
-
-         const skillGraphKey = 'skill-graph';
-         const skillNodesKey = 'skill-nodes';
-         var skillLinksKey = 'skill-links';
-
-         if (format == "json") {
-            skillTree = JSON.parse(contents);
-            skillLinksKey = 'skill-links';
-         } else if (format == "conf" || format == "hocon") {
-            skillTree = Hocon(contents);
-            skillLinksKey = 'skill-links '; // the space is required because hocon-parser interprets this as a valid key...
-         } else {
-            alert("Unsupported file format. Please provide either a JSON ( ending in .json ) or HOCON ( ending in .conf ).");
-            throw "Unsupported file format.";
-         }
-
-         if (skillTree['skill-graph']) {
-
-            let rawNodes = skillTree[skillGraphKey][skillNodesKey];
-            let rawEdges = skillTree[skillGraphKey][skillLinksKey];
-
-            let nodes = [];
-            let edges = [];
-
-            // Iterate over all nodes as provided in configuration, process them and push them into the nodes collection
-            Object.keys(rawNodes).forEach((key) => nodes.push(this.processNode(key, rawNodes[key])));
-
-            // Iterate over all links as provided in configuration, process them and push them into the edges collection
-            rawEdges.forEach((rawEdge) => edges.push(this.processEdge(rawEdge)));
-
-            this.skillNodes = new Vis.DataSet(nodes);
-            this.skillLinks = new Vis.DataSet(edges);
-
-            this.buildSkillTree();
-         }
-      }
    }
 }
 </script>
