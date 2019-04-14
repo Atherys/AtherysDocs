@@ -1,6 +1,9 @@
 <template>
    <div id="rpg-container">
 
+
+      <div id="skill-tree">
+      </div>
       <div v-if="editingNode" id="network-pop-up">
          <span id="operation">node</span>
          <div id="node-editor"></div>
@@ -8,10 +11,10 @@
          <button @click="editingNode = false">Cancel</button>
       </div>
 
-      <div id="skill-tree">
+      <div id="button-row">
+         <input type="file" @change="readSkillTree" id="upload-config">
+         <input type="button" value="Upload a Skill Graph" @click="clickUpload" id="upload-button">
       </div>
-
-      <input type="file" @change="readSkillTree">
       
    </div>
 </template>
@@ -41,10 +44,6 @@ const locales = {
 
 const options = {
    manipulation: {
-      editNode: (data, callback) => {
-         this.editingNode = true;
-         callback(data);
-      }
    },
    locales: locales
 };
@@ -68,6 +67,11 @@ export default {
       }
    },
    mounted () {
+      options.manipulation = {
+         editNode: (data, callback) => {
+            this.editNode(data, callback);
+         }
+      };
       this.buildSkillTree();
    },
    methods: {
@@ -80,10 +84,21 @@ export default {
          };
 
          let network = new Vis.Network(element, data, options);
+         network.enableEditMode();
+         network.stopSimulation();
+      },
+
+      editNode(data, callback) {
+         this.editingNode = true;
+         callback(data);
       },
 
       cancelEdit(callback) {
          callback(null);
+      },
+
+      clickUpload() {
+         document.getElementById("upload-config").click();
       },
 
       readSkillTree(e) {
@@ -118,12 +133,21 @@ export default {
    height 75vh
    background #12110f url(https://www.onlygfx.com/wp-content/uploads/2015/12/simple-old-paper-2-transparent.jpg) no-repeat
    background-size cover
+   border solid 3px black
+   width 70%
+   border-radius 5px
+   display flex
+
+#button-row
+   margin-top 10px
+   > *
+      height 30px
+      cursor pointer
+
+#upload-config 
+   display none
 
 #network-pop-up 
-   position:absolute
-   top 350px
-   left 170px
-   z-index 299
    width 250px
    height 120px
    background-color #f9f9f9
@@ -140,10 +164,26 @@ export default {
 .vis-button 
    font-size 16px
    margin-left 10px
+   cursor pointer
+   background white
+   padding 5px
+   border solid 1px black
+   border-radius 4px
 
 .vis-manipulation
    display flex !important
    border-top 1px solid lightgray
-   height 35px
    align-items center
+   padding-top: 4px
+   position: absolute
+   left: 0
+   top: 5px
+   width: 100%
+   height: 28px
+
+.vis-edit-mode 
+   position: absolute
+   left: 0
+   top: 10px
+   height: 30px
 </style>
