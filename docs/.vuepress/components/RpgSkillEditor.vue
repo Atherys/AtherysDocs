@@ -12,16 +12,15 @@
          <div id="skill-node-editor-properties">
             <div id="skill-node-editor-properties-header">
                <p>Properties</p>
-               <button id="skill-node-editor-properties-add-property">Add Property</button>
+               <button id="skill-node-editor-properties-add-property" @click="nodeEditorAddEmptyProperty">Add Property</button>
             </div>
-            <p id="skill-node-properties-1">
-               <label><input id="skill-node-properties-1-key" type="text"/>:</label><input id="skill-node-properties-1-value" type="text"/>
-            </p>
-            <p id="skill-node-properties-2">
-               <label><input id="skill-node-properties-2-key" type="text"/>:</label><input id="skill-node-properties-2-value" type="text"/>
-            </p>
+            <div id="skill-node-editor-properties-list">
+               <p id="skill-node-properties-0">
+                  <label><input id="skill-node-properties-0-key" type="text"/>:</label><input id="skill-node-properties-0-value" type="text"/>
+               </p>
+            </div>
          </div>
-         <div><button id="skill-node-editor-save">Save</button></div>
+         <div><button id="skill-node-editor-save" @click="nodeEditorSave">Save</button></div>
       </div>
 
       <div id="skill-edge-editor">
@@ -182,7 +181,6 @@ export default {
       },
 
       onSelectNode(network, event) {
-         // TODO: Hide edge editor
          const node = this.skillNodes.get(event.nodes[0]);
 
          const nodeIdField = document.getElementById("skill-node-editor-id");
@@ -190,9 +188,56 @@ export default {
          const resourceCostField = document.getElementById("skill-node-editor-resource-cost");
          const cooldownField = document.getElementById("skill-node-editor-cooldown");
 
+         nodeIdField.setAttribute('value', node.id);
+         
+         if (node.raw) {
+            skillIdField.setAttribute('value', node.raw['skill-id'] || '');
+            resourceCostField.setAttribute('value', node.raw['resource-cost'] || '');
+            cooldownField.setAttribute('value', node.raw['cooldown'] || '');
+
+            if (node.raw.properties && node.raw.properties instanceof Object) {
+               const propertiesDiv = document.getElementById("skill-node-editor-properties-list");
+
+               // Remove all nodes from the properties list
+               while (propertiesDiv.firstChild) {
+                  propertiesDiv.removeChild(propertiesDiv.firstChild);
+               }
+
+               var i = 0;
+
+               // Create new nodes from the node properties
+               Object.keys(node.raw.properties).forEach(key => {
+                  const propertyNode = document.createElement('p');
+                  propertyNode.setAttribute('id', 'skill-node-properties-' + i);
+                  
+                  const keyLabel = document.createElement('label');
+
+                  const keyInput = document.createElement('input');
+                  keyInput.setAttribute('id', 'skill-node-properties-' + i + '-key');
+                  keyInput.setAttribute('value', key);
+
+                  keyLabel.appendChild(keyInput)
+
+                  const valueInput = document.createElement('input');
+                  valueInput.setAttribute('id', 'skill-node-properties-' + i + '-value');
+                  valueInput.textContent = node.raw.properties[key];
+
+                  propertiesDiv.appendChild(propertyNode);
+                  i++;
+               })
+            }
+         }
 
          // TODO: When selecting a node, set the fields.
       },
+
+      nodeEditorSave() {
+
+      },
+
+      nodeEditorAddEmptyProperty() {
+
+      }
    }
 }
 </script>
@@ -213,7 +258,7 @@ export default {
 
 #skill-node-editor
    width 29%
-   display none // inline-block
+   display inline-block // inline-block
    float right
    > p
       margin 10px
@@ -225,11 +270,12 @@ div #skill-node-editor-properties
    margin 10px
    > div
       text-align center
-   > p > label > input
-      width 40%
-   > p > input
-      width 40%
-      float right
+      > p > label > input
+         width 40%
+         direction RTL
+      > p > input
+         width 40%
+         float right
 
 #skill-edge-editor
    width 29%
