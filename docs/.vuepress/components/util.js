@@ -104,8 +104,8 @@ const nodes = {
             enabled: true
     },
     color: {
-            background: '#aa3300',
-            border:     '#000000'
+            background: '#e2950f',
+            border:     '#000'
     },
     font: {
             size: 18

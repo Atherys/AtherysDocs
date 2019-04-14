@@ -128,6 +128,7 @@ export default {
       },
 
       onSelectNode(network, event) {
+         // TODO: Fix this
          const node = this.skillNodes.get(event.nodes[0]);
 
          const nodeIdField = document.getElementById("skill-node-editor-id");
@@ -205,7 +206,6 @@ export default {
    width 70%
    border-radius 5px
    display inline-block
-   float left
 
 #skill-node-editor
    width 29%
@@ -263,15 +263,16 @@ div #skill-node-editor-properties
    font-size 16px
    margin-left 10px
    cursor pointer
-   background #aa3300
+   background #e2950f
    padding 5px
    border solid 1px black
    border-radius 4px
    -webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.5);
    -moz-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.5);
    box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.5);
+   transition all 0.2s
    &:hover
-      background #aa5e00
+      background #fff
 
 .vis-manipulation
    display flex !important
