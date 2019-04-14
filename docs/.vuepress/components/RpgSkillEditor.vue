@@ -15,9 +15,6 @@
                <button id="skill-node-editor-properties-add-property" @click="nodeEditorAddEmptyProperty">Add Property</button>
             </div>
             <div id="skill-node-editor-properties-list">
-               <p id="skill-node-properties-0">
-                  <label><input id="skill-node-properties-0-key" type="text"/>:</label><input id="skill-node-properties-0-value" type="text"/>
-               </p>
             </div>
          </div>
          <div><button id="skill-node-editor-save" @click="nodeEditorSave">Save</button></div>
@@ -195,18 +192,18 @@ export default {
             resourceCostField.setAttribute('value', node.raw['resource-cost'] || '');
             cooldownField.setAttribute('value', node.raw['cooldown'] || '');
 
+            const propertiesDiv = document.getElementById("skill-node-editor-properties-list");
+
+            // Remove all nodes from the properties list
+            while (propertiesDiv.firstChild) {
+               propertiesDiv.removeChild(propertiesDiv.firstChild);
+            }
+
             if (node.raw.properties && node.raw.properties instanceof Object) {
-               const propertiesDiv = document.getElementById("skill-node-editor-properties-list");
-
-               // Remove all nodes from the properties list
-               while (propertiesDiv.firstChild) {
-                  propertiesDiv.removeChild(propertiesDiv.firstChild);
-               }
-
                var i = 0;
 
-               // Create new nodes from the node properties
-               Object.keys(node.raw.properties).forEach(key => {
+               // Create new nodes for each property
+               for (var key in node.raw.properties) {
                   const propertyNode = document.createElement('p');
                   propertyNode.setAttribute('id', 'skill-node-properties-' + i);
                   
@@ -220,11 +217,15 @@ export default {
 
                   const valueInput = document.createElement('input');
                   valueInput.setAttribute('id', 'skill-node-properties-' + i + '-value');
-                  valueInput.textContent = node.raw.properties[key];
+                  valueInput.setAttribute('value', node.raw.properties[key]);
+
+                  propertyNode.appendChild(keyLabel);
+                  propertyNode.append(":");
+                  propertyNode.appendChild(valueInput);
 
                   propertiesDiv.appendChild(propertyNode);
                   i++;
-               })
+               }
             }
          }
 
