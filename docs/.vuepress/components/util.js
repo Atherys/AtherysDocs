@@ -79,3 +79,53 @@ export function loadSkillTree(contents, format) {
         return { skillNodes: nodes, skillLinks: edges };
     }
 }
+
+const locales = {
+    en: {
+      edit: 'Edit Skill Tree',
+      back: 'Back',
+      del: 'Delete selected',
+      addNode: 'Add Skill Node',
+      addEdge: 'Add Skill Link',
+      editNode: 'Edit Skill Node',
+      editEdge: 'Edit Skill Link',
+      addDescription: 'Click in an empty space to place a new node.',
+      edgeDescription: 'Click on a node and drag the edge to another node to connect them.',
+      editEdgeDescription: 'Click on the control points and drag them to a node to connect to it.',
+      createEdgeError: 'Cannot link edges to a cluster.',
+      deleteClusterError: 'Clusters cannot be deleted.',
+      editClusterError: 'Clusters cannot be edited.'
+    }
+}
+
+const nodes = {
+    shape: 'box',
+    shadow: {
+            enabled: true
+    },
+    color: {
+            background: '#aa3300',
+            border:     '#000000'
+    },
+    font: {
+            size: 18
+    },
+    mass: 2.3
+}
+
+const edges = {
+    smooth: false,
+    color: {
+            color: '#957e4c'
+    },
+    font: {
+        strokeColor: '#aa3300'
+    },
+    arrows: 'to'
+}
+
+export const options = {
+    nodes: nodes,
+    edges: edges,
+    locales: locales
+}

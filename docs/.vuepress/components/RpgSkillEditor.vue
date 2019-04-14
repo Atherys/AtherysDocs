@@ -44,31 +44,7 @@
 <script>
 import Vis from "vis";
 import Hocon from "hocon-parser";
-import { loadSkillTree } from "./util";
-
-const locales = {
-   en: {
-      edit: 'Edit Skill Tree',
-      back: 'Back',
-      del: 'Delete selected',
-      addNode: 'Add Skill Node',
-      addEdge: 'Add Skill Link',
-      editNode: 'Edit Skill Node',
-      editEdge: 'Edit Skill Link',
-      addDescription: 'Click in an empty space to place a new node.',
-      edgeDescription: 'Click on a node and drag the edge to another node to connect them.',
-      editEdgeDescription: 'Click on the control points and drag them to a node to connect to it.',
-      createEdgeError: 'Cannot link edges to a cluster.',
-      deleteClusterError: 'Clusters cannot be deleted.',
-      editClusterError: 'Clusters cannot be edited.'
-   }
-};
-
-const options = {
-   manipulation: {
-   },
-   locales: locales
-};
+import { loadSkillTree, options } from "./util";
 
 export default {
    data () {
@@ -106,33 +82,7 @@ export default {
          };
 
          let network = new Vis.Network(element, data, options);
-         // Default options for nodes and edges
-         network.setOptions({
-            nodes: {
-               shape: 'box',
-               shadow: {
-                     enabled: true
-               },
-               color: {
-                     background: '#aa3300',
-                     border:     '#000000'
-               },
-               font: {
-                     size: 18
-               },
-               mass: 2.3
-            },
-            edges: {
-               smooth: false,
-               color: {
-                     color: '#957e4c'
-               },
-               font: {
-                     strokeColor: '#aa3300'
-               },
-               arrows: 'to'
-            }
-         })
+
          network.enableEditMode();
          network.stopSimulation();
          network.on('selectNode', (event) => this.onSelectNode(network, event))
