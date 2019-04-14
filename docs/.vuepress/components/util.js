@@ -13,7 +13,8 @@ function processNode(rawId, raw) {
         font: {
             size: 18
         },
-        mass: 2.3
+        mass: 2.3,
+        raw: raw
     };
 }
 
@@ -27,7 +28,8 @@ function processEdge(raw) {
         },
         font: {
             strokeColor: "#aa3300"
-        }
+        },
+        raw: raw
     };
 
     if (raw.type == "UNIDIRECTIONAL") {

@@ -1,9 +1,35 @@
 <template>
    <div id="rpg-container">
 
-
       <div id="skill-tree">
       </div>
+
+      <div id="skill-node-editor">
+         <p><label>Node Id:</label><input id="skill-node-editor-id" type="text"/></p>
+         <p><label>Skill Id:</label><input id="skill-node-editor-skill-id" type="text"/></p>
+         <p><label>Resource Cost:</label><input id="skill-node-editor-resource-cost" type="text"/></p>
+         <p><label>Cooldown:</label><input id="skill-node-editor-cooldown" type="text"/></p>
+         <div id="skill-node-editor-properties">
+            <div id="skill-node-editor-properties-header">
+               <p>Properties</p>
+               <button id="skill-node-editor-properties-add-property">Add Property</button>
+            </div>
+            <p id="skill-node-properties-1">
+               <label><input id="skill-node-properties-1-key" type="text"/>:</label><input id="skill-node-properties-1-value" type="text"/>
+            </p>
+            <p id="skill-node-properties-2">
+               <label><input id="skill-node-properties-2-key" type="text"/>:</label><input id="skill-node-properties-2-value" type="text"/>
+            </p>
+         </div>
+         <div><button id="skill-node-editor-save">Save</button></div>
+      </div>
+
+      <div id="skill-edge-editor">
+         Todo. This will contain properties to be configured similarly to the node editor. 
+         You may not have both an edge editor and a node editor active at the same time. 
+         When one is shown, the other is hidden.
+      </div>
+
       <div v-if="editingNode" id="network-pop-up">
          <span id="operation">node</span>
          <div id="node-editor"></div>
@@ -84,8 +110,38 @@ export default {
          };
 
          let network = new Vis.Network(element, data, options);
+         // Default options for nodes and edges
+         network.setOptions({
+            nodes: {
+               shape: 'box',
+               shadow: {
+                     enabled: true
+               },
+               color: {
+                     background: '#aa3300',
+                     border:     '#000000'
+               },
+               font: {
+                     size: 18
+               },
+               mass: 2.3
+            },
+            edges: {
+               smooth: false,
+               color: {
+                     color: '#957e4c'
+               },
+               font: {
+                     strokeColor: '#aa3300'
+               },
+               arrows: 'to'
+            }
+         })
          network.enableEditMode();
          network.stopSimulation();
+         network.on('selectNode', (event) => this.onSelectNode(network, event))
+         // TODO: Add node editor save button functionality
+         // TODO: Add edge editor save button functionality
       },
 
       editNode(data, callback) {
@@ -124,11 +180,27 @@ export default {
 
          reader.readAsText(skillTreeFile);
       },
+
+      onSelectNode(network, event) {
+         // TODO: Hide edge editor
+         const node = this.skillNodes.get(event.nodes[0]);
+
+         const nodeIdField = document.getElementById("skill-node-editor-id");
+         const skillIdField = document.getElementById("skill-node-editor-skill-id");
+         const resourceCostField = document.getElementById("skill-node-editor-resource-cost");
+         const cooldownField = document.getElementById("skill-node-editor-cooldown");
+
+
+         // TODO: When selecting a node, set the fields.
+      },
    }
 }
 </script>
 
 <style lang="stylus">
+#rpg-container
+   overflow: hidden
+
 #skill-tree
    height 75vh
    background #12110f url(https://www.onlygfx.com/wp-content/uploads/2015/12/simple-old-paper-2-transparent.jpg) no-repeat
@@ -136,10 +208,39 @@ export default {
    border solid 3px black
    width 70%
    border-radius 5px
-   display flex
+   display inline-block
+   float left
+
+#skill-node-editor
+   width 29%
+   display none // inline-block
+   float right
+   > p
+      margin 10px
+      > input
+         width 60%
+         float right
+
+div #skill-node-editor-properties
+   margin 10px
+   > div
+      text-align center
+   > p > label > input
+      width 40%
+   > p > input
+      width 40%
+      float right
+
+#skill-edge-editor
+   width 29%
+   display none
+   float right
+   padding 10px
+   margin -10px
 
 #button-row
    margin-top 10px
+   clear: both
    > *
       height 30px
       cursor pointer
@@ -165,14 +266,18 @@ export default {
    font-size 16px
    margin-left 10px
    cursor pointer
-   background white
+   background #aa3300
    padding 5px
    border solid 1px black
    border-radius 4px
+   -webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.5);
+   -moz-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.5);
+   box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.5);
+   &:hover
+      background #aa5e00
 
 .vis-manipulation
    display flex !important
-   border-top 1px solid lightgray
    align-items center
    padding-top: 4px
    position: absolute
@@ -186,4 +291,7 @@ export default {
    left: 0
    top: 10px
    height: 30px
+
+.border-test
+   border solid 1px black
 </style>
