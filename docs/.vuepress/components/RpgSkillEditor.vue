@@ -5,19 +5,32 @@
       </div>
 
       <div id="skill-node-editor">
-         <p><label>Node Id:</label><input id="skill-node-editor-id" type="text"/></p>
-         <p><label>Skill Id:</label><input id="skill-node-editor-skill-id" type="text"/></p>
-         <p><label>Resource Cost:</label><input id="skill-node-editor-resource-cost" type="text"/></p>
-         <p><label>Cooldown:</label><input id="skill-node-editor-cooldown" type="text"/></p>
+         <p><label>Node Id:</label>
+            <input v-model="selectedSkillNode.id" id="skill-node-editor-id"/>
+         </p>
+         <p><label>Skill Id:</label>
+            <input v-model="selectedSkillNode.raw['skill-id']" id="skill-node-editor-skill-id" type="text"/>
+         </p>
+         <p><label>Resource Cost:</label>
+            <input v-model="selectedSkillNode.raw['cost']" id="skill-node-editor-resource-cost" type="text"/>
+         </p>
+         <p><label>Cooldown:</label>
+            <input v-model="selectedSkillNode.raw.cooldown" id="skill-node-editor-cooldown" type="text"/>
+         </p>
          <div id="skill-node-editor-properties">
             <div id="skill-node-editor-properties-header">
                <p>Properties</p>
-               <button id="skill-node-editor-properties-add-property" @click="nodeEditorAddEmptyProperty">Add Property</button>
+               <button id="skill-node-editor-properties-add-property" @click="nodeEditorAddProperty">Add Property</button>
+               <button id="skill-node-editor-properties-remove-property" @click="nodeEditorRemoveProperty">Remove Property</button>
             </div>
-            <div id="skill-node-editor-properties-list">
+            <div id="skill-node-editor-property" v-for="property in selectedSkillNode.raw.properties">
+               <div class="property">
+                  <input v-model="property.name"/>
+                  <div class="colon">:</div>
+                  <input v-model="property.value"/>
+               </div>
             </div>
          </div>
-         <div><button id="skill-node-editor-save" @click="nodeEditorSave">Save</button></div>
       </div>
 
       <div id="skill-edge-editor">
@@ -37,7 +50,6 @@
          <input type="file" @change="readSkillTree" id="upload-config">
          <input type="button" value="Upload a Skill Graph" @click="clickUpload" id="upload-button">
       </div>
-      
    </div>
 </template>
 
@@ -60,7 +72,7 @@ export default {
           * - cost (weight)
           * - type (BIDIRECTIONAL/UNIDIRECTIONAL) */
          skillLinks: new Vis.DataSet(),
-         selectedSkillNode: null,
+         selectedSkillNode: { raw: {} },
          editingNode: false
       }
    },
@@ -128,67 +140,29 @@ export default {
       },
 
       onSelectNode(network, event) {
-         // TODO: Fix this
          const node = this.skillNodes.get(event.nodes[0]);
-
-         const nodeIdField = document.getElementById("skill-node-editor-id");
-         const skillIdField = document.getElementById("skill-node-editor-skill-id");
-         const resourceCostField = document.getElementById("skill-node-editor-resource-cost");
-         const cooldownField = document.getElementById("skill-node-editor-cooldown");
-
-         nodeIdField.setAttribute('value', node.id);
-         
-         if (node.raw) {
-            skillIdField.setAttribute('value', node.raw['skill-id'] || '');
-            resourceCostField.setAttribute('value', node.raw['resource-cost'] || '');
-            cooldownField.setAttribute('value', node.raw['cooldown'] || '');
-
-            const propertiesDiv = document.getElementById("skill-node-editor-properties-list");
-
-            // Remove all nodes from the properties list
-            while (propertiesDiv.firstChild) {
-               propertiesDiv.removeChild(propertiesDiv.firstChild);
-            }
-
-            if (node.raw.properties && node.raw.properties instanceof Object) {
-               var i = 0;
-
-               // Create new nodes for each property
-               for (var key in node.raw.properties) {
-                  const propertyNode = document.createElement('p');
-                  propertyNode.setAttribute('id', 'skill-node-properties-' + i);
-                  
-                  const keyLabel = document.createElement('label');
-
-                  const keyInput = document.createElement('input');
-                  keyInput.setAttribute('id', 'skill-node-properties-' + i + '-key');
-                  keyInput.setAttribute('value', key);
-
-                  keyLabel.appendChild(keyInput)
-
-                  const valueInput = document.createElement('input');
-                  valueInput.setAttribute('id', 'skill-node-properties-' + i + '-value');
-                  valueInput.setAttribute('value', node.raw.properties[key]);
-
-                  propertyNode.appendChild(keyLabel);
-                  propertyNode.append(":");
-                  propertyNode.appendChild(valueInput);
-
-                  propertiesDiv.appendChild(propertyNode);
-                  i++;
-               }
-            }
+         if (!node.raw) {
+            node.raw = {properties: []};
+            this.skillNodes.update(node);
          }
-
-         // TODO: When selecting a node, set the fields.
+         this.selectedSkillNode = node;
       },
 
       nodeEditorSave() {
-
+         this.skillNodes.update(this.selectedSkillNode);
       },
 
-      nodeEditorAddEmptyProperty() {
+      nodeEditorAddProperty() {
+         if (this.selectedSkillNode.id) {
+            this.selectedSkillNode.raw.properties.push({name: "", value: ""});
+         }
+      },
 
+      nodeEditorRemoveProperty() {
+         if (this.selectedSkillNode.id) {
+            const index = this.selectedSkillNode.raw.properties.length - 1;
+            this.selectedSkillNode.raw.properties.splice(index);
+         }
       }
    }
 }
@@ -292,4 +266,13 @@ div #skill-node-editor-properties
 
 .border-test
    border solid 1px black
+
+.property 
+   display flex
+   justify-content space-around
+   margin-top 10px
+   input 
+      width 100px
+   .colon 
+      padding-top 3px
 </style>
