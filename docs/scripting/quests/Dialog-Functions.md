@@ -24,7 +24,7 @@ DialogTree dialogTree(String id, DialogNode root)
 ```
 ### Arguments:
 
-**id**: A unique string ID.
+**id**:   A unique string ID.
 
 **root**: The starting dialog node.
 
@@ -39,7 +39,7 @@ DialogNodeBuilder dialogNode(Integer id)
 ```
 ### Arguments:
 
-**id**:           The numerical id of the node ( must be unique within the Dialog Tree )
+**id**: The numerical id of the node ( must be unique within the Dialog Tree )
 
 Returns a _**DialogNodeBuilder**_: A DialogNodeBuilder object
 

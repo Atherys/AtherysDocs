@@ -60,7 +60,7 @@ Requirement moneyRequirement(Double amount, Currency currency)
 ```
 ### Arguments:
 
-**amount**: The amount of money.
+**amount**:   The amount of money.
 
 **currency**: The money's currency.
 
@@ -74,7 +74,7 @@ Requirement andRequirement(Requirement requirement, Requirement requirement2)
 ```
 ### Arguments:
 
-**requirement**: The first requirement.
+**requirement**:  The first requirement.
 
 **requirement2**: The second requirement.
 

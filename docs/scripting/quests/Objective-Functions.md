@@ -14,7 +14,7 @@ Objective killEntityObjective(String entityName, Integer amount)
 
 **entityName**: The name of the entity. ie: "minecraft:zombie".
 
-**amount**: The number of entities to kill.
+**amount**:     The number of entities to kill.
 
 ## dialogObjective
 
@@ -26,9 +26,9 @@ Objective dialogObjective(String treeId, Integer dialogNode, Text description)
 ```
 ### Arguments:
 
-**treeId**: The dialog tree's ID.
+**treeId**:      The dialog tree's ID.
 
-**dialogNode**: The node ID within the tree.
+**dialogNode**:  The node ID within the tree.
 
 **description**: The objective's description.
 
@@ -44,9 +44,9 @@ Objective reachLocationObjective(Location location, Text name, Double radius)
 
 **location**: The location to reach.
 
-**name**: The name of the location.
+**name**:     The name of the location.
 
-**radius**: The radius around the location.
+**radius**:   The radius around the location.
 
 ## itemDeliveryObjective
 
@@ -54,11 +54,11 @@ An objective that requires delivering an item to an entity.
 
 ### Signature:
 ```js
-ItemDeliveryObjective itemDeliveryObjective(ItemStack itemStack, String targetUUID, Text targetName)
+ItemDeliveryObjective itemDeliveryObjective(ItemStack itemStack, UUID targetUUID, Text targetName)
 ```
 ### Arguments:
 
-**itemStack**: The item to deliver.
+**itemStack**:  The item to deliver.
 
 **targetUUID**: The UUID of the entity to deliver the item to.
 

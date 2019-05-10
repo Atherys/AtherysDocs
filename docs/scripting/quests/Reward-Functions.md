@@ -23,7 +23,7 @@ Reward moneyReward(Double amount, Currency currency)
 ```
 ### Arguments:
 
-**amount**: The amount of money.
+**amount**:   The amount of money.
 
 **currency**: The currency to use.
 
@@ -37,7 +37,7 @@ Reward commandReward(String command, Text description)
 ```
 ### Arguments:
 
-**command**: The command to perform.
+**command**:     The command to perform.
 
 **description**: A description of the reward.
 
