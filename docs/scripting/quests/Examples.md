@@ -80,3 +80,22 @@ onDialogRegistration( function(event) {
     }
 })
 ```
+
+## A quest with an item delivery objective.
+```javascript
+onQuestRegistration(function(event) {
+    var QUEST_ID = "delivery-quest"; 
+    var QUEST_NAME = textOf("Simple Delivery Quest"); 
+    var QUEST_DESCRIPTION = textOf("Deliver three fish."); 
+    var VERSION = 1; 
+
+    var quest = createSimpleQuest(QUEST_ID, QUEST_NAME, QUEST_DESCRIPTION, VERSION);
+    
+    var fish = createItemStack("minecraft:fish", 3);
+    var npc = getNpc("Rynelf"); //Given that there is a created CustomNPC with the name "Rynelf"
+
+    //A delivery objective accepts an item, a UUID, and a name for the NPC in the quest
+    addQuestObjective(quest, itemDeliveryObjective(fish, getNpcUUID(npc), textOf("Rynelf the Wizard"));
+    event.getManager().registerQuest(quest);
+})
+```
