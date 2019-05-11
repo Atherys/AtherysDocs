@@ -29,13 +29,15 @@ module.exports = {
 			{
 				text: 'Javadocs',
 				items: [
-					{ text: 'Core', link: 'https://atherys.com/docs/AtherysCore' },
-					{ text: 'Parties', link: 'https://atherys.com/docs/AtherysParties' },
-					{ text: 'Quests', link: 'https://atherys.com/docs/AtherysQuests' },
-					{ text: 'Roleplay', link: 'https://atherys.com/docs/AtherysRoleplay' },
-					{ text: 'RPG', link: 'https://atherys.com/docs/AtherysRPG' },
-					{ text: 'Script', link: 'https://atherys.com/docs/AtherysScript' },
-					{ text: 'Towns', link: 'https://atherys.com/docs/AtherysTowns' }
+					{ text: 'Core', link: 'https://docs.atherys.com/javadocs/AtherysCore' },
+					{ text: 'Items', link: 'https://docs.atherys.com/javadocs/AtherysItems' },
+					{ text: 'Parties', link: 'https://docs.atherys.com/javadocs/AtherysParties' },
+					{ text: 'Quests', link: 'https://docs.atherys.com/javadocs/AtherysQuests' },
+					{ text: 'Roleplay', link: 'https://docs.atherys.com/javadocs/AtherysRoleplay' },
+					{ text: 'RPG', link: 'https://docs.atherys.com/javadocs/AtherysRPG' },
+					{ text: 'Script', link: 'https://docs.atherys.com/javadocs/AtherysScript' },
+					{ text: 'Skills', link: 'https://docs.atherys.com/javadocs/AtherysSkills' },
+					{ text: 'Towns', link: 'https://docs.atherys.com/javadocs/AtherysTowns' }
 				]
 			},
 			{ text: 'A\'therys', link: 'https://atherys.com' },
