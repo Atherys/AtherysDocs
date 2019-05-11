@@ -17,7 +17,7 @@ module.exports = {
 				items: [
 					{ text: 'Base', link: '/scripting/' },
 					{ text: 'Quests', link: '/scripting/quests/' },
-					{ text: 'NPCs', link: '/scripting/npcs/' }
+					{ text: 'NPCs', link: '/scripting/npcs/NPC-Functions' }
 				]
 			},
 			{
@@ -72,7 +72,7 @@ module.exports = {
 					title: 'Function Reference',
 					collapsable: false,
 					children: [
-						'NPC-Functions'
+                  'NPC-Functions'
 					]
 				}
 			],
