@@ -122,3 +122,24 @@ StagedQuest createStagedQuest(String id, Text name, Text description, Integer ve
 Requirement getQuestRequirements(Quest quest)
 ```
 
+## makeQuestDeliverable
+
+Makes a quest deliverable, meaning it must be turned in to an NPC.
+
+### Signature:
+```js
+Boolean makeQuestDeliverable(Quest quest, UUID target, Text targetName, DialogNode node)
+```
+### Arguments:
+
+**quest**: The quest.
+
+**target**: The UUID of the entity to turn in the quest to.
+
+**targetName**: How the NPC is referenced in the quest.
+
+**node**: The dialog to complete the quest. This will be attached as a response in the root
+             node of the NPC. If the NPC does not have a dialog to begin with, this will not work.
+
+Returns a _**Boolean**_: 
+
