@@ -81,7 +81,7 @@ onDialogRegistration( function(event) {
 })
 ```
 
-## A quest with an item delivery objective.
+## A deliverable quest with an item delivery objective.
 ```javascript
 onQuestRegistration(function(event) {
     var QUEST_ID = "delivery-quest"; 
@@ -92,10 +92,14 @@ onQuestRegistration(function(event) {
     var quest = createSimpleQuest(QUEST_ID, QUEST_NAME, QUEST_DESCRIPTION, VERSION);
     
     var fish = createItemStack("minecraft:fish", 3);
-    var npc = getNpc("Rynelf"); //Given that there is a created CustomNPC with the name "Rynelf"
+    var npc = getNpc("Rynelf"); // Given that there is a created CustomNPC with the name "Rynelf"
+    
+    var turnInNpc = getNpc("Damir");
+    var node = dialogNode(7).player(textOf("I've found those three fish!")).build(); // This node will be attached to Damir, given that Damir has a dialog attached already
 
     //A delivery objective accepts an item, a UUID, and a name for the NPC in the quest
     addQuestObjective(quest, itemDeliveryObjective(fish, getNpcUUID(npc), textOf("Rynelf the Wizard"));
+    makeQuestDeliverable(quest, getNpcUUID(turnInNPC), textOf("Damir"), node);
     event.getManager().registerQuest(quest);
 })
 ```
