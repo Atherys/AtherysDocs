@@ -98,6 +98,20 @@ SimpleQuest createSimpleQuest(String id, Text name, Text description, Integer ve
 Boolean addQuestRequirements(Quest quest, List requirements)
 ```
 
+## makeQuestTimed
+
+Makes a quest timed.
+
+### Signature:
+```js
+Boolean makeQuestTimed(Quest quest, Integer seconds)
+```
+### Arguments:
+
+**quest**: The quest.
+
+**seconds**: How many seconds before the quest is failed and removed.
+
 ## stageOf
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
@@ -141,5 +155,29 @@ Boolean makeQuestDeliverable(Quest quest, UUID target, Text targetName, DialogNo
 **node**: The dialog to complete the quest. This will be attached as a response in the root
              node of the NPC. If the NPC does not have a dialog to begin with, this will not work.
 
-Returns a _**Boolean**_: 
+## setOnTimedQuestFail
+
+Sets a function that will run if the quest's timer runs out.
+
+### Signature:
+```js
+Boolean setOnTimedQuestFail(Quest quest, Consumer onFail)
+```
+### Arguments:
+
+**quest**: The quest.
+
+**onFail**: A function that will run if the quest's time runs out. It takes a single argument, the player
+
+Returns a _**Boolean**_: True if setting it worked, false if the quest isn't timed.
+
+### Example:
+
+```js
+var world = getWorldFromName("world");
+var onFail = function(player) {
+teleportPlayer(player, locationOf(world, 100, 90, 100);
+}
+setOnTimedQuestFail(quest, onFail);
+```
 
