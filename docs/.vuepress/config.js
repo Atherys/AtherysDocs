@@ -8,6 +8,7 @@ module.exports = {
 				text: 'Plugins',
 				items: [
 					{ text: 'AtherysRoleplay', link: '/plugins/AtherysRoleplay/' },
+					{ text: 'AtherysQuests', link: '/plugins/AtherysQuests/' },
 					{ text: 'AtherysItems', link: '/plugins/AtherysItems/Item-Editor' },
 					{ text: 'AtherysRPG', link: '/plugins/AtherysRPG/' }
 				]
@@ -111,7 +112,16 @@ module.exports = {
 						'The-srun-Command'
 					]
 				}
-			]
+         ],
+         '/plugins/AtherysQuests/': [
+            {
+               title: 'A\'therys Quests',
+               collapsable: false,
+               children: [
+                  'Usage'
+               ]
+            }
+         ]
 		}
 	}
 }

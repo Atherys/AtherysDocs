@@ -1,4 +1,4 @@
-# AtherysRoleplay
+# Athery's Roleplay
 AtherysRoleplay provides character cards and dice rolling, with more features to come.
 
 ## Character Cards
