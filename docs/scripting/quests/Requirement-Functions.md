@@ -78,13 +78,13 @@ Requirement andRequirement(Requirement requirement, Requirement requirement2)
 
 **requirement2**: The second requirement.
 
-## completedQuestRequirement
+## turnedInQuestRequirement
 
-A requirement for completing a quest.
+A requirement for having turned in a quest.
 
 ### Signature:
 ```js
-Requirement completedQuestRequirement(String questId)
+Requirement turnedInQuestRequirement(String questId)
 ```
 ### Arguments:
 
