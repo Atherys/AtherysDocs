@@ -10,7 +10,8 @@ module.exports = {
 					{ text: 'AtherysRoleplay', link: '/plugins/AtherysRoleplay/' },
 					{ text: 'AtherysQuests', link: '/plugins/AtherysQuests/' },
 					{ text: 'AtherysItems', link: '/plugins/AtherysItems/Item-Editor' },
-					{ text: 'AtherysRPG', link: '/plugins/AtherysRPG/' }
+					{ text: 'AtherysRPG', link: '/plugins/AtherysRPG/' },
+					{ text: 'AtherysQuests', link: '/plugins/AtherysQuests/' }
 				]
 			},
 			{ 

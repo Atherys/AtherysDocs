@@ -24,6 +24,7 @@ export default {
 .option
    align-items: center
    display: flex
+   margin-bottom: 5px
 
 .label
    display: flex

@@ -130,3 +130,21 @@ export const options = {
     edges: edges,
     locales: locales
 }
+
+export function templater(strings, ...keys) {
+   return function(data) {
+      let temp = strings.slice();
+      keys.forEach((key, i) => {
+         temp[i] = temp[i] + data[key];
+      });
+      return temp.join('');
+   }
+}
+
+export function downloadFile(string, fileName, elementId) {
+   let text = new Blob([string], {type: "text/plain;charset=utf-8"});
+   let link = document.getElementById(elementId);
+   link.href = window.URL.createObjectURL(text);
+   link.download = fileName;
+   link.click();
+}
