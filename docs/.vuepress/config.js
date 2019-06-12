@@ -11,7 +11,6 @@ module.exports = {
 					{ text: 'AtherysQuests', link: '/plugins/AtherysQuests/' },
 					{ text: 'AtherysItems', link: '/plugins/AtherysItems/Item-Editor' },
 					{ text: 'AtherysRPG', link: '/plugins/AtherysRPG/' },
-					{ text: 'AtherysQuests', link: '/plugins/AtherysQuests/' }
 				]
 			},
 			{ 
@@ -74,7 +73,7 @@ module.exports = {
 					title: 'Function Reference',
 					collapsable: false,
 					children: [
-                  'NPC-Functions'
+						'NPC-Functions'
 					]
 				}
 			],
@@ -113,16 +112,18 @@ module.exports = {
 						'The-srun-Command'
 					]
 				}
-         ],
-         '/plugins/AtherysQuests/': [
-            {
-               title: 'A\'therys Quests',
-               collapsable: false,
-               children: [
-                  'Usage'
-               ]
-            }
-         ]
+			],
+			'/plugins/AtherysQuests/': [
+				{
+					title: 'A\'therys Quests',
+					collapsable: false,
+					children: [
+						['/plugins/AtherysQuests/', 'Home'],
+						'Usage',
+						'Quest-Editor'
+					]
+				}
+			]
 		}
 	}
 }
