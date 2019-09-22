@@ -1,3 +1,27 @@
+const base = 'https://docs.atherys.com/';
+const plugins = [
+	'Core', 'Economy', 'Items', 'Parties', 'Quests', 'Roleplay', 'RPG', 'Script', 'Skills', 'Towns'
+];
+const downloadItems = [];
+const javadocItems = [];
+
+function baseURL(path) {
+	return base + path;
+}
+
+function javadocs(path) {
+	return baseURL('javadocs/') + path;
+}
+
+function downloads(path) {
+	return baseURL('downloads/') + path;
+}
+
+plugins.forEach(plugin => {
+	downloadItems.push({text: plugin, link: downloads('Atherys' + plugin + '-all.jar')});
+	javadocItems.push({text: plugin, link: javadocs('Atherys' + plugin)});
+});
+
 module.exports = {
 	title: 'A\'therys Docs',
 	description: 'Documentation for all things A\'therys',
@@ -12,6 +36,10 @@ module.exports = {
 					{ text: 'AtherysItems', link: '/plugins/AtherysItems/Item-Editor' },
 					{ text: 'AtherysRPG', link: '/plugins/AtherysRPG/' },
 				]
+			},
+			{ 
+				text: 'Downloads',  
+				items: downloadItems
 			},
 			{ 
 				text: 'Scripting',
@@ -29,17 +57,7 @@ module.exports = {
 			},
 			{
 				text: 'Javadocs',
-				items: [
-					{ text: 'Core', link: 'https://docs.atherys.com/javadocs/AtherysCore' },
-					{ text: 'Items', link: 'https://docs.atherys.com/javadocs/AtherysItems' },
-					{ text: 'Parties', link: 'https://docs.atherys.com/javadocs/AtherysParties' },
-					{ text: 'Quests', link: 'https://docs.atherys.com/javadocs/AtherysQuests' },
-					{ text: 'Roleplay', link: 'https://docs.atherys.com/javadocs/AtherysRoleplay' },
-					{ text: 'RPG', link: 'https://docs.atherys.com/javadocs/AtherysRPG' },
-					{ text: 'Script', link: 'https://docs.atherys.com/javadocs/AtherysScript' },
-					{ text: 'Skills', link: 'https://docs.atherys.com/javadocs/AtherysSkills' },
-					{ text: 'Towns', link: 'https://docs.atherys.com/javadocs/AtherysTowns' }
-				]
+				items: javadocItems
 			},
 			{ text: 'A\'therys', link: 'https://atherys.com' },
 			{ text: 'GitHub', link: 'https://github.com/Atherys-Horizons/' }

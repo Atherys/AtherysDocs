@@ -4,7 +4,7 @@ A'therys plugins should all follow the same basic code architecture.
 
 ## Architectural Diagram
 
-![Diagram](./pluginArchitecture.png)
+<p style="text-align: center;"><img src="./pluginArchitecture.png"></p>
 
 ## Components
 
