@@ -15,8 +15,6 @@ Requirement hasQuestRequirement(String questId)
 
 **questId**: The quest's ID.
 
-Returns a _**Requirement**_: 
-
 ## levelRequirement
 
 A requirement for the player to be a certain level (experience).
@@ -49,6 +47,21 @@ Requirement notRequirement(Requirement requirement)
 ### Arguments:
 
 **requirement**: The requirement for them not to have.
+
+## reachedStageRequirement
+
+A requirement for the player to have reached a specific stage of a quest. Only works with
+ staged quests.
+
+### Signature:
+```js
+Requirement reachedStageRequirement(String questId, Integer stage)
+```
+### Arguments:
+
+**questId**: The ID of the quest.
+
+**stage**: The index of the stage to check for.
 
 ## moneyRequirement
 
