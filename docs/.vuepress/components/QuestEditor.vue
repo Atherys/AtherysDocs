@@ -25,10 +25,10 @@
 
 <script>
 import { templater, downloadFile } from './util';
-const ID_TEMPLATE = templater`\tvar QUEST_ID = "${'id'}";`;
-const NAME_TEMPLATE = templater`\tvar QUEST_NAME= textOf("${'name'}");`;
-const DESC_TEMPLATE = templater`\tvar QUEST_DESCRIPTION = textOf("${'description'})";`;
-const VERSION_TEMPLATE = templater`\tvar QUEST_VERSION = ${'version'};`;
+const ID_TEMPLATE = templater`\tdef QUEST_ID = "${'id'}";`;
+const NAME_TEMPLATE = templater`\tdef QUEST_NAME= textOf("${'name'}");`;
+const DESC_TEMPLATE = templater`\tdef QUEST_DESCRIPTION = textOf("${'description'})";`;
+const VERSION_TEMPLATE = templater`\tdef QUEST_VERSION = ${'version'};`;
 const CREATE_TEMPLATE = templater`\tcreate${'type'}Quest(QUEST ID, QUEST_NAME, QUEST_DESCRIPTION, QUEST_VERSION);`;
 const TIME_TEMPLATE = templater`\tmakeQuestTimed(quest, ${`time`});`;
 
@@ -59,7 +59,7 @@ export default {
    },
    methods: {
       generateQuest() {
-         this.generated = "onQuestRegistration(function(event) {\n";
+         this.generated = "onQuestRegistration({ event ->\n";
          templates.forEach(template => {
             this.writeLine(template.template(this.quest));
             if (template.lineAfter) this.writeLine("");
@@ -82,7 +82,7 @@ export default {
          Object.assign(this.$data, this.$options.data.call(this));
       },
       downloadQuest() {
-         downloadFile(this.generated, this.quest.id + ".js", "download");
+         downloadFile(this.generated, this.quest.id + ".groovy", "download");
       }
    }
 }
