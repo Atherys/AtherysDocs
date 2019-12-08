@@ -69,16 +69,13 @@ export default {
             type: "",
             lore: "",
             attributes: {
-               strength: 0,
-               constitution: 0,
-               defense: 0,
-               agility: 0,
-               charisma: 0,
-               perception: 0,
-               luck: 0,
-               intelligence: 0,
-               wisdom: 0,
-               willpower: 0
+               con: 0,
+               str: 0,
+               dex: 0,
+               int: 0,
+               wis: 0,
+               magicres: 0,
+               physres: 0,
             },
             enchantments: []
          },
