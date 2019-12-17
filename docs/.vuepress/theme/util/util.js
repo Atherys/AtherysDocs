@@ -2,7 +2,7 @@ import Hocon from 'hocon-parser';
 function processNode(rawId, raw) {
     return {
         id: rawId,
-        label: raw['skill-id'],
+        label: raw['skillId'],
         shape: 'box',
         shadow: {
             enabled: true
@@ -81,6 +81,10 @@ export function loadSkillTree(contents, format) {
     }
 }
 
+export function downloadSkillTree(skillNodes, skillLinks) {
+
+}
+
 const locales = {
     en: {
       edit: 'Edit Skill Tree',
@@ -128,7 +132,10 @@ const edges = {
 export const options = {
     nodes: nodes,
     edges: edges,
-    locales: locales
+    locales: locales,
+    physics: {
+        enabled: false
+    }
 }
 
 export function templater(strings, ...keys) {

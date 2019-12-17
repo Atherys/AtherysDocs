@@ -1,89 +1,59 @@
 <template>
    <div id="rpg-container">
 
-      <div id="skill-tree">
-      </div>
-
-      <div id="skill-node-editor">
-         <p><label>Node Id:</label>
-            <input v-model="selectedSkillNode.id" id="skill-node-editor-id"/>
-         </p>
-         <p><label>Skill Id:</label>
-            <input v-model="selectedSkillNode.raw['skill-id']" id="skill-node-editor-skill-id" type="text"/>
-         </p>
-         <p><label>Resource Cost:</label>
-            <input v-model="selectedSkillNode.raw['cost']" id="skill-node-editor-resource-cost" type="text"/>
-         </p>
-         <p><label>Cooldown:</label>
-            <input v-model="selectedSkillNode.raw.cooldown" id="skill-node-editor-cooldown" type="text"/>
-         </p>
-         <div id="skill-node-editor-properties">
-            <div id="skill-node-editor-properties-header">
-               <p>Properties</p>
-               <button id="skill-node-editor-properties-add-property" @click="nodeEditorAddProperty">Add Property</button>
-               <button id="skill-node-editor-properties-remove-property" @click="nodeEditorRemoveProperty">Remove Property</button>
-            </div>
-            <div id="skill-node-editor-property" v-for="property in selectedSkillNode.raw.properties">
-               <div class="property">
-                  <input v-model="property.name"/>
-                  <div class="colon">:</div>
-                  <input v-model="property.value"/>
-               </div>
-            </div>
+      <div id="skill-tree-editor">
+         <div id="skill-tree">
          </div>
+         <SkillNodeEditor 
+            v-if="editingNode" 
+            :nodeData="Object.assign({}, selectedSkillNode.raw)"
+            v-on:update:node="updateSkillNode($event)"
+         />
+         <SkillLinkEditor v-if="editingLink" :linkData="Object.assign({}, selectedSkillLink.raw)"/>
+
       </div>
 
-      <div id="skill-edge-editor">
-         Todo. This will contain properties to be configured similarly to the node editor. 
-         You may not have both an edge editor and a node editor active at the same time. 
-         When one is shown, the other is hidden.
-      </div>
-
-      <div v-if="editingNode" id="network-pop-up">
-         <span id="operation">node</span>
-         <div id="node-editor"></div>
-         <button @click="">Save</button>
-         <button @click="editingNode = false">Cancel</button>
-      </div>
-
-      <div id="button-row">
+      <div class="button-row">
          <input type="file" @change="readSkillTree" id="upload-config">
          <input type="button" value="Upload a Skill Graph" @click="clickUpload" id="upload-button">
+         <input type="button" value="Download Skill Graph" @click="downloadSkillTree">
       </div>
    </div>
 </template>
 
 <script>
+import SkillNodeEditor from '../components/rpg/SkillNodeEditor'
+import SkillLinkEditor from '../components/rpg/SkillLinkEditor'
 import Vis from "vis";
 import Hocon from "hocon-parser";
-import { loadSkillTree, options } from "./util";
+import { loadSkillTree, options } from "../util/util";
 
 export default {
+   components: {
+      SkillNodeEditor, SkillLinkEditor
+   },
+
    data () {
       return {
-         /* Skill node
-          * - id
-          * - cost
-          * - cooldown */
          skillNodes: new Vis.DataSet(),
-         /* Skill link
-          * - parent node
-          * - child node
-          * - cost (weight)
-          * - type (BIDIRECTIONAL/UNIDIRECTIONAL) */
          skillLinks: new Vis.DataSet(),
          selectedSkillNode: { raw: {} },
-         editingNode: false
+         editingNode: false,
+         selectedSkillLink: { raw: {} },
+         editingLink: false
       }
    },
+
    mounted () {
       options.manipulation = {
-         editNode: (data, callback) => {
-            this.editNode(data, callback);
+         addNode: (nodeData, callback) => {
+            nodeData.raw = { nodeId: 'node-' + this.skillNodes.length };
+            callback(nodeData);
          }
       };
       this.buildSkillTree();
    },
+
    methods: {
       buildSkillTree() {
          const element = document.getElementById('skill-tree');
@@ -97,18 +67,12 @@ export default {
 
          network.enableEditMode();
          network.stopSimulation();
-         network.on('selectNode', (event) => this.onSelectNode(network, event))
-         // TODO: Add node editor save button functionality
-         // TODO: Add edge editor save button functionality
-      },
 
-      editNode(data, callback) {
-         this.editingNode = true;
-         callback(data);
-      },
+         network.on('selectNode', event => this.onSelectNode(network, event));
+         network.on('deselectNode', event => this.onDeselectNode());
 
-      cancelEdit(callback) {
-         callback(null);
+         network.on('selectEdge', event => this.onSelectEdge(network, event));
+         network.on('deselectEdge', event => this.onDeselectEdge());
       },
 
       clickUpload() {
@@ -139,6 +103,10 @@ export default {
          reader.readAsText(skillTreeFile);
       },
 
+      downloadSkillTree() {
+
+      },
+
       onSelectNode(network, event) {
          const node = this.skillNodes.get(event.nodes[0]);
          if (!node.raw) {
@@ -146,9 +114,30 @@ export default {
             this.skillNodes.update(node);
          }
          this.selectedSkillNode = node;
+         this.editingNode = true;
       },
 
-      nodeEditorSave() {
+      onDeselectNode() {
+         this.editingNode = false;
+      },
+
+      onSelectEdge(network, event) {
+         const link = this.skillLinks.get(event.edges[0]);
+         if (!link.raw) {
+            link.raw = {};
+            this.skillLinks.update(link);
+         }
+         this.selectedSkillLink = link;
+         this.editingLink = true;
+      },
+
+      onDeselectEdge() {
+         this.editingLink = false;
+      },
+
+      updateSkillNode(newSkillNode) {
+         this.selectedSkillNode.raw = newSkillNode;
+         this.selectedSkillNode.raw['skillId'] = newSkillNode['skillId'];
          this.skillNodes.update(this.selectedSkillNode);
       },
 
@@ -172,35 +161,17 @@ export default {
 #rpg-container
    overflow: hidden
 
+#skill-tree-editor
+   display flex
+   justify-content space-between
+
 #skill-tree
-   height 75vh
    background #12110f url(https://www.onlygfx.com/wp-content/uploads/2015/12/simple-old-paper-2-transparent.jpg) no-repeat
    background-size cover
    border solid 3px black
-   width 70%
+   width 65%
    border-radius 5px
    display inline-block
-
-#skill-node-editor
-   width 29%
-   display inline-block // inline-block
-   float right
-   > p
-      margin 10px
-      > input
-         width 60%
-         float right
-
-div #skill-node-editor-properties
-   margin 10px
-   > div
-      text-align center
-      > p > label > input
-         width 40%
-         direction RTL
-      > p > input
-         width 40%
-         float right
 
 #skill-edge-editor
    width 29%
@@ -209,10 +180,11 @@ div #skill-node-editor-properties
    padding 10px
    margin -10px
 
-#button-row
+.button-row
    margin-top 10px
+   margin-bottom 10px
    clear: both
-   > *
+   > button
       height 30px
       cursor pointer
 

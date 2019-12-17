@@ -1,37 +1,65 @@
 <template>
-  <div class="home">
-    <div class="hero">
-      <img v-if="data.heroImage" :src="$withBase(data.heroImage)" alt="hero">
-      <h1>{{ data.heroText || $title || 'Hello' }}</h1>
+  <main class="home" aria-labelledby="main-title">
+    <header class="hero">
+      <img
+        v-if="data.heroImage"
+        :src="$withBase(data.heroImage)"
+        :alt="data.heroAlt || 'hero'"
+      >
+
+      <h1 v-if="data.heroText !== null" id="main-title">{{ data.heroText || $title || 'Hello' }}</h1>
+
       <p class="description">
         {{ data.tagline || $description || 'Welcome to your VuePress site' }}
       </p>
-      <p class="action" v-if="data.actionText && data.actionLink">
-        <NavLink class="action-button" :item="actionLink"/>
+
+      <p
+        class="action"
+        v-if="data.actionText && data.actionLink"
+      >
+        <NavLink
+          class="action-button"
+          :item="actionLink"
+        />
       </p>
-    </div>
-    <div class="features" v-if="data.features && data.features.length">
-      <div class="feature" v-for="feature in data.features">
+    </header>
+
+    <div
+      class="features"
+      v-if="data.features && data.features.length"
+    >
+      <div
+        class="feature"
+        v-for="(feature, index) in data.features"
+        :key="index"
+      >
         <h2>{{ feature.title }}</h2>
         <p>{{ feature.details }}</p>
       </div>
     </div>
-    <Content custom/>
-    <div class="footer" v-if="data.footer">
+
+    <Content class="theme-default-content custom"/>
+
+    <div
+      class="footer"
+      v-if="data.footer"
+    >
       {{ data.footer }}
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
-import NavLink from './NavLink.vue'
+import NavLink from '@theme/components/NavLink.vue'
 
 export default {
   components: { NavLink },
+
   computed: {
     data () {
       return this.$page.frontmatter
     },
+
     actionLink () {
       return {
         link: this.data.actionLink,
@@ -43,26 +71,20 @@ export default {
 </script>
 
 <style lang="stylus">
-@import './styles/config.styl'
-
-@font-face {
-  font-family: Chancery;
-  src: url('styles/black-chancery.ttf');
-}
-
 .home
   padding $navbarHeight 2rem 0
   max-width 960px
   margin 0px auto
+  display block
   .hero
     text-align center
     img
+      max-width: 100%
       max-height 280px
       display block
       margin 3rem auto 1.5rem
     h1
       font-size 3rem
-      font-family Chancery
     h1, .description, .action
       margin 1.8rem auto
     .description
@@ -94,7 +116,7 @@ export default {
   .feature
     flex-grow 1
     flex-basis 30%
-    max-width 40%
+    max-width 30%
     h2
       font-size 1.4rem
       font-weight 500
