@@ -47,5 +47,6 @@ export default {
    margin-right: 5px
    width: 30%
    min-width: 60px
+   font-size: 14px
 </style>
 

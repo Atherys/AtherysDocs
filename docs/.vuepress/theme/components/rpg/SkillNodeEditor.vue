@@ -1,9 +1,10 @@
 <template>
    <div id="skill-node-editor">
+      <h2> Node Editor </h2>
       <div class="button-row">
-         <button v-on:click="$emit('update:node', node)"> Save </button>
-         <button v-on:click="$emit('copy:node', node)"> Copy </button>
-         <button> Paste </button>
+         <button @click="$emit('update:node', node)"> Save </button>
+         <button @click="$emit('copy:node', node)"> Copy </button>
+         <button @click="paste()"> Paste </button>
       </div>
 
       <BasicOption id="Node ID" v-model="node.nodeId" :value="node.nodeId"/>
@@ -52,10 +53,10 @@ export default {
       return {
          node: {
             nodeId: this.nodeData.nodeId,
-            skillId: this.nodeData.skillId || "",
-            cost: this.nodeData.cost || "",
-            cooldown: this.nodeData.cooldown || "",
-            properties: this.nodeData.properties || []
+            skillId: this.nodeData.skillId,
+            cost: this.nodeData.cost,
+            cooldown: this.nodeData.cooldown,
+            properties: this.nodeData.properties
          }
       }
    },
@@ -75,18 +76,17 @@ export default {
          this.node.properties.pop();
       },
 
-      copy() {
-
-      },
-
       paste() {
-
+         console.log(this.clipboard);
+         if (this.clipboard) {
+           this.node = {...this.node, ...this.clipboard};
+         }
       }
    }
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 #skill-node-editor
    border: solid 1px
    padding: 15px

@@ -7,10 +7,15 @@
          <SkillNodeEditor 
             v-if="editingNode" 
             :nodeData="Object.assign({}, selectedSkillNode.raw)"
-            v-on:update:node="updateSkillNode($event)"
+            :clipboard="copiedNode"
+            @update:node="updateSkillNode($event)"
+            @copy:node="copySkillNode($event)"
          />
-         <SkillLinkEditor v-if="editingLink" :linkData="Object.assign({}, selectedSkillLink.raw)"/>
-
+         <SkillLinkEditor 
+            v-if="editingLink" 
+            :linkData="Object.assign({}, selectedSkillLink.raw)"
+            @update:link="updateSkillLink($event)"
+         />
       </div>
 
       <div class="button-row">
@@ -18,6 +23,8 @@
          <input type="button" value="Upload a Skill Graph" @click="clickUpload" id="upload-button">
          <input type="button" value="Download Skill Graph" @click="downloadSkillTree">
       </div>
+
+      <a id="download-tree" style="display: hidden;"></a>
    </div>
 </template>
 
@@ -26,7 +33,7 @@ import SkillNodeEditor from '../components/rpg/SkillNodeEditor'
 import SkillLinkEditor from '../components/rpg/SkillLinkEditor'
 import Vis from "vis";
 import Hocon from "hocon-parser";
-import { loadSkillTree, options } from "../util/util";
+import { loadSkillTree, exportSkillTree, options, downloadFile } from "../util/util";
 
 export default {
    components: {
@@ -39,6 +46,7 @@ export default {
          skillLinks: new Vis.DataSet(),
          selectedSkillNode: { raw: {} },
          editingNode: false,
+         copiedNode: null,
          selectedSkillLink: { raw: {} },
          editingLink: false
       }
@@ -47,10 +55,36 @@ export default {
    mounted () {
       options.manipulation = {
          addNode: (nodeData, callback) => {
-            nodeData.raw = { nodeId: 'node-' + this.skillNodes.length };
+            nodeData.raw = { 
+               nodeId: 'node-' + this.skillNodes.length,
+               skillId: "",
+               cost: "",
+               cooldown: "",
+               properties: []
+            };
             callback(nodeData);
-         }
+         },
+         deleteNode: (nodeData, callback) => {
+            this.editingNode = false;
+            callback(nodeData);
+         },
+
+         addEdge: (edgeData, callback) => {
+            if (edgeData.to === edgeData.from) {
+              return;
+            }
+
+            let toNode = this.skillNodes.get(edgeData.to);
+            let fromNode = this.skillNodes.get(edgeData.from);
+            edgeData.raw = { parentNode: fromNode.raw.nodeId, childNode: toNode.raw.nodeId };
+            callback(edgeData);
+         },
+         deleteEdge: (edgeData, callback) => {
+            this.editingLink = false;
+            callback(edgeData);
+         },
       };
+
       this.buildSkillTree();
    },
 
@@ -104,7 +138,8 @@ export default {
       },
 
       downloadSkillTree() {
-
+         let contents = exportSkillTree(this.skillNodes, this.skillLinks);
+         downloadFile(contents, 'skill-graph.json', 'download-tree');
       },
 
       onSelectNode(network, event) {
@@ -119,6 +154,12 @@ export default {
 
       onDeselectNode() {
          this.editingNode = false;
+      },
+
+      copySkillNode(newNode) {
+         this.copiedNode = newNode;
+         delete this.copiedNode.nodeId;
+         console.log(this.copiedNode);
       },
 
       onSelectEdge(network, event) {
@@ -137,22 +178,14 @@ export default {
 
       updateSkillNode(newSkillNode) {
          this.selectedSkillNode.raw = newSkillNode;
-         this.selectedSkillNode.raw['skillId'] = newSkillNode['skillId'];
+         this.selectedSkillNode.label = newSkillNode.skillId;
          this.skillNodes.update(this.selectedSkillNode);
       },
 
-      nodeEditorAddProperty() {
-         if (this.selectedSkillNode.id) {
-            this.selectedSkillNode.raw.properties.push({name: "", value: ""});
-         }
+      updateSkillLink(newSkillLink) {
+        this.selectedSkillLink.raw = newSkillLink;
+        this.skillLinks.update(this.selectedSkillLink);
       },
-
-      nodeEditorRemoveProperty() {
-         if (this.selectedSkillNode.id) {
-            const index = this.selectedSkillNode.raw.properties.length - 1;
-            this.selectedSkillNode.raw.properties.splice(index);
-         }
-      }
    }
 }
 </script>
@@ -171,14 +204,8 @@ export default {
    border solid 3px black
    width 65%
    border-radius 5px
+   height 50vh
    display inline-block
-
-#skill-edge-editor
-   width 29%
-   display none
-   float right
-   padding 10px
-   margin -10px
 
 .button-row
    margin-top 10px

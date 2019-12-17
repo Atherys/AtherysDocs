@@ -1,12 +1,10 @@
 <template>
    <div id="skill-link-editor">
+      <h2> Link Editor </h2>
       <div class="button-row">
          <button v-on:click="$emit('update:link', link)"> Save </button>
       </div>
-      <BasicOption id="Parent Node" v-model="link.parentNode" :value="link.parentNode"/>
-      <BasicOption id="Child Node" v-model="link.childNode" :value="link.childNode"/>
       <BasicOption id="Cost" v-model="link.cost" :value="link.cost"/>
-      <BasicOption id="Type" v-model="link.type" :value="link.type"/>
    </div>
 </template>
 

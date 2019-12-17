@@ -2,7 +2,7 @@ import Hocon from 'hocon-parser';
 function processNode(rawId, raw) {
     return {
         id: rawId,
-        label: raw['skillId'],
+        label: raw['skill-id'],
         shape: 'box',
         shadow: {
             enabled: true
@@ -15,7 +15,11 @@ function processNode(rawId, raw) {
             size: 18
         },
         mass: 2.3,
-        raw: raw
+        raw: {
+          ...raw,
+          nodeId: rawId,
+          skillId: raw['skill-id']
+        }
     };
 }
 
@@ -30,7 +34,11 @@ function processEdge(raw) {
         font: {
             strokeColor: "#aa3300"
         },
-        raw: raw
+        raw: {
+          ...raw,
+          parentNode: raw['parent-node'],
+          childNode: raw['child-node']
+        }
     };
 
     if (raw.type == "UNIDIRECTIONAL") {
@@ -49,10 +57,12 @@ function processEdge(raw) {
 export function loadSkillTree(contents, format) {
     let skillTree = {};
 
-    const skillGraphKey = 'skill-graph';
     const skillNodesKey = 'skill-nodes';
     let skillLinksKey = 'skill-links';
 
+    skillTree = JSON.parse(contents);
+
+    /*
     if (format == "json") {
         skillTree = JSON.parse(contents);
         skillLinksKey = 'skill-links';
@@ -63,26 +73,46 @@ export function loadSkillTree(contents, format) {
         alert("Unsupported file format. Please provide either a JSON ( ending in .json ) or HOCON ( ending in .conf ).");
         throw "Unsupported file format.";
     }
+    */
 
-    if (skillTree['skill-graph']) {
-        let rawNodes = skillTree[skillGraphKey][skillNodesKey];
-        let rawEdges = skillTree[skillGraphKey][skillLinksKey];
+    let rawNodes = skillTree[skillNodesKey];
+    let rawEdges = skillTree[skillLinksKey];
 
-        let nodes = [];
-        let edges = [];
+    let nodes = [];
+    let edges = [];
 
-        // Iterate over all nodes as provided in configuration, process them and push them into the nodes collection
-        Object.keys(rawNodes).forEach((key) => nodes.push(processNode(key, rawNodes[key])));
+    // Iterate over all nodes as provided in configuration, process them and push them into the nodes collection
+    Object.keys(rawNodes).forEach(key => nodes.push(processNode(key, rawNodes[key])));
 
-        // Iterate over all links as provided in configuration, process them and push them into the edges collection
-        rawEdges.forEach((rawEdge) => edges.push(processEdge(rawEdge)));
+    // Iterate over all links as provided in configuration, process them and push them into the edges collection
+    rawEdges.forEach(rawEdge => edges.push(processEdge(rawEdge)));
 
-        return { skillNodes: nodes, skillLinks: edges };
-    }
+    return { skillNodes: nodes, skillLinks: edges };
 }
 
-export function downloadSkillTree(skillNodes, skillLinks) {
+export function exportSkillTree(skillNodes, skillLinks) {
+  let nodeArray = skillNodes.map(node => node.raw);
+  let nodeMap = {};
 
+  nodeArray.forEach(node => {
+    nodeMap[node.nodeId] = node;
+  });
+
+  let linkArray = skillLinks.map(link => link.raw);
+  
+  let config = JSON.stringify({'skill-nodes': nodeMap, 'skill-links': linkArray}, excludeId, 2);
+  config = config.replace(/skillId/g, "skill-id")
+                 .replace(/childNode/g, "child-node")
+                 .replace(/parentNode/g, "parent-node");
+
+  return config;
+}
+
+function excludeId(key, value) {
+  if (key === "nodeId") {
+    return undefined;
+  }
+  return value;
 }
 
 const locales = {
@@ -92,8 +122,6 @@ const locales = {
       del: 'Delete selected',
       addNode: 'Add Skill Node',
       addEdge: 'Add Skill Link',
-      editNode: 'Edit Skill Node',
-      editEdge: 'Edit Skill Link',
       addDescription: 'Click in an empty space to place a new node.',
       edgeDescription: 'Click on a node and drag the edge to another node to connect them.',
       editEdgeDescription: 'Click on the control points and drag them to a node to connect to it.',
@@ -135,6 +163,9 @@ export const options = {
     locales: locales,
     physics: {
         enabled: false
+    },
+    interaction: {
+      selectConnectedEdges: false
     }
 }
 
