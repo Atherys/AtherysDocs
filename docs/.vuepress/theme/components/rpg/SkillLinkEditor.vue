@@ -32,10 +32,7 @@ export default {
    data() {
       return {
          link: {
-            parentNode: this.linkData.parentNode || "",
-            childNode: this.linkData.childNode || "",
             cost: this.linkData.cost || "",
-            type: this.linkData.type || ""
          }
       }
    },

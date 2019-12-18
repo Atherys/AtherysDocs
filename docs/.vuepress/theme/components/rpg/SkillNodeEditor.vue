@@ -7,7 +7,6 @@
          <button @click="paste()"> Paste </button>
       </div>
 
-      <BasicOption id="Node ID" v-model="node.nodeId" :value="node.nodeId"/>
       <BasicOption id="Skill ID" v-model="node['skillId']" :value="node['skillId']"/>
       <BasicOption id="Cost" v-model="node.cost" :value="node.cost"/>
       <BasicOption id="Cooldown" v-model="node.cooldown" :value="node.cooldown"/>
@@ -52,7 +51,6 @@ export default {
    data() {
       return {
          node: {
-            nodeId: this.nodeData.nodeId,
             skillId: this.nodeData.skillId,
             cost: this.nodeData.cost,
             cooldown: this.nodeData.cooldown,

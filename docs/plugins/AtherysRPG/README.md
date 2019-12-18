@@ -1,4 +1,2 @@
----
-layout: Custom
----
+# Skill Graph Editor
 <RpgSkillEditor/>

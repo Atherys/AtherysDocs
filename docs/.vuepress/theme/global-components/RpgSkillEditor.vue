@@ -33,7 +33,11 @@ import SkillNodeEditor from '../components/rpg/SkillNodeEditor'
 import SkillLinkEditor from '../components/rpg/SkillLinkEditor'
 import Vis from "vis";
 import Hocon from "hocon-parser";
-import { loadSkillTree, exportSkillTree, options, downloadFile } from "../util/util";
+import { 
+   loadSkillTree, exportSkillTree, options, 
+   downloadFile, isBidirectional, getOtherDirection,
+   getEmptyNode 
+} from "../util/util";
 
 export default {
    components: {
@@ -42,7 +46,7 @@ export default {
 
    data () {
       return {
-         skillNodes: new Vis.DataSet(),
+         skillNodes: new Vis.DataSet([{ id: 'root-skill', raw: getEmptyNode('root-skill') }]),
          skillLinks: new Vis.DataSet(),
          selectedSkillNode: { raw: {} },
          editingNode: false,
@@ -55,18 +59,16 @@ export default {
    mounted () {
       options.manipulation = {
          addNode: (nodeData, callback) => {
-            nodeData.raw = { 
-               nodeId: 'node-' + this.skillNodes.length,
-               skillId: "",
-               cost: "",
-               cooldown: "",
-               properties: []
-            };
+            nodeData.raw = getEmptyNode(nodeData.id);
             callback(nodeData);
          },
          deleteNode: (nodeData, callback) => {
-            this.editingNode = false;
-            callback(nodeData);
+            if (nodeData.nodes[0] === 'root') {
+
+            } else {
+               this.editingNode = false;
+               callback(nodeData);
+            }
          },
 
          addEdge: (edgeData, callback) => {
@@ -159,7 +161,6 @@ export default {
       copySkillNode(newNode) {
          this.copiedNode = newNode;
          delete this.copiedNode.nodeId;
-         console.log(this.copiedNode);
       },
 
       onSelectEdge(network, event) {
@@ -183,8 +184,12 @@ export default {
       },
 
       updateSkillLink(newSkillLink) {
-        this.selectedSkillLink.raw = newSkillLink;
-        this.skillLinks.update(this.selectedSkillLink);
+         this.selectedSkillLink.raw = newSkillLink;
+         this.skillLinks.update(this.selectedSkillLink);
+         let otherDirection = getOtherDirection(this.selectedSkillLink, this.skillLinks);
+         if (otherDirection.length > 0) {
+            otherDirection[0].raw.cost = this.selectedSkillLink.raw.cost;
+         }
       },
    }
 }
@@ -204,7 +209,7 @@ export default {
    border solid 3px black
    width 65%
    border-radius 5px
-   height 50vh
+   height 70vh
    display inline-block
 
 .button-row
