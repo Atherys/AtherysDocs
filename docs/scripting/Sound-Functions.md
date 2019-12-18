@@ -5,7 +5,7 @@
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Sound buildSound(Sound.Builder builder)
 ```
 
@@ -13,7 +13,7 @@ Sound buildSound(Sound.Builder builder)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean playSound(Viewer viewer, Sound sound, Vector3d position)
 ```
 
@@ -21,7 +21,7 @@ Boolean playSound(Viewer viewer, Sound sound, Vector3d position)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Sound.Builder setSoundCategory(Sound.Builder builder, String soundCategory)
 ```
 
@@ -29,7 +29,7 @@ Sound.Builder setSoundCategory(Sound.Builder builder, String soundCategory)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Sound.Builder setSoundMinVolume(Sound.Builder builder, Double minVolume)
 ```
 
@@ -37,7 +37,7 @@ Sound.Builder setSoundMinVolume(Sound.Builder builder, Double minVolume)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Sound.Builder soundBuilder(String soundType, Double volume)
 ```
 
@@ -45,7 +45,7 @@ Sound.Builder soundBuilder(String soundType, Double volume)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Sound.Builder setSoundPitch(Sound.Builder builder, Double pitch)
 ```
 

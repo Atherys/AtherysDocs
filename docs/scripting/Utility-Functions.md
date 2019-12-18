@@ -5,7 +5,7 @@
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 void warningOutput(String msg)
 ```
 
@@ -13,15 +13,15 @@ void warningOutput(String msg)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
-List listOf(Object array)
+```groovy
+List listOf(Object[] array)
 ```
 
 ## errorOutput
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 void errorOutput(String msg)
 ```
 
@@ -29,7 +29,7 @@ void errorOutput(String msg)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 void debugOutput(String msg)
 ```
 
@@ -37,7 +37,7 @@ void debugOutput(String msg)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 UUID uUIDOf(String s)
 ```
 
@@ -45,7 +45,7 @@ UUID uUIDOf(String s)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 void infoOutput(String msg)
 ```
 
@@ -53,7 +53,7 @@ void infoOutput(String msg)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 UUID randomUUID()
 ```
 

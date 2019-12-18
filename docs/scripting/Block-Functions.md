@@ -8,7 +8,7 @@
 Used to create a new [`BlockState`](https://jd.spongepowered.org/7.0.0/org/spongepowered/api/block/BlockState.html) from a block type id.
 
 ### Signature:
-```js
+```groovy
 BlockState blockOf(String blockTypeId)
 ```
 ### Arguments:
@@ -19,7 +19,7 @@ Returns a _**BlockState**_: The `BlockState` for the given id, or null.
 
 ### Example:
 
-```js
+```groovy
 var block = blockOf("minecraft:anvil");
 ```
 
@@ -28,7 +28,7 @@ var block = blockOf("minecraft:anvil");
 Used to get the `BlockState` present at the specified location.
 
 ### Signature:
-```js
+```groovy
 BlockState getBlockFromLocation(Location worldLocation)
 ```
 ### Arguments:
@@ -39,7 +39,7 @@ Returns a _**BlockState**_: A `BlockState` representing the block at the locatio
 
 ### Example:
 
-```js
+```groovy
 var location = locationOf( getWorldFromName("world"), 100, 50, 100 );
 var block = getBlockFromLocation(location);
 ```
@@ -49,7 +49,7 @@ var block = getBlockFromLocation(location);
 Used to change the BlockState at the specified location
 
 ### Signature:
-```js
+```groovy
 Boolean setBlockAtLocation(Location worldLocation, BlockState state)
 ```
 ### Arguments:
@@ -62,7 +62,7 @@ Returns a _**Boolean**_: Whether the application worked.
 
 ### Example:
 
-```js
+```groovy
 var location = locationOf( getWorldFromName("world"), 100, 50, 100 );
 var success = setBlockAtLocation( location, blockOf("minecraft:anvil") );
 ```

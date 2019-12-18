@@ -5,7 +5,7 @@
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean addEntityPotionEffect(Entity entity, PotionEffect potionEffect)
 ```
 
@@ -13,7 +13,7 @@ Boolean addEntityPotionEffect(Entity entity, PotionEffect potionEffect)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Entity createEntity(String entityType, Location worldLocation)
 ```
 
@@ -21,7 +21,7 @@ Entity createEntity(String entityType, Location worldLocation)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 ItemStack getEntityHelmet(Entity entity)
 ```
 
@@ -29,7 +29,7 @@ ItemStack getEntityHelmet(Entity entity)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean setEntityHelmet(Entity entity, ItemStack helmet)
 ```
 
@@ -37,7 +37,7 @@ Boolean setEntityHelmet(Entity entity, ItemStack helmet)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 ItemStack getEntityOffhand(Entity entity)
 ```
 
@@ -45,7 +45,7 @@ ItemStack getEntityOffhand(Entity entity)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 ItemStack getEntityBoots(Entity entity)
 ```
 
@@ -53,7 +53,7 @@ ItemStack getEntityBoots(Entity entity)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean setEntityName(Entity entity, Text name)
 ```
 
@@ -61,7 +61,7 @@ Boolean setEntityName(Entity entity, Text name)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean setEntityOffhand(Entity entity, ItemStack item)
 ```
 
@@ -69,7 +69,7 @@ Boolean setEntityOffhand(Entity entity, ItemStack item)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 ItemStack getEntityLeggings(Entity entity)
 ```
 
@@ -77,7 +77,7 @@ ItemStack getEntityLeggings(Entity entity)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean setEntityMainHand(Entity entity, ItemStack item)
 ```
 
@@ -85,7 +85,7 @@ Boolean setEntityMainHand(Entity entity, ItemStack item)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean setEntityBoots(Entity entity, ItemStack boots)
 ```
 
@@ -93,7 +93,7 @@ Boolean setEntityBoots(Entity entity, ItemStack boots)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean setEntityMaxHealth(Entity entity, Double maxHealth)
 ```
 
@@ -101,7 +101,7 @@ Boolean setEntityMaxHealth(Entity entity, Double maxHealth)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 UUID getEntityUUID(Entity entity)
 ```
 
@@ -109,15 +109,15 @@ UUID getEntityUUID(Entity entity)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
-Boolean setEntityPotionEffects(Entity entity, PotionEffect effects)
+```groovy
+Boolean setEntityPotionEffects(Entity entity, List effects)
 ```
 
 ## getEntityMainHand
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 ItemStack getEntityMainHand(Entity entity)
 ```
 
@@ -125,7 +125,7 @@ ItemStack getEntityMainHand(Entity entity)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean healEntity(Entity entity, Double amount)
 ```
 
@@ -133,7 +133,7 @@ Boolean healEntity(Entity entity, Double amount)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean spawnEntity(Entity entity)
 ```
 
@@ -141,7 +141,7 @@ Boolean spawnEntity(Entity entity)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean damageEntity(Entity entity, DamageSource src, Double damage)
 ```
 
@@ -149,7 +149,7 @@ Boolean damageEntity(Entity entity, DamageSource src, Double damage)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Double getEntityMaxHealth(Entity entity)
 ```
 
@@ -157,7 +157,7 @@ Double getEntityMaxHealth(Entity entity)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Text getEntityName(Entity entity)
 ```
 
@@ -165,7 +165,7 @@ Text getEntityName(Entity entity)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 ItemStack getEntityChestplate(Entity entity)
 ```
 
@@ -173,7 +173,7 @@ ItemStack getEntityChestplate(Entity entity)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean setEntityLeggings(Entity entity, ItemStack leggings)
 ```
 
@@ -181,7 +181,7 @@ Boolean setEntityLeggings(Entity entity, ItemStack leggings)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Double getEntityHealth(Entity entity)
 ```
 
@@ -189,7 +189,7 @@ Double getEntityHealth(Entity entity)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 List getEntityPotionEffects(Entity entity)
 ```
 
@@ -197,7 +197,7 @@ List getEntityPotionEffects(Entity entity)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean setEntityChestplate(Entity entity, ItemStack chestplate)
 ```
 

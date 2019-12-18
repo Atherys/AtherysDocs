@@ -6,7 +6,7 @@
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Task startTask(Builder builder)
 ```
 
@@ -14,7 +14,7 @@ Task startTask(Builder builder)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean setTaskInterval(Builder builder, Long ticks)
 ```
 
@@ -22,7 +22,7 @@ Boolean setTaskInterval(Builder builder, Long ticks)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean setTaskExecutable(Builder builder, Consumer runnable)
 ```
 
@@ -30,7 +30,7 @@ Boolean setTaskExecutable(Builder builder, Consumer runnable)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean setTaskDelay(Builder builder, Long ticks)
 ```
 
@@ -38,7 +38,7 @@ Boolean setTaskDelay(Builder builder, Long ticks)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Builder taskOf(String name)
 ```
 
