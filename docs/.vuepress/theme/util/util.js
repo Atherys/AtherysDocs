@@ -163,8 +163,10 @@ export function getOtherDirection(skillLink, skillLinks) {
     let fromNode = skillLink.from;
     let toNode = skillLink.to;
 
-    return skillLinks.filter(link => {
-        return link.from === toNode && link.to === fromNode;
+    return skillLinks.get({
+        filter: link => {
+            return link.from === toNode && link.to === fromNode;
+        }
     });
 }
 
