@@ -6,7 +6,7 @@
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Quest getQuestById(String questId)
 ```
 
@@ -14,7 +14,7 @@ Quest getQuestById(String questId)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Stage getQuestStages(StagedQuest quest)
 ```
 
@@ -22,7 +22,7 @@ Stage getQuestStages(StagedQuest quest)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean addQuestObjective(SimpleQuest simpleQuest, Objective objective)
 ```
 
@@ -30,7 +30,7 @@ Boolean addQuestObjective(SimpleQuest simpleQuest, Objective objective)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean addQuestObjectives(SimpleQuest simpleQuest, List objectives)
 ```
 
@@ -38,7 +38,7 @@ Boolean addQuestObjectives(SimpleQuest simpleQuest, List objectives)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Objective getQuestObjectives(Quest quest)
 ```
 
@@ -46,7 +46,7 @@ Objective getQuestObjectives(Quest quest)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean addQuestReward(Quest quest, Reward reward)
 ```
 
@@ -54,7 +54,7 @@ Boolean addQuestReward(Quest quest, Reward reward)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean addQuestRewards(Quest quest, List rewards)
 ```
 
@@ -62,7 +62,7 @@ Boolean addQuestRewards(Quest quest, List rewards)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean addQuestStages(StagedQuest stagedQuest, List stages)
 ```
 
@@ -70,7 +70,7 @@ Boolean addQuestStages(StagedQuest stagedQuest, List stages)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Reward getQuestRewards(Quest quest)
 ```
 
@@ -78,7 +78,7 @@ Reward getQuestRewards(Quest quest)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean registerQuest(Quest quest)
 ```
 
@@ -86,7 +86,7 @@ Boolean registerQuest(Quest quest)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 SimpleQuest createSimpleQuest(String id, Text name, Text description, Integer version)
 ```
 
@@ -94,7 +94,7 @@ SimpleQuest createSimpleQuest(String id, Text name, Text description, Integer ve
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean addQuestRequirements(Quest quest, List requirements)
 ```
 
@@ -103,7 +103,7 @@ Boolean addQuestRequirements(Quest quest, List requirements)
 Makes a quest timed.
 
 ### Signature:
-```js
+```groovy
 Boolean makeQuestTimed(Quest quest, Integer seconds)
 ```
 ### Arguments:
@@ -116,7 +116,7 @@ Boolean makeQuestTimed(Quest quest, Integer seconds)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Stage stageOf(Objective objective, List rewards)
 ```
 
@@ -124,7 +124,7 @@ Stage stageOf(Objective objective, List rewards)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 StagedQuest createStagedQuest(String id, Text name, Text description, Integer version)
 ```
 
@@ -132,7 +132,7 @@ StagedQuest createStagedQuest(String id, Text name, Text description, Integer ve
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Requirement getQuestRequirements(Quest quest)
 ```
 
@@ -141,7 +141,7 @@ Requirement getQuestRequirements(Quest quest)
 Makes a quest deliverable, meaning it must be turned in to an NPC.
 
 ### Signature:
-```js
+```groovy
 Boolean makeQuestDeliverable(Quest quest, Text message)
 ```
 ### Arguments:
@@ -149,30 +149,4 @@ Boolean makeQuestDeliverable(Quest quest, Text message)
 **quest**: The quest.
 
 **message**: A message to tell the player how to turn in the quest.
-
-## setOnTimedQuestFail
-
-Sets a function that will run if the quest's timer runs out.
-
-### Signature:
-```js
-Boolean setOnTimedQuestFail(Quest quest, Consumer onFail)
-```
-### Arguments:
-
-**quest**: The quest.
-
-**onFail**: A function that will run if the quest's time runs out. It takes a single argument, the player
-
-Returns a _**Boolean**_: True if setting it worked, false if the quest isn't timed.
-
-### Example:
-
-```js
-var world = getWorldFromName("world");
-var onFail = function(player) {
-teleportPlayer(player, locationOf(world, 100, 90, 100);
-}
-setOnTimedQuestFail(quest, onFail);
-```
 
