@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { templater, downloadFile } from './util';
+import { templater, downloadFile } from '../util/util';
 const ID_TEMPLATE = templater`\tdef QUEST_ID = "${'id'}";`;
 const NAME_TEMPLATE = templater`\tdef QUEST_NAME= textOf("${'name'}");`;
 const DESC_TEMPLATE = templater`\tdef QUEST_DESCRIPTION = textOf("${'description'})";`;

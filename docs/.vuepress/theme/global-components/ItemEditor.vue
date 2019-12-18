@@ -58,7 +58,14 @@
 </template>
 
 <script>
+import { downloadFile } from '../util/util';
+import BasicOption from '../components/BasicOption';
+
 export default {
+   components: {
+      BasicOption
+   },
+
    data () {
       return {
          item: {
@@ -84,11 +91,7 @@ export default {
    },
    methods: {
       downloadJson () {
-         let json = new Blob([this.generate()], {type: "text/plain;charset=utf-8"});
-         let link = document.getElementById("download");
-         link.href = window.URL.createObjectURL(json);
-         link.download = this.item.id + ".json"
-         link.click();
+         downloadFile(json, this.item.id + ".json", "download");
       },
       generate () {
          let info = "{\n";
@@ -180,8 +183,6 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../theme/styles/config.styl'
-
 input
    max-height: 30px
 

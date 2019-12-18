@@ -1,1 +1,2 @@
+# Skill Graph Editor
 <RpgSkillEditor/>
