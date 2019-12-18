@@ -19,12 +19,12 @@ Each function present in AScript will be documented using the following format:
 <function description>
 
 #### Signature:
-```javascript
+```groovy
     <function signature>
 ```
 
 #### Example:
-```javascript
+```groovy
     <simple example usage of the function>
 ```
 ~~~~
@@ -48,4 +48,4 @@ So, a function which takes 2 arguments will look like:
 
 Where each argument is separated by a comma.
 
-The example is written in the default implementation of AScript, which is JavaScript.
+The example is written in the default implementation of AScript, which is groovy.

@@ -17,7 +17,7 @@ The very basic idea of a computer program is that you want to tell the CPU of yo
 The smallest step that you can instruct your computer in doing, is called a _statement_. Each one is a wholly independent instruction which can be equated in and of itself, based on context. Every statement has a result.
 
 To give an example of this, see the blow codeblock:
-```js
+```groovy
 2 + 2 == 4;
 ```
 
@@ -30,7 +30,7 @@ What has been _stated_ here is that 2 added to 2 is equal to 4. We don't need to
 This means that if we were to feed this into a theoretical computer which takes in nothing but a single statement, and spits out the result, it would result in a `true` being returned.
 
 So then, what can we say about this?
-```js
+```groovy
 2 + 3 == 6;
 ```
 
@@ -40,7 +40,7 @@ Another statement is `2 + 2` by itself, or `4 == 4`, or even just `4`. That's ri
 
 If we put each of the above into our computer one-by-one, we would get the following results:
 
-```js
+```groovy
 2 + 2; -> 4
 
 4 == 4; -> true
@@ -50,7 +50,7 @@ If we put each of the above into our computer one-by-one, we would get the follo
 
 And with the very first one, we move on to the next type of result we can get. A number.
 
-```js
+```groovy
 ( (4 + 4) * 8 ) - 9;
 ```
 
@@ -60,25 +60,25 @@ This of course equates to 55. The way a "number" type result works is heavily de
 
 In general programming terms, there are 2 types of numbers, an `int` ( short for `integer` ) and a `float`. When a number contains a fraction, such as `23.7`, it's a `float`. When it does not, such as `2412`, it's an `int`. Note that `52.0` is also a `float`, despite being equivalent to `52`.
 
-In JavaScript, numbers are not as complex. There is really only a single number type, and it's just called `number`. From what we discussed above, a number in JS is always a floating-point value, meaning `52` and `52.0` equate to the same thing in JavaScript.
+In JavaScript, numbers are not as complex. There is really only a single number type, and it's just called `number`. From what we discussed above, a number in groovy is always a floating-point value, meaning `52` and `52.0` equate to the same thing in JavaScript.
 
 ### Strings
 
 Next, we can move on to the next commonly found type in programming: a string.
-```js
+```groovy
 "Hello World!";
 ```
 
 A string is a way to represent text in code. Much like we can add numbers together, we can "add" strings together, in a process called _concatenation_
 
-```js
+```groovy
 "Hello " + "World!";
 ```
 
 The above will result in `Hello World!` as a single string.
 
 In JavaScript, there are 3 ways to create a new string:
-```js
+```groovy
 "This is my new single-line string!";
 
 'This is my new single-line string!';
@@ -112,14 +112,14 @@ The first of which, is `\0`. The `\` in front of a character signifies to the st
 Nowadays, null terminators have become less and less relevant, however when working with lower-level languages like C, they are of great importance. This character symbolizes the end of a string. The reasons behind it's existence is to do with how memory works in detail, which I won't be getting into. Needless to say, this is a good starting point on our introduction to ASCII.
 
 The following string:
-```js
+```groovy
 "Hello \0World!";
 ```
 In the C programming language, the above would be printed only as `Hello `, with the space after the o. The `World!` part would be omitted, as C would only read up until the special `\0` character, at which point it will stop reading, beliving it has reached the end of the string.
 
 As mentioned, this is not relevant in JavaScript. What is relevant, however, is the next character:
 
-```js
+```groovy
 "Hello \nWorld!";
 ```
 
@@ -132,7 +132,7 @@ World!
 With the newline. That's what `\n` represents, a newline character. It tells the printer that we want whatever comes after this special character to be on the next line below.
 
 And so, finally, we get to raw string literals:
-```js
+```groovy
 "Hello \nEveryone! \nThis \nis \ncool!";
 
 `
@@ -155,7 +155,7 @@ Real quick, we will be using the following combination of characters some after 
 So as we saw from the above examples, the simplest statement consists of just a value. `"Hello World!"`, `4`, `true`, etc. These are all statements in and of themselves, which equate to a value of a certain type.
 
 But, going back to our first ever example, it's a bit more complicated than that
-```js
+```groovy
 2 + 2 == 4
 ```
 
@@ -187,7 +187,7 @@ The first operator we'll take a look at is the equals, `==`.
 All it does is check whether something is equal to something else. When surrounded by 2 values on either side, called _operands_, it becomes a statement which equates to a `boolean`.
 
 See the below examples
-```js
+```groovy
 true == true; -> true
 true == false; -> false
 
@@ -204,7 +204,7 @@ Next we have the Not operator, `!`.
 
 It's job is to negate any boolean which has been placed on the right-hand side of the operator. See examples below
 
-```js
+```groovy
 !true; -> false
 !false; -> true
 
@@ -220,13 +220,13 @@ The Not Equals operator ( `!=` ) is used as shorthand for what we saw in the exa
 
 Instead of writing
 
-```js
+```groovy
 !("Hello" == "world");
 ```
 
 We may instead use Not Equals to write
 
-```js
+```groovy
 "Hello" != "world";
 ```
 
@@ -266,7 +266,7 @@ Going back to our introduction to strings, you may remember a brief mention to s
 
 Therefore, what `+` finally equates to is dependent on the types of the operands on either side. Take the below examples:
 
-```js
+```groovy
 1 + 1; -> 2
 
 23.06 + 41.44; -> 64.5
@@ -290,7 +290,7 @@ The subtraction operator ( `-` ) works similarly to `+`, however it has no meani
 
 When applied to numbers, it simply subtracts the right-hand value from the left-hand one, returning a number.
 
-```js
+```groovy
 1 - 1; -> 0
 
 10.067 - 0.067; -> 10.0
@@ -302,7 +302,7 @@ Division ( `/` ) works quite the same as `+` and `-` when applied to numbers, an
 
 It simply divides the left-hand side by whatever is on the right-hand side.
 
-```js
+```groovy
 4 / 2; -> 2
 
 16 / 4; -> 4
@@ -314,7 +314,7 @@ It simply divides the left-hand side by whatever is on the right-hand side.
 
 The same is true for multiplication ( `*` ).
 
-```js
+```groovy
 4 * 2; -> 8
 
 0.5 * 8; -> 4
@@ -326,7 +326,7 @@ The next thing we have to talk about are _variables_. So far, we've talked about
 
 But, take the below example...
 
-```js
+```groovy
 "John" + " was born on the " + 19 + " of " + "June" + " at " + "19:36" + " in the town of " + "Manchester";
 ```
 
@@ -344,7 +344,7 @@ Well, this is where _variables_ come in. And in order to introduce you to variab
 
 A variable, as stated previously, is a way to _hold_, or _store_ a piece of data temporarily during the execution of our program. Below you may see a few examples of variables.
 
-```js
+```groovy
 var asdf = 1.54;
 
 var qwerty = "Hello!";
@@ -360,7 +360,7 @@ Variables have 3 parts to them. The first is the _type_, the second is the _iden
 
 A variable can also be created without the assignment of a value. This is called a **variable _declaration_**, and it looks like this
 
-```js
+```groovy
 var asdf;
 
 var qwerty;
@@ -401,13 +401,13 @@ This is called _dynamic typing_, where the word _dynamic_ refers to the variable
 
 While in static typic variables were created with a `<type>` preceding the identifier, in JavaScript's dynamic type system, a _keyword_ is used instead. This keyword is `var`.
 
-```js
+```groovy
 var asdf = "Henlo!";
 ```
 
 This means that we have declared a variable called `asdf`, which can take _any_ type of value. Therefore, the following statements are valid.
 
-```js
+```groovy
 var asdf = "Henlo!";
 var numb = 56;
 ```
@@ -416,21 +416,21 @@ var numb = 56;
 
 Once we have declared our variables, optionally with a default value, we can later on change the value that is contained within, again using the assignment operator. This is done like so.
 
-```js
+```groovy
 var asdf = 5;
 asdf = 56;
 ```
 
 This is a very simple case of reassigning a value. We can also increment the value this way, if it is a number
 
-```js
+```groovy
 var asdf = 5;
 asdf = asdf + 1; // asdf == 6
 ```
 
 As pointed out, JavaScript is dynamically typed, meaning we don't have to limit ourselved to assigning a number to a variable which has been declared with a number as it's default value. See the below
 
-```js
+```groovy
 var asdf = 5;
 asdf = "Hello!"; // perfectly valid
 ```
@@ -441,13 +441,13 @@ Best practices dictate, that it is a better idea to leave the type of value stor
 
 Alright, so with all this information now, let's go back to the initial example:
 
-```js
+```groovy
 "John" + " was born on the " + 19 + " of " + "June" + " at " + "19:36" + " in the town of " + "Manchester";
 ```
 
 How can we improve this? Well, how about
 
-```js
+```groovy
 var person = "John";
 var dayOfMonth = 19;
 var month = "June";
@@ -465,7 +465,7 @@ So now that we've gone about how we can store a single value somewhere, what abo
 
 Imagine the situation. You want to create string variables containing all numbers between 1 and 10, and you'd like to store them somewhere for later use. So, what do you do?
 
-```js
+```groovy
 var num1 = "1";
 var num2 = "2";
 var num3 = "3";
@@ -477,7 +477,7 @@ An array is a data structure ( which we will be covering in more detail later on
 
 All arrays have a size. You access each element of the array via an index, which is a number between 0 and the size of your array. See below
 
-```js
+```groovy
 var arr = [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" ];
 // Need the 3rd element?
 var thirdElement = arr[2] // Wait, what? 2?
@@ -488,13 +488,13 @@ var thirdElement = arr[2] // Wait, what? 2?
 The **square brackets** operator is used to both create and access an array.
 When used like this:
 
-```js
+```groovy
 var arr = [ 1, 2, 3, 4, ... ];
 ```
 
 This indicates array creation. While the following
 
-```js
+```groovy
 arr[0];
 ```
 
@@ -506,7 +506,7 @@ Now that we've gone through and have a general idea of variables and arrays, we 
 
 This is a term used to describe how code is read by the computer. Generally speaking, code is read from top-to-bottom, left-to-right. Therefore, it makes sense to say that if you have code which looks like this:
 
-```js
+```groovy
 var someString = "Hello " + name;
 var name = "John";
 ```
@@ -537,7 +537,7 @@ All control flow statements have a _definition_ and a _body_. The definition is 
 And moving on to the first control flow statement we're going to be look at, it's actually the exact one we need to solve the problem we posited above.
 
 The way we define an if-statement is as follows:
-```js
+```groovy
 if ( /* condition */ ) {
     // body
 }
@@ -545,7 +545,7 @@ if ( /* condition */ ) {
 
 The _condition_ part is simply a statement which equates to a `boolean` value. And if the resulting boolean is `true`, then the body will be executed.
 
-```js
+```groovy
 var condition = (4 == 4);
 var aString = "something";
 
@@ -558,7 +558,7 @@ var someOtherString = aString; // "something else"
 
 And to finally solve the initial problem we started with:
 
-```js
+```groovy
 var a = 2;
 var b;
 
@@ -583,7 +583,7 @@ Suddenly, our approach from above is no longer practical. The naive way would be
 
 This can never work. Which is why, instead, we can append our if-statement with an else, the combination of which is called an _**if-else statement**_
 
-```js
+```groovy
 var a = 4;
 var b;
 
@@ -600,7 +600,7 @@ Ok, but what if we _do_ want to account for several different possibilities at o
 
 > "if the value of `a` is `2`, set `b` to `2`. If the value of `c` is `5`, set `b` to `10`, otherwise set `b` to `100`"
 
-```js
+```groovy
 var a = 7;
 var b;
 var c = 5;
@@ -624,7 +624,7 @@ For example, take the following problem:
 
 > "If a string is equal to "hello " ( with the space at the end ), concatenate it with "world!" such that the resulting string is "hello world!"."
 
-```js
+```groovy
 var someString = "hello ";
 switch (someString) {
     case "hello ":

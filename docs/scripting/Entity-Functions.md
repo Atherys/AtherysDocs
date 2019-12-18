@@ -3,201 +3,201 @@
 
 ## addEntityPotionEffect
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Boolean addEntityPotionEffect(Entity entity, PotionEffect potionEffect)
 ```
 
 ## createEntity
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Entity createEntity(String entityType, Location worldLocation)
 ```
 
 ## getEntityHelmet
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 ItemStack getEntityHelmet(Entity entity)
 ```
 
 ## setEntityHelmet
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Boolean setEntityHelmet(Entity entity, ItemStack helmet)
 ```
 
 ## getEntityOffhand
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 ItemStack getEntityOffhand(Entity entity)
 ```
 
 ## getEntityBoots
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 ItemStack getEntityBoots(Entity entity)
 ```
 
 ## setEntityName
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Boolean setEntityName(Entity entity, Text name)
 ```
 
 ## setEntityOffhand
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Boolean setEntityOffhand(Entity entity, ItemStack item)
 ```
 
 ## getEntityLeggings
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 ItemStack getEntityLeggings(Entity entity)
 ```
 
 ## setEntityMainHand
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Boolean setEntityMainHand(Entity entity, ItemStack item)
 ```
 
 ## setEntityBoots
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Boolean setEntityBoots(Entity entity, ItemStack boots)
 ```
 
 ## setEntityMaxHealth
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Boolean setEntityMaxHealth(Entity entity, Double maxHealth)
 ```
 
 ## getEntityUUID
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 UUID getEntityUUID(Entity entity)
 ```
 
 ## setEntityPotionEffects
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Boolean setEntityPotionEffects(Entity entity, PotionEffect effects)
 ```
 
 ## getEntityMainHand
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 ItemStack getEntityMainHand(Entity entity)
 ```
 
 ## healEntity
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Boolean healEntity(Entity entity, Double amount)
 ```
 
 ## spawnEntity
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Boolean spawnEntity(Entity entity)
 ```
 
 ## damageEntity
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Boolean damageEntity(Entity entity, DamageSource src, Double damage)
 ```
 
 ## getEntityMaxHealth
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Double getEntityMaxHealth(Entity entity)
 ```
 
 ## getEntityName
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Text getEntityName(Entity entity)
 ```
 
 ## getEntityChestplate
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 ItemStack getEntityChestplate(Entity entity)
 ```
 
 ## setEntityLeggings
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Boolean setEntityLeggings(Entity entity, ItemStack leggings)
 ```
 
 ## getEntityHealth
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Double getEntityHealth(Entity entity)
 ```
 
 ## getEntityPotionEffects
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 List getEntityPotionEffects(Entity entity)
 ```
 
 ## setEntityChestplate
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Boolean setEntityChestplate(Entity entity, ItemStack chestplate)
 ```
 

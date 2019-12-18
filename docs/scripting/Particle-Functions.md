@@ -3,121 +3,121 @@
 
 ## spawnParticles
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Boolean spawnParticles(ParticleEffect particleEffect, Location location, Viewer viewer, Integer radius)
 ```
 
 ## setParticleNote
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Builder setParticleNote(Builder builder, String note)
 ```
 
 ## setParticleColor
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Builder setParticleColor(Builder builder, Color color)
 ```
 
 ## setParticleOffset
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Builder setParticleOffset(Builder builder, Double x, Double y, Double z)
 ```
 
 ## setParticleBlockstate
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Builder setParticleBlockstate(Builder builder, BlockState blockState)
 ```
 
 ## buildParticleEffect
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 ParticleEffect buildParticleEffect(Builder builder)
 ```
 
 ## setParticleFirework
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Builder setParticleFirework(Builder builder, FireworkEffect fireworks)
 ```
 
 ## setParticleScale
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Builder setParticleScale(Builder builder, Double scale)
 ```
 
 ## setParticlePotionType
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Builder setParticlePotionType(Builder builder, String potionTypeId)
 ```
 
 ## particleBuilder
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Builder particleBuilder()
 ```
 
 ## setParticleVelocity
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Builder setParticleVelocity(Builder builder, Double x, Double y, Double z)
 ```
 
 ## setParticleSlowHorizontal
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Builder setParticleSlowHorizontal(Builder builder, Boolean slow)
 ```
 
 ## setParticleItem
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Builder setParticleItem(Builder builder, ItemStack item)
 ```
 
 ## setParticleType
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Builder setParticleType(Builder builder, String typeId)
 ```
 
 ## setParticleQuantity
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Builder setParticleQuantity(Builder builder, Integer quantity)
 ```
 

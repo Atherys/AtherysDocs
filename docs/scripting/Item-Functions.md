@@ -3,73 +3,73 @@
 
 ## setItemStackEnchants
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Boolean setItemStackEnchants(ItemStack itemStack, Enchantment enchantments)
 ```
 
 ## getItemStackLore
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 List getItemStackLore(ItemStack itemStack)
 ```
 
 ## getItemStackEnchants
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 List getItemStackEnchants(ItemStack itemStack)
 ```
 
 ## setItemStackDisplayName
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Boolean setItemStackDisplayName(ItemStack itemStack, Text text)
 ```
 
 ## dropItemStackOnGround
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Entity dropItemStackOnGround(ItemStack itemStack, Location location)
 ```
 
 ## getItemStackDisplayName
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Text getItemStackDisplayName(ItemStack itemStack)
 ```
 
 ## createItemStack
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 ItemStack createItemStack(String itemTypeId, Integer amount)
 ```
 
 ## setItemStackLore
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Boolean setItemStackLore(ItemStack itemStack, Text lore)
 ```
 
 ## createEnchantment
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Enchantment createEnchantment(String enchantmentType, Integer level)
 ```
 

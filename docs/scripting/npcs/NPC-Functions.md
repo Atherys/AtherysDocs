@@ -6,7 +6,7 @@
 Retrieves a CustomNPC from a name.
 
 ### Signature:
-```js
+```groovy
 ICustomNpc getNpc(String name)
 ```
 ### Arguments:
@@ -20,7 +20,7 @@ Returns a _**ICustomNpc**_: An `ICustomNpc` object.
 Retrieve's an NPC's UUID.
 
 ### Signature:
-```js
+```groovy
 UUID getNpcUUID(ICustomNpc npc)
 ```
 ### Arguments:

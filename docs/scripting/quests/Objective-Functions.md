@@ -7,7 +7,7 @@
 An objective that requires killing a number of entities. The entity name is in the format "minecraft:entity".
 
 ### Signature:
-```js
+```groovy
 Objective killEntityObjective(String entityName, Integer amount)
 ```
 ### Arguments:
@@ -21,7 +21,7 @@ Objective killEntityObjective(String entityName, Integer amount)
 An objective that requires the player to meet a specific dialog node in a dialog tree.
 
 ### Signature:
-```js
+```groovy
 Objective dialogObjective(String treeId, Integer dialogNode, Text description)
 ```
 ### Arguments:
@@ -37,7 +37,7 @@ Objective dialogObjective(String treeId, Integer dialogNode, Text description)
 An objective that requires reaching a specific location, within a radius.
 
 ### Signature:
-```js
+```groovy
 Objective reachLocationObjective(Location location, Text name, Double radius)
 ```
 ### Arguments:
@@ -53,7 +53,7 @@ Objective reachLocationObjective(Location location, Text name, Double radius)
 An objective that requires delivering an item to an entity.
 
 ### Signature:
-```js
+```groovy
 ItemDeliveryObjective itemDeliveryObjective(ItemStack itemStack, UUID targetUUID, Text targetName)
 ```
 ### Arguments:
@@ -69,7 +69,7 @@ ItemDeliveryObjective itemDeliveryObjective(ItemStack itemStack, UUID targetUUID
 An objective that requires interacting with a specific block.
 
 ### Signature:
-```js
+```groovy
 Objective interactWithBlockObjective(Location location)
 ```
 ### Arguments:

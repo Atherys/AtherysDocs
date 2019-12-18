@@ -10,12 +10,12 @@ Functions responsible for attaching handling functions to events. These are best
 Triggered when a script is started. This is completely at the discretion of the `ScriptService` implementation, though it is expected to be done during GameServerStartedEvent.
 
 #### Signature:
-```javascript
+```groovy
 boolean onScriptStart(Consumer<ScriptStartEvent> handler)
 ```
 
 #### Example:
-```javascript
+```groovy
 var success = onScriptStart( function(event) {
     info("Started Script: " + event.getScript().getId());
 });
@@ -26,13 +26,13 @@ var success = onScriptStart( function(event) {
 Triggered when a script is reloaded. This is completely at the discretion of the `ScriptService` implementation, though it is expected to be done upon a plugin reload using the `/sponge reload` command.
 
 #### Signature:
-```javascript
+```groovy
 boolean onScriptReload(Consumer<ScriptReloadEvent> handler)
 ```
 
 #### Example:
-```javascript
-var success = onScriptReload( function(event) {
+```groovy
+def success = onScriptReload( function(event) {
     info("Reloaded Script: " + event.getScript().getId());
 });
 ```
@@ -42,13 +42,13 @@ var success = onScriptReload( function(event) {
 Triggered when a script is stopped. This is completely at the discretion of the `ScriptService` implementation, though it is expected to be done during a GameServerStoppingEvent.
 
 #### Signature:
-```javascript
+```groovy
 boolean onScriptStop(Consumer<ScriptStopEvent> handler)
 ```
 
 #### Example:
-```javascript
-var success = onScriptStop( function(event) {
+```groovy
+def success = onScriptStop( function(event) {
     info("Stopped Script: " + event.getScript().getId());
 });
 ```

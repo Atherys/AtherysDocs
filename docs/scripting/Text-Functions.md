@@ -7,7 +7,7 @@ Formats a `String` into a `Text` object using Minecraft formatting codes. See [h
  the available codes. However, you must use an ampersand instead of the section sign used on the wiki page.
 
 ### Signature:
-```js
+```groovy
 Text textOf(String text)
 ```
 ### Arguments:
@@ -18,7 +18,7 @@ Returns a _**Text**_: The formatted text.
 
 ### Example:
 
-```js
+```groovy
 var message = textOf("&4This text is red!");
 ```
 

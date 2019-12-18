@@ -5,7 +5,7 @@
 Gets the UUID for the NPC with the name.
 
 ### Signature:
-```js
+```groovy
 UUID getNpc(String npcName)
 ```
 

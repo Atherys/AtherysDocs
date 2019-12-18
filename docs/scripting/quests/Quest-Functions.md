@@ -4,98 +4,98 @@
 
 ## getQuestById
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Quest getQuestById(String questId)
 ```
 
 ## getQuestStages
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Stage getQuestStages(StagedQuest quest)
 ```
 
 ## addQuestObjective
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Boolean addQuestObjective(SimpleQuest simpleQuest, Objective objective)
 ```
 
 ## addQuestObjectives
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
-Boolean addQuestObjectives(SimpleQuest simpleQuest, List objectives)
+```groovy
+Boolean addQuestObjectives(SimpleQuest simpleQuest, Objective[] objectives)
 ```
 
 ## getQuestObjectives
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Objective getQuestObjectives(Quest quest)
 ```
 
 ## addQuestReward
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Boolean addQuestReward(Quest quest, Reward reward)
 ```
 
 ## addQuestRewards
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
-Boolean addQuestRewards(Quest quest, List rewards)
+```groovy
+Boolean addQuestRewards(Quest quest, Reward[] rewards)
 ```
 
 ## addQuestStages
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
-Boolean addQuestStages(StagedQuest stagedQuest, List stages)
+```groovy
+Boolean addQuestStages(StagedQuest stagedQuest, Stage[] stages)
 ```
 
 ## getQuestRewards
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Reward getQuestRewards(Quest quest)
 ```
 
 ## registerQuest
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Boolean registerQuest(Quest quest)
 ```
 
 ## createSimpleQuest
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 SimpleQuest createSimpleQuest(String id, Text name, Text description, Integer version)
 ```
 
 ## addQuestRequirements
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
-Boolean addQuestRequirements(Quest quest, List requirements)
+```groovy
+Boolean addQuestRequirements(Quest quest, Requirement[] requirements)
 ```
 
 ## makeQuestTimed
@@ -103,7 +103,7 @@ Boolean addQuestRequirements(Quest quest, List requirements)
 Makes a quest timed.
 
 ### Signature:
-```js
+```groovy
 Boolean makeQuestTimed(Quest quest, Integer seconds)
 ```
 ### Arguments:
@@ -114,25 +114,25 @@ Boolean makeQuestTimed(Quest quest, Integer seconds)
 
 ## stageOf
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
-Stage stageOf(Objective objective, List rewards)
+```groovy
+Stage stageOf(Objective objective, Reward[] rewards)
 ```
 
 ## createStagedQuest
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 StagedQuest createStagedQuest(String id, Text name, Text description, Integer version)
 ```
 
 ## getQuestRequirements
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Requirement getQuestRequirements(Quest quest)
 ```
 
@@ -141,7 +141,7 @@ Requirement getQuestRequirements(Quest quest)
 Makes a quest deliverable, meaning it must be turned in to an NPC.
 
 ### Signature:
-```js
+```groovy
 Boolean makeQuestDeliverable(Quest quest, Text message)
 ```
 ### Arguments:
@@ -155,7 +155,7 @@ Boolean makeQuestDeliverable(Quest quest, Text message)
 Sets a function that will run if the quest's timer runs out.
 
 ### Signature:
-```js
+```groovy
 Boolean setOnTimedQuestFail(Quest quest, Consumer onFail)
 ```
 ### Arguments:
@@ -168,9 +168,9 @@ Returns a _**Boolean**_: True if setting it worked, false if the quest isn't tim
 
 ### Example:
 
-```js
-var world = getWorldFromName("world");
-var onFail = function(player) {
+```groovy
+def world = getWorldFromName("world");
+def onFail = function(player) {
 teleportPlayer(player, locationOf(world, 100, 90, 100);
 }
 setOnTimedQuestFail(quest, onFail);

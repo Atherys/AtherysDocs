@@ -6,7 +6,7 @@ Quests in the AtherysQuest plugin are representative of the work-reward process.
 
 There are 2 broadly defined types of quests, and they are both a variation of the same simple plan:
 
-1. The player picks up the quest ( they meet it's requirements )
+1. The player picks up the quest ( they meet its requirements )
 2. The player accomplishes all tasks contained within the quest ( more on this later )
 3. The player is rewarded for their efforts
 
@@ -44,7 +44,7 @@ Since all requirements will equate to a `boolean` value ( true/false ), we may f
 
 For example,
 
-```js
+```groovy
 andRequirement(
     moneyRequirement(100.0, currencyOf("atherys:some-currency")),
     levelRequirement(10)
@@ -54,18 +54,18 @@ andRequirement(
 the above will create a requirement which will check the player for their money, and their level. And if **both** requirements are met, it will permit the player through.
 
 Other examples:
-```js
+```groovy
 // the player must have either 100.0 of atherys:some-currency, or level 10
 orRequirement(
     moneyRequirement(100.0, currencyOf("atherys:some-currency")),
     levelRequirement(10)
 )
 ```
-```js
+```groovy
 // the player must not currently be working on a quest with id "some-other-quest"
 notRequirement(hasQuestRequirement("some-other-quest"))
 ```
-```js
+```groovy
 // the player must neither be working on a quest with id "some-other-quest", nor have completed a quest with id "some-third-quest"
 notRequirement(
     andRequirement(
@@ -90,7 +90,7 @@ The following list will go through all available objective types as of the time 
 The [killEntityObjective](/Objective-Functions.html#killEntityObjective) tasks the player with killing a given amount of an entity with the provided name.
 
 For example, if we have many different entities of different types ( zombies, sheep, pigs, etc. ) all spawning with the same common name ( for example, "charlie" ) then the following:
-```js
+```groovy
 killEntityObjective("charlie", 10);
 ```
 Will require of us to kill 10 entities with that name in order to complete this objective.
@@ -100,7 +100,7 @@ Will require of us to kill 10 entities with that name in order to complete this 
 The [dialogObjective](/Objective-Functions.html#dialogObjective) will require the player to take part in a dialog with a certain string id, and reach a node with the provided numerical id within that tree. For more details on how dialogs work, see ["How To Write a Dialog in AtherysQuests"](/Writing-a-Dialog.md).
 
 Example:
-```js
+```groovy
 dialogObjective("some-dialog-tree", 4, textOf("Speak to some NPC and get whatever information out of them"));
 ```
 Here, we're asking the player to seek out a dialog tree with the id `some-dialog-tree`, and reach a node within it with a numerical id of `4`. The last argument, the `description`, will be how the objective is presented to the player.
@@ -109,33 +109,33 @@ Here, we're asking the player to seek out a dialog tree with the id `some-dialog
 
 The [itemDeliveryObjective](/Objective-Functions.html#itemDeliveryObjective) requires that you deliver some item ( the amount is described as part of the item ) to an entity with the provided UUID.
 
-```js
-var entity = ...; // Get the entity from somewhere. It could be a custom-created one, or an NPC. It can be any entity at all, of any type.
-var entityUUID = getEntityUUID(entity);
-var itemToDeliver = createItemStack("minecraft:stone", 10); // create an itemstack of 10 stone
+```groovy
+def entity = ...; // Get the entity from somewhere. It could be a custom-created one, or an NPC. It can be any entity at all, of any type.
+def entityUUID = getEntityUUID(entity);
+def itemToDeliver = createItemStack("minecraft:stone", 10); // create an itemstack of 10 stone
 // how the player obtains this item is undefined. However, it does not necessarily have to be the exact same itemstack as we are creating here. This is more of a template which will be used to compare against whatever the player is attempting to deliver.
 
-var objective = itemDeliveryObjective(itemToDeliver, entityUUID.toString(), textOf("What you want the npc's name to be in the description"))
+def objective = itemDeliveryObjective(itemToDeliver, entityUUID.toString(), textOf("What you want the npc's name to be in the description"))
 ```
 
 #### Interact With Block Objective
 
 The [interactWithBlockObjective](/Objective-Functions.md#interactWithBlockObjective) allows you to attach an objective to a player right clicking a specific block in the world.
 
-```js
-var world = getWorldById("world"); // the world the block is located in
-var location = locationOf(world, 100.0, 50.0, 150.0); // the location, including the world and the position
-var objective = interactWithBlockObjective(location);
+```groovy
+def world = getWorldById("world"); // the world the block is located in
+def location = locationOf(world, 100.0, 50.0, 150.0); // the location, including the world and the position
+def objective = interactWithBlockObjective(location);
 ```
 
 #### Reach Location Objective
 
 The [reachLocationObjective](/Objective-Functions.md#reachLocationObjective) will require of the player to get within a certain radius of a specified location.
 
-```js
-var world = getWorldById("world"); // the world the block is located in
-var location = locationOf(world, 2000.0, 140.0, -1200.0); // the location, including the world and the position
-var objective = reachLocationObjective(location, textOf("The location's name"), 5.0);
+```groovy
+def world = getWorldById("world"); // the world the block is located in
+def location = locationOf(world, 2000.0, 140.0, -1200.0); // the location, including the world and the position
+def objective = reachLocationObjective(location, textOf("The location's name"), 5.0);
 ```
 
 The last argument, the `5.0`, specifies the radius. This is the distance that the player must be within the location in order for the objective to count. Note that this number must _always_ be above `1.0`, as any value beneath that may be far too close for the player to get to.
@@ -154,19 +154,19 @@ The following list will go through all available reward types as of the time of 
 
 A [singleItemReward](/Reward-Functions.html#singleItemReward) will give the player a single itemstack as a reward.
 
-```js
-var itemstack = createItemStack("minecraft:anvil", 1);
+```groovy
+def itemstack = createItemStack("minecraft:anvil", 1);
 setItemStackDisplayName(itemstack, textOf("&iThe Anvil"));
 
-var reward = singleItemReward(itemstack);
+def reward = singleItemReward(itemstack);
 ```
 
 #### Money Reward
 
 A [moneyReward](/Reward-Functions.html#moneyReward) will give the player some currency as a reward.
 
-```js
-var reward = moneyReward(150.0, currencyOf("atherys:some-currency"));
+```groovy
+def reward = moneyReward(150.0, currencyOf("atherys:some-currency"));
 ```
 
 #### Command Reward
@@ -183,8 +183,8 @@ There are several custom placeholders which are supported by this function. they
 
 Example usage:
 
-```js
-var reward = commandReward(
+```groovy
+def reward = commandReward(
     'give ${player} minecraft:diamong_sword{display:{Lore:["a legendary sword"]}}', 
     textOf("Some reward description")
 );
@@ -214,8 +214,8 @@ A stage is representative of a single step along the way to completing the quest
 
 A stage contains an objective and a single reward, and that's it.
 
-```js
-var stage = stageOf(
+```groovy
+def stage = stageOf(
     killEntityObjective("charlie", 10),
     commandReward('tppos ${player} 100 70 2000')
 );
@@ -245,41 +245,41 @@ Old Stuff Below
 If you want to write a quest, you've come to the right place. If you haven't already, you should read [the introduction to programming](../A-bear-bones-introduction-to-JavaScript.html).
 
 We start off by calling the `onQuestRegistration` function, which takes in a function with one parameter. That function will get called when AtherysQuests is registering quests as the plugin loads, so that is when you should register your quest.
-```js
+```groovy
 onQuestRegistration( function(event) {
 ```
 
 A quest requires an ID, a name, a description, and a version. The ID must be unique.
-```js
-var QUEST_ID = "test-quest"; 
-var QUEST_NAME = textOf("&lTest Simple Quest"); 
-var QUEST_DESCRIPTION = textOf("A test quest to ensure all is well. Kill 5 zombies. You know, for testing."); 
-var VERSION = 1; 
+```groovy
+def QUEST_ID = "test-quest"; 
+def QUEST_NAME = textOf("&lTest Simple Quest"); 
+def QUEST_DESCRIPTION = textOf("A test quest to ensure all is well. Kill 5 zombies. You know, for testing."); 
+def VERSION = 1; 
 ```
 
 To create a quest, you must call one the function of the type of quest you want to make. We will be making a simple quest; see [here](Quest-Functions.html) for others. This creates an empty quest, to which you must add objectives and rewards.
-```js
-var quest = createSimpleQuest(QUEST_ID, QUEST_NAME, QUEST_DESCRIPTION, VERSION);
+```groovy
+def quest = createSimpleQuest(QUEST_ID, QUEST_NAME, QUEST_DESCRIPTION, VERSION);
 ```
 
 Our quest will have one objective: to kill five five zombies. We call the `addQuestObjective` function and provide the quest that we made, along with the objective. We call the appropriate function to create the objective (see [here](Objective-Functions.html) for more).
-```js
+```groovy
 addQuestObjective(quest, killEntityObjective("zombie", 5));
 ```
 
 Next, we will add a reward to our quest. We create an item stack representing 7 anvils, and set its display name to "Anvil Reward". For other item manipulation functions, see [here](../Item-Functions.html). 
-```js
-var anvil = createItemStack("minecraft:anvil", 7);
+```groovy
+def anvil = createItemStack("minecraft:anvil", 7);
 setItemStackDisplayName(anvil, textOf("Anvil Reward"));
 ```
 
 To add the reward, we call the `addQuestReward` function and provide our quest again, along with the objective. Currently, there are two types of [rewards](Reward-Functions.html): single items, and money. 
-```js
+```groovy
 addQuestReward(quest, singleItemReward(anvil));
 ```
 
 Finally, we get the quest manager that the initial event belongs to, and register the quest.
-```js
+```groovy
 event.getManager().registerQuest(quest);
 ```
 

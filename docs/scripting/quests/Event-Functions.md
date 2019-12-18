@@ -7,70 +7,70 @@ module: event
 ## onDialogRegistration
 
 ### Signature: 
-```javascript
+```groovy
  onDialogRegistration
 ```
 
 ## onDialogStart
 
 ### Signature: 
-```javascript
+```groovy
  onDialogStart
 ```
 
 ## onDialogProgress
 
 ### Signature: 
-```javascript
+```groovy
  onDialogProgress
 ```
 
 ## onDialogComplete
 
 ### Signature: 
-```javascript
+```groovy
  onDialogComplete
 ```
 
 ## onQuestRegistration
 
 ### Signature: 
-```javascript
+```groovy
  onQuestRegistration
 ```
 
 ## onQuestStart
 
 ### Signature: 
-```javascript
+```groovy
  onQuestStart
 ```
 
 ## onSimpleQuestProgress
 
 ### Signature: 
-```javascript
+```groovy
  onSimpleQuestProgress
 ```
 
 ## onStagedQuestProgress
 
 ### Signature: 
-```javascript
+```groovy
  onStagedQuestProgress
 ```
 
 ## onQuestComplete
 
 ### Signature: 
-```javascript
+```groovy
  onQuestComplete
 ```
 
 ## onQuestTurnIn
 
 ### Signature: 
-```javascript
+```groovy
  onQuestTurnIn
 ```
 

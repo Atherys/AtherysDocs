@@ -21,7 +21,7 @@ Dialogs in AtherysQuests are represented by a tree structure. This means that ev
 
 Looking at the signature of the `dialogTree` function, we see that it accepts 2 arguments and returns 1 value:
 
-```js
+```groovy
 DialogTree dialogTree(String id, DialogNode root)
 ```
 
@@ -31,7 +31,7 @@ The first, `id`, is a uniquely identifiable string which can be used later on to
 
 In order for us to create the root node, we need to know how to create a node in general. For this, we use the `dialogNode` function:
 
-```js
+```groovy
 DialogNodeBuilder dialogNode(Integer id)
 ```
 
@@ -40,7 +40,7 @@ This is a bit trickier to use. As you can see, it accepts a single argument, an 
 And in return, we get an object called a `DialogNodeBuilder`. This will contain methods which allow us to customize the newly created dialog node. You may find the full definition of the `DialogNodeBuilder` [here](https://github.com/Atherys-Horizons/AtherysQuests/blob/da03b0cf6c3421406faa6cb6353e4fff9a505e0a/src/main/java/com/atherys/quests/dialog/tree/DialogNodeBuilder.java).
 
 To use it, we simply do the following:
-```js
+```groovy
 var rootNode = dialogNode(0)
     .player(textOf("What the player says"))
     .npc([
@@ -67,7 +67,7 @@ In fact, we do this every time we call one of it's methods, and this is because 
 
 The above code can also be written out in a single line, as follows:
 
-```js
+```groovy
 var rootNode = dialogNode(0).player(textOf("What the player says")).npc([textOf("Multiple lines of"), textOf("what the npc will say in response to the player."), textOf("The player will always speak first, unless it is the root node.")]).quest(getQuestById("some-quest-id")).requirements([moneyRequirement(20.0, currencyOf("atherys:some-currency"))]).responses([dialogNode(...), dialogNode(...), dialogNode(...)]).build();
 ```
 
@@ -88,7 +88,7 @@ Below you will find a detailed explanation of what each method does:
 * `DialogNode build()`
     - To wrap it all up, we call the `build` method which will return to us the dialog node object we have been constructing all along. From here, we may take it, and place it within a variable, with which we can call the `dialogTree` function to finally create our tree.
 
-```js
+```groovy
 var rootNode = dialogNode(0)
     .npc([textOf("Hello, friend!")])
     .responses([
@@ -138,7 +138,7 @@ And with that, we're finished, our dialog tree has been created. But now, we hav
 
 Here we have to take a look at the function `onDialogRegistration`. This is part of the Event API, and it allows us to attach some code to an event, whenever it might happen. Based on the name, we can quite easily guess that this is where we're suppose to be creating and registering our dialogs. And, doing it is not that hard:
 
-```js
+```groovy
 onDialogRegistration( function(event) {
 
     var DIALOG_ID = "test-dialog";

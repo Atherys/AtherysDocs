@@ -4,145 +4,145 @@
 
 ## setDamageSourceFallingBlock
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 DamageSourceBuilder setDamageSourceFallingBlock(ImmutableFallingBlockData immutableFallingBlockData, DamageSourceBuilder builder)
 ```
 
 ## setDamageSourceExplosion
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 DamageSourceBuilder setDamageSourceExplosion(DamageSourceBuilder builder)
 ```
 
 ## setDamageSourceAbsolute
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 DamageSourceBuilder setDamageSourceAbsolute(DamageSourceBuilder builder)
 ```
 
 ## setDamageSourceMagical
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 DamageSourceBuilder setDamageSourceMagical(DamageSourceBuilder builder)
 ```
 
 ## fallingBlockDamageSourceBuilder
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Builder fallingBlockDamageSourceBuilder()
 ```
 
 ## setDamageSourceType
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 DamageSourceBuilder setDamageSourceType(String damageType)
 ```
 
 ## setDamageSourceEntity
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 DamageSourceBuilder setDamageSourceEntity(Entity entity, DamageSourceBuilder builder)
 ```
 
 ## setDamageSourceProxySource
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 DamageSourceBuilder setDamageSourceProxySource(Entity entity, DamageSourceBuilder builder)
 ```
 
 ## setDamageSourceBlock
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 DamageSourceBuilder setDamageSourceBlock(BlockSnapshot blockSnapshot, DamageSourceBuilder builder)
 ```
 
 ## buildDamageSource
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 DamageSource buildDamageSource(DamageSourceBuilder builder)
 ```
 
 ## blockDamageSourceBuilder
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Builder blockDamageSourceBuilder()
 ```
 
 ## setDamageSourceCreative
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 DamageSourceBuilder setDamageSourceCreative(DamageSourceBuilder damageSourceBuilder)
 ```
 
 ## setDamageSourceExhaustion
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 DamageSourceBuilder setDamageSourceExhaustion(DamageSourceBuilder damageSourceBuilder, Double exhaustion)
 ```
 
 ## entityDamageSourceBuilder
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Builder entityDamageSourceBuilder()
 ```
 
 ## setDamageSourceBlockLocation
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Builder setDamageSourceBlockLocation(Location blockLocation, DamageSourceBuilder builder)
 ```
 
 ## setDamageSourceBypassArmor
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 DamageSourceBuilder setDamageSourceBypassArmor(DamageSourceBuilder damageSourceBuilder)
 ```
 
 ## indirectEntityDamageSourceBuilder
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Builder indirectEntityDamageSourceBuilder()
 ```
 
 ## setDamageSourceScale
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 DamageSourceBuilder setDamageSourceScale(DamageSourceBuilder damageSourceBuilder)
 ```
 

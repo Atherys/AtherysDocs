@@ -4,41 +4,41 @@
 
 ## startTask
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Task startTask(Builder builder)
 ```
 
 ## setTaskInterval
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Boolean setTaskInterval(Builder builder, Long ticks)
 ```
 
 ## setTaskExecutable
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Boolean setTaskExecutable(Builder builder, Consumer runnable)
 ```
 
 ## setTaskDelay
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Boolean setTaskDelay(Builder builder, Long ticks)
 ```
 
 ## taskOf
 
-<h3 style="padding-top: 4.6rem"> Signature: </h3>
+### Signature:
 
-```js
+```groovy
 Builder taskOf(String name)
 ```
 
