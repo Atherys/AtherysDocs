@@ -7,13 +7,13 @@
 Creates a new location from the provided parameters.
 
 ### Signature:
-```js
+```groovy
 Location locationOf(World world, Double x, Double y, Double z)
 ```
 
 ### Example:
 
-```js
+```groovy
 var world = getWorldByName("world");
 var location = locationOf(world, 160, 50.3, -100.43);
 ```
@@ -23,7 +23,7 @@ var location = locationOf(world, 160, 50.3, -100.43);
 Used to get a world by it's name. The default world name is usually world.
 
 ### Signature:
-```js
+```groovy
 World getWorldFromName(String worldName)
 ```
 ### Arguments:
@@ -32,7 +32,7 @@ Returns a _**World**_:
 
 ### Example:
 
-```js
+```groovy
 var world = getWorldByName("world");
 ```
 

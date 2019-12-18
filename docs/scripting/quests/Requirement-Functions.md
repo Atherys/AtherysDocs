@@ -8,7 +8,7 @@
 A requirement for a player to have a quest.
 
 ### Signature:
-```js
+```groovy
 Requirement hasQuestRequirement(String questId)
 ```
 ### Arguments:
@@ -20,7 +20,7 @@ Requirement hasQuestRequirement(String questId)
 A requirement for the player to be a certain level (experience).
 
 ### Signature:
-```js
+```groovy
 Requirement levelRequirement(Integer level)
 ```
 ### Arguments:
@@ -32,7 +32,7 @@ Requirement levelRequirement(Integer level)
 A requirement for the player to have either requirement, or both.
 
 ### Signature:
-```js
+```groovy
 Requirement orRequirement(Requirement requirement, Requirement requirement2)
 ```
 
@@ -41,7 +41,7 @@ Requirement orRequirement(Requirement requirement, Requirement requirement2)
 A requirement for the player _not_ to have a requirement.
 
 ### Signature:
-```js
+```groovy
 Requirement notRequirement(Requirement requirement)
 ```
 ### Arguments:
@@ -54,7 +54,7 @@ A requirement for the player to have reached a specific stage of a quest. Only w
  staged quests.
 
 ### Signature:
-```js
+```groovy
 Requirement reachedStageRequirement(String questId, Integer stage)
 ```
 ### Arguments:
@@ -68,7 +68,7 @@ Requirement reachedStageRequirement(String questId, Integer stage)
 A requirement for the player to have a certain amount of money.
 
 ### Signature:
-```js
+```groovy
 Requirement moneyRequirement(Double amount, Currency currency)
 ```
 ### Arguments:
@@ -82,7 +82,7 @@ Requirement moneyRequirement(Double amount, Currency currency)
 A requirement that requires two requirements to be met.
 
 ### Signature:
-```js
+```groovy
 Requirement andRequirement(Requirement requirement, Requirement requirement2)
 ```
 ### Arguments:
@@ -96,7 +96,7 @@ Requirement andRequirement(Requirement requirement, Requirement requirement2)
 A requirement for having turned in a quest.
 
 ### Signature:
-```js
+```groovy
 Requirement turnedInQuestRequirement(String questId)
 ```
 ### Arguments:

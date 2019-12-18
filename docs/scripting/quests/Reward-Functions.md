@@ -6,7 +6,7 @@
 A reward to give the player money.
 
 ### Signature:
-```js
+```groovy
 Reward moneyReward(Double amount, Currency currency)
 ```
 ### Arguments:
@@ -20,7 +20,7 @@ Reward moneyReward(Double amount, Currency currency)
 A reward to give the player an item.
 
 ### Signature:
-```js
+```groovy
 Reward singleItemReward(Text description, List items)
 ```
 ### Arguments:
@@ -34,7 +34,7 @@ Reward singleItemReward(Text description, List items)
 Performs a command as the reward for a quest.
 
 ### Signature:
-```js
+```groovy
 Reward commandReward(String command, Text description)
 ```
 ### Arguments:

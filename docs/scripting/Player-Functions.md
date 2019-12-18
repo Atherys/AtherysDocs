@@ -5,7 +5,7 @@
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Location getPlayerLocation(Player player)
 ```
 
@@ -13,7 +13,7 @@ Location getPlayerLocation(Player player)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean teleportPlayer(Player player, Location location)
 ```
 
@@ -21,7 +21,7 @@ Boolean teleportPlayer(Player player, Location location)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Player getPlayerFromUUID(UUID uuid)
 ```
 
@@ -29,7 +29,7 @@ Player getPlayerFromUUID(UUID uuid)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Player getPlayerFromName(String playerName)
 ```
 
@@ -37,7 +37,7 @@ Player getPlayerFromName(String playerName)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 UUID getPlayerUUID(Player player)
 ```
 

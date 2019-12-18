@@ -5,15 +5,15 @@
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
-Boolean setItemStackEnchants(ItemStack itemStack, Enchantment enchantments)
+```groovy
+Boolean setItemStackEnchants(ItemStack itemStack, Enchantment[] enchantments)
 ```
 
 ## getItemStackLore
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 List getItemStackLore(ItemStack itemStack)
 ```
 
@@ -21,7 +21,7 @@ List getItemStackLore(ItemStack itemStack)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 List getItemStackEnchants(ItemStack itemStack)
 ```
 
@@ -29,7 +29,7 @@ List getItemStackEnchants(ItemStack itemStack)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Boolean setItemStackDisplayName(ItemStack itemStack, Text text)
 ```
 
@@ -37,7 +37,7 @@ Boolean setItemStackDisplayName(ItemStack itemStack, Text text)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Entity dropItemStackOnGround(ItemStack itemStack, Location location)
 ```
 
@@ -45,7 +45,7 @@ Entity dropItemStackOnGround(ItemStack itemStack, Location location)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Text getItemStackDisplayName(ItemStack itemStack)
 ```
 
@@ -53,7 +53,7 @@ Text getItemStackDisplayName(ItemStack itemStack)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 ItemStack createItemStack(String itemTypeId, Integer amount)
 ```
 
@@ -61,15 +61,15 @@ ItemStack createItemStack(String itemTypeId, Integer amount)
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
-Boolean setItemStackLore(ItemStack itemStack, Text lore)
+```groovy
+Boolean setItemStackLore(ItemStack itemStack, List lore)
 ```
 
 ## createEnchantment
 
 <h3 style="padding-top: 4.6rem"> Signature: </h3>
 
-```js
+```groovy
 Enchantment createEnchantment(String enchantmentType, Integer level)
 ```
 
