@@ -106,7 +106,7 @@ export function loadSkillTree(contents, format) {
 }
 
 export function exportSkillTree(skillNodes, skillLinks) {
-    let nodeArray = skillNodes.map(node => node.raw);
+    let nodeArray = skillNodes.map(node => Object.assign({}, node.raw));
     let nodeMap = {};
     let rootNode;
 
@@ -137,7 +137,7 @@ export function exportSkillTree(skillNodes, skillLinks) {
         });
         if (alreadyInArray.length > 0) return;
 
-        let otherDirection = getOtherDirection(link, skillLinks.get());
+        let otherDirection = getOtherDirection(link, skillLinks);
         if (otherDirection.length > 0) {
             newLink.type = 'BIDIRECTIONAL';
         } else {
@@ -162,7 +162,6 @@ function excludeId(key, value) {
 export function getOtherDirection(skillLink, skillLinks) {
     let fromNode = skillLink.from;
     let toNode = skillLink.to;
-
     return skillLinks.get({
         filter: link => {
             return link.from === toNode && link.to === fromNode;

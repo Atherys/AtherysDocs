@@ -75,7 +75,6 @@ export default {
       },
 
       paste() {
-         console.log(this.clipboard);
          if (this.clipboard) {
            this.node = {...this.node, ...this.clipboard};
          }

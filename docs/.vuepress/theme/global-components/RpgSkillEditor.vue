@@ -187,7 +187,6 @@ export default {
          this.selectedSkillLink.raw = newSkillLink;
          this.skillLinks.update(this.selectedSkillLink);
          let otherDirection = getOtherDirection(this.selectedSkillLink, this.skillLinks);
-         console.log(otherDirection);
          if (otherDirection.length > 0) {
             otherDirection[0].raw.cost = this.selectedSkillLink.raw.cost;
          }
