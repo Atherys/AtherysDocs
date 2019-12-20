@@ -51,6 +51,7 @@ export default {
    data() {
       return {
          node: {
+            nodeId: this.nodeData.nodeId,
             skillId: this.nodeData.skillId,
             cost: this.nodeData.cost,
             cooldown: this.nodeData.cooldown,
