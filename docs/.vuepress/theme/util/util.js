@@ -28,7 +28,7 @@ function processNode(rawId, raw) {
 
 function convertPropertiesToArray(properties) {
     return Object.keys(properties).map(propKey => {
-       return { name: propKey, value: properties.propKey }
+        return { name: propKey, value: properties[propKey] };
     });
 }
 
@@ -224,9 +224,6 @@ export const options = {
     nodes: nodes,
     edges: edges,
     locales: locales,
-    physics: {
-        enabled: false
-    },
     interaction: {
         selectConnectedEdges: false
     }
