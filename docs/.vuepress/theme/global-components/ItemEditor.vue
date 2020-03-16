@@ -76,13 +76,15 @@ export default {
             type: "",
             lore: "",
             attributes: {
-               con: 0,
-               str: 0,
-               dex: 0,
-               int: 0,
-               wis: 0,
-               magicres: 0,
-               physres: 0,
+               "atherys:constitution": 0,
+               "atherys:strength": 0,
+               "atherys:dexterity": 0,
+               "atherys:intelligence": 0,
+               "atherys:wisdom": 0,
+               "atherys:magical_resistance": 0,
+               "atherys:physical_resistance": 0,
+               "atherys:base_armor": 0,
+               "atherys:base_damage": 0
             },
             enchantments: []
          },
