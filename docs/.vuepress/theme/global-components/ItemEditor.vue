@@ -21,9 +21,9 @@
 
             <fieldset id="attributes">
                <legend> Attributes </legend>
-               <div class="attribute" v-for="(amount, name) in items[selectedItem].attributes">
-                     <div class="label">{{ getDisplayName(name) }}</div>
-                     <input class="attribute-input" v-model.number.lazy="items[selectedItem].attributes[name]" type="number" step="any">
+               <div class="attribute" v-for="(display, attribute) in getDisplayNames()">
+                     <div class="label">{{ display }}</div>
+                     <input class="attribute-input" v-model.number.lazy="items[selectedItem].attributes[attribute]" type="number" step="any">
                </div>
             </fieldset>
 
@@ -108,7 +108,7 @@ export default {
    },
    methods: {
       downloadJson() {
-         downloadFile("items=" + JSON.stringify(this.items, this.replacer, 3), "items.conf", "download");
+         downloadFile(JSON.stringify({items: this.items}, this.replacer, 3), "items.conf", "download");
       },
       readItems(e) {
          const files = e.target.files || e.dataTransfer.files;
@@ -126,7 +126,7 @@ export default {
          document.getElementById("upload-config").click();
       },
       replacer(key, value) {
-         if (value === 0 || value === "") {
+         if (value === 0 || value === "" || value === null || value == undefined) {
             return undefined;
          }
          return value;
@@ -174,22 +174,22 @@ export default {
             type: "",
             lore: "",
             attributes: {
-               "atherys:constitution": 0,
-               "atherys:strength": 0,
-               "atherys:dexterity": 0,
-               "atherys:intelligence": 0,
-               "atherys:wisdom": 0,
-               "atherys:magical_resistance": 0,
-               "atherys:physical_resistance": 0,
-               "atherys:base_armor": 0,
-               "atherys:base_damage": 0
+               "atherys:constitution": null,
+               "atherys:strength": null,
+               "atherys:dexterity": null,
+               "atherys:intelligence": null,
+               "atherys:wisdom": null,
+               "atherys:magical_resistance": null,
+               "atherys:physical_resistance": null,
+               "atherys:base_armor": null,
+               "atherys:base_damage": null
             },
             "hide-flags": false,
             enchantments: []
          }
       },
-      getDisplayName(attribute) {
-         return DISPLAY_NAMES[attribute];
+      getDisplayNames() {
+         return DISPLAY_NAMES;
       }
    },
    filters: {

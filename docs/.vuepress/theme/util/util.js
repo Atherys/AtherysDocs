@@ -1,5 +1,6 @@
 import Hocon from 'hocon-parser';
 import Vis from "vis";
+
 function processNode(rawId, raw) {
     return {
         id: rawId,
@@ -98,7 +99,6 @@ export function loadSkillTree(contents, format) {
     // Iterate over all links as provided in configuration, process them and push them into the edges collection
     rawEdges.forEach(rawEdge => {
         let newEdge = processEdge(rawEdge);
-        if (getOtherDirection)
         edges.push(newEdge);
     });
 
@@ -138,7 +138,7 @@ export function exportSkillTree(skillNodes, skillLinks) {
         if (alreadyInArray.length > 0) return;
 
         let otherDirection = getOtherDirection(link, skillLinks);
-        if (otherDirection.length > 0) {
+        if (otherDirection.length > 0 || link.arrows === 'to, from') {
             newLink.type = 'BIDIRECTIONAL';
         } else {
             newLink.type = 'UNIDIRECTIONAL';
