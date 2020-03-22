@@ -155,7 +155,7 @@ export default {
       deleteItem(index) {
          if (this.items.length === 1) {
             this.addItem();  
-         } else if (index <= this.selectedItem && index !== 0) {
+         } else if (index <= this.selectedItem && this.selectedItem !== 0) {
             this.selectItem(this.selectedItem - 1);
          }
          this.items.splice(index, 1);
