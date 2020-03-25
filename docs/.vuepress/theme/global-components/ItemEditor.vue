@@ -82,9 +82,9 @@ import BasicOption from '../components/BasicOption';
 
 const DISPLAY_NAMES = {
    "atherys:constitution": "Constitution",
-   "atherys:physical_resistance": "Physical Res",
+   "atherys:physical_resistance": "Physical Resistance",
    "atherys:strength": "Strength",
-   "atherys:magical_resistance": "Magical Res",
+   "atherys:magical_resistance": "Magical Resistance",
    "atherys:dexterity": "Dexterity",
    "atherys:base_damage": "Base Damage",
    "atherys:intelligence": "Intelligence",
@@ -169,7 +169,7 @@ export default {
          return {
             id: "new-item",
             name: "New Item",
-            durability: "-1",
+            durability: "",
             quantity: 1,
             type: "",
             lore: "",
