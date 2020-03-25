@@ -82,14 +82,14 @@ import BasicOption from '../components/BasicOption';
 
 const DISPLAY_NAMES = {
    "atherys:constitution": "Constitution",
-   "atherys:strength": "Strength",
-   "atherys:dexterity": "Dexterity",
-   "atherys:intelligence": "Intelligence",
-   "atherys:wisdom": "Wisdom",
-   "atherys:magical_resistance": "Magical Res",
    "atherys:physical_resistance": "Physical Res",
-   "atherys:base_armor": "Base Armor",
+   "atherys:strength": "Strength",
+   "atherys:magical_resistance": "Magical Res",
+   "atherys:dexterity": "Dexterity",
    "atherys:base_damage": "Base Damage"
+   "atherys:intelligence": "Intelligence",
+   "atherys:base_armor": "Base Armor",
+   "atherys:wisdom": "Wisdom",
 };
 
 export default {
@@ -169,10 +169,10 @@ export default {
          return {
             id: "new-item",
             name: "New Item",
-            durability: "",
+            durability: "-1",
             quantity: 1,
             type: "",
-            lore: "Is this long enough?",
+            lore: "",
             attributes: {
                "atherys:constitution": null,
                "atherys:strength": null,
@@ -184,7 +184,7 @@ export default {
                "atherys:base_armor": null,
                "atherys:base_damage": null
             },
-            "hide-flags": false,
+            "hide-flags": true,
             enchantments: []
          }
       },
@@ -330,7 +330,7 @@ ul
 
 textarea 
    width: 100%
-   height: 500px
+   height: 300px
 
 #attributes 
    display: grid
