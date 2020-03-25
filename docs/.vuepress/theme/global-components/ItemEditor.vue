@@ -86,10 +86,10 @@ const DISPLAY_NAMES = {
    "atherys:strength": "Strength",
    "atherys:magical_resistance": "Magical Res",
    "atherys:dexterity": "Dexterity",
-   "atherys:base_damage": "Base Damage"
+   "atherys:base_damage": "Base Damage",
    "atherys:intelligence": "Intelligence",
    "atherys:base_armor": "Base Armor",
-   "atherys:wisdom": "Wisdom",
+   "atherys:wisdom": "Wisdom"
 };
 
 export default {
