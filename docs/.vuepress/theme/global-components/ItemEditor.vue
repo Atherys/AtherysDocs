@@ -172,7 +172,7 @@ export default {
             durability: "",
             quantity: 1,
             type: "",
-            lore: "",
+            lore: "Is this long enough?",
             attributes: {
                "atherys:constitution": null,
                "atherys:strength": null,
@@ -330,7 +330,7 @@ ul
 
 textarea 
    width: 100%
-   height: 75px
+   height: 500px
 
 #attributes 
    display: grid
