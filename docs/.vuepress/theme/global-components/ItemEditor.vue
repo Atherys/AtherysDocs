@@ -129,6 +129,11 @@ export default {
          if (value === 0 || value === "" || value === null || value == undefined) {
             return undefined;
          }
+
+         if (key === "lore") {
+            return value.split('\n');
+         }
+
          return value;
       },
       clearAll() {
@@ -154,7 +159,7 @@ export default {
       },
       deleteItem(index) {
          if (this.items.length === 1) {
-            this.addItem();  
+            this.addItem();
          } else if (index <= this.selectedItem && this.selectedItem !== 0) {
             this.selectItem(this.selectedItem - 1);
          }
