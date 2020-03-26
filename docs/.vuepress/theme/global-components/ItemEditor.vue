@@ -126,12 +126,12 @@ export default {
          document.getElementById("upload-config").click();
       },
       replacer(key, value) {
-         if (value === 0 || value === "" || value === null || value == undefined) {
+         if (value === 0 || value === "" || value === null || value === undefined) {
             return undefined;
          }
 
          if (key === "lore") {
-            return value.split('\n');
+            return value.split('\n').map(line => line === null ? "" : line);
          }
 
          return value;
