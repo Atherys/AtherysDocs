@@ -81,9 +81,9 @@ import { downloadFile } from '../util/util';
 import BasicOption from '../components/BasicOption';
 
 const DISPLAY_NAMES = {
-   "atherys:constitution": "Constitution",
-   "atherys:physical_resistance": "Physical Resistance",
    "atherys:strength": "Strength",
+   "atherys:physical_resistance": "Physical Resistance",
+   "atherys:constitution": "Constitution",
    "atherys:magical_resistance": "Magical Resistance",
    "atherys:dexterity": "Dexterity",
    "atherys:base_damage": "Base Damage",
