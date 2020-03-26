@@ -7,15 +7,10 @@
                <BasicOption id="ID" v-model="items[selectedItem].id"/>
                <BasicOption id="Name" v-model="items[selectedItem].name"/>
                <BasicOption id="Durability" v-model.number="items[selectedItem].durability" type="number"/>
-               <BasicOption id="Quantity" v-model.number="items[selectedItem].quantity" type="number"/>
                <BasicOption id="Item Type" v-model="items[selectedItem].type"/>
                <div class="option">
                   <div class="label">Hide Flags</div>
                   <input type="checkbox" v-model="items[selectedItem]['hide-flags']">
-               </div>
-               <div class="option lore">
-                  <div class="label">Lore</div>
-                  <textarea rows="2" v-model.lazy="items[selectedItem].lore"></textarea>
                </div>
             </fieldset>
 
@@ -108,7 +103,10 @@ export default {
    },
    methods: {
       downloadJson() {
-         downloadFile(JSON.stringify({items: this.items}, this.replacer, 3), "items.conf", "download");
+         let converted = this.items.map(item => {
+            return JSON.parse(JSON.stringify(item, this.replacer));
+         })
+         downloadFile(JSON.stringify({items: converted}, null, 3), "items.conf", "download");
       },
       readItems(e) {
          const files = e.target.files || e.dataTransfer.files;
@@ -119,6 +117,9 @@ export default {
          const reader = new FileReader();
          reader.onload = (e) => {
             this.items = JSON.parse(reader.result).items;
+            this.items.forEach(item => {
+
+            });
          }
          reader.readAsText(files[0]);
       },
@@ -126,12 +127,12 @@ export default {
          document.getElementById("upload-config").click();
       },
       replacer(key, value) {
-         if (value === 0 || value === "" || value === null || value === undefined) {
-            return undefined;
+         if (key === "lore") {
+            return value.split("\n");
          }
 
-         if (key === "lore") {
-            return value.split('\n').map(line => line === null ? "" : line);
+         if (value === 0 || value === null || value === undefined) {
+            return undefined;
          }
 
          return value;
@@ -174,9 +175,8 @@ export default {
          return {
             id: "new-item",
             name: "New Item",
-            durability: "",
-            quantity: 1,
-            type: "",
+            durability: null,
+            type: null,
             lore: "",
             attributes: {
                "atherys:constitution": null,
