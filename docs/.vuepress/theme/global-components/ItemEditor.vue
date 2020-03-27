@@ -8,6 +8,10 @@
                <BasicOption id="Name" v-model="items[selectedItem].name"/>
                <BasicOption id="Durability" v-model.number="items[selectedItem].durability" type="number"/>
                <BasicOption id="Item Type" v-model="items[selectedItem].type"/>
+               <div class="option lore">
+                  <div class="label">Lore</div>
+                  <textarea rows="2" v-model.lazy="items[selectedItem].lore"></textarea>
+               </div>
                <div class="option">
                   <div class="label">Hide Flags</div>
                   <input type="checkbox" v-model="items[selectedItem]['hide-flags']">
@@ -118,7 +122,7 @@ export default {
          reader.onload = (e) => {
             this.items = JSON.parse(reader.result).items;
             this.items.forEach(item => {
-
+               
             });
          }
          reader.readAsText(files[0]);
