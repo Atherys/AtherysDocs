@@ -122,7 +122,15 @@ export default {
          reader.onload = (e) => {
             this.items = JSON.parse(reader.result).items;
             this.items.forEach(item => {
-               
+               if (item.enchantments) {
+                  let enchantments = [];
+
+                  Object.keys(item.enchantments).forEach(type => {
+                     enchantments.push({ type: type, level: item.enchantments[type] });
+                  })
+
+                  item.enchantments = enchantments;
+               }
             });
          }
          reader.readAsText(files[0]);
