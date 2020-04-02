@@ -135,6 +135,14 @@ export default {
             return value.split("\n");
          }
 
+         if (key === "enchantments") {
+            let enchantments = {};
+            value.forEach(enchantment => {
+               enchantments[enchantment.type] = enchantment.level;
+            })
+            return enchantments;
+         }
+
          if (value === 0 || value === null || value === undefined) {
             return undefined;
          }
