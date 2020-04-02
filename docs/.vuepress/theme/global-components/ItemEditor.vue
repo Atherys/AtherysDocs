@@ -127,9 +127,19 @@ export default {
 
                   Object.keys(item.enchantments).forEach(type => {
                      enchantments.push({ type: type, level: item.enchantments[type] });
-                  })
+                  });
 
                   item.enchantments = enchantments;
+               }
+
+               if (item.lore) {
+                  let lore = "";
+
+                  item.lore.forEach(line => {
+                     lore += line + "\n";
+                  });
+
+                  item.lore = lore;
                }
             });
          }
