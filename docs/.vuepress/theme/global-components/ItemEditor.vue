@@ -134,9 +134,15 @@ export default {
 
                if (item.lore) {
                   let lore = "";
+                  let i = 0;
 
                   item.lore.forEach(line => {
-                     lore += line + "\n";
+                     i++;
+                     if (i == item.lore.length) {
+                        lore += line;
+                     } else {
+                        lore += line + "\n";
+                     }
                   });
 
                   item.lore = lore;
