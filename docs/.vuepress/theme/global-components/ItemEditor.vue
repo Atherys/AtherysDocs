@@ -56,6 +56,8 @@
                <template v-for="(item, index) in items">
                   <li :id="'item-' + index" class="item-element">
                      <div class="item" @click="selectItem(index)"> {{ item.name + " (" + item.id + ")"}} </div>
+                     <button class="up-button" @click="swapItem(index, index - 1)"> ^ </button>
+                     <button class="down-button" @click="swapItem(index, index + 1)"> v </button>
                      <button class="delete-button" @click="deleteItem(index)"> x </button>
                   </li>
                </template>
@@ -207,6 +209,13 @@ export default {
          this.selectedItem = index;
          document.getElementById("item-" + index).classList.add("item-selected");
       },
+      swapItem(from, to) {
+         if (from < 0 || to < 0 || from > this.items.length || to > this.items.length) return;
+         let temp = this.items[from];
+         this.items[from] = this.items[to];
+         this.items[to] = temp;
+         this.$forceUpdate();
+      },
       createDefaultItem() {
          return {
             id: "new-item",
@@ -285,6 +294,7 @@ ul
 
 .item
    cursor: pointer
+   flex-grow: 1
 
 .delete-button
    background-color: #E64F4F
