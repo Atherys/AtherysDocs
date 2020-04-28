@@ -48,8 +48,6 @@ in the database schema.
     * `{DESCRIPTION}` is a brief explanation of what the script does, in `Upper-Kebab-Case`
 * All scripts should be able to be executed repeatedly without having compounding effects on the state of the database
 
-
-
 #### Name Examples
 
 The reasoning behind the naming conventions of the migration scripts is simple.
