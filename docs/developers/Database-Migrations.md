@@ -41,8 +41,9 @@ in the database schema.
 ### Conventions for A'therys Database Migration Scripts
 
 * All A'therys plugins have their migrations scripts saved under the `src/resources/sql/migrations` folder of the corresponding project, and they are included as part of the compiled jar.
-* All migration scripts are placed in the same folder ( **not** sub-folders ), and use the following naming convention: `YYYY-MM-DD-{PROJECT_ID}-{DESCRIPTION}.sql` ( # )
+* All migration scripts are placed in the same folder ( **not** sub-folders ), and use the following naming convention: `YYYY-MM-DD-N-{PROJECT_ID}-{DESCRIPTION}.sql` ( # )
     * `YYYY-MM-DD` is the date at which the script was created
+    * `N` is the index of the script for this date, starting at `0`
     * `{PROJECT_ID}` is the ID of the plugin in `UpperCamelCase`
     * `{DESCRIPTION}` is a brief explanation of what the script does, in `Upper-Kebab-Case`
 * All scripts should be able to be executed repeatedly without having compounding effects on the state of the database
@@ -60,12 +61,14 @@ The reason for prepending the script with a date is so that they can be properly
 which is of **utmost importance**. Scripts must **ALWAYS** be executed in the order that they
 were created in. New scripts, knowingly or not, will always depend on the state of the database
 from the last migration. The only way to ensure scripts are run in their proper order is to
-order them via their file names, which in this case is done with the prepended date.
+order them via their file names, which in this case is done with the prepended date and index.
 
 ```
-2020-01-01-AtherysRPG-Create-PlayerCharacter-Table.sql
-2020-03-23-AtherysTown-Add-Town-Bank-Column.sql
-2020-04-03-AtherysBattlegrounds-Remove-TeamMember-Rank-Column.sql
+2020-01-01-0-AtherysRPG-Create-PlayerCharacter-Table.sql
+2020-03-23-0-AtherysTown-Add-Town-Bank-Column.sql
+2020-04-03-0-AtherysBattlegrounds-Remove-TeamMember-Rank-Column.sql
+2020-04-03-1-AtherysBattlegrounds-Add-TeamMember-Rank-Column.sql
+2020-04-03-2-AtherysQuests-Modify-Quester-Column.sql
 ```
 
 #### Script Examples
