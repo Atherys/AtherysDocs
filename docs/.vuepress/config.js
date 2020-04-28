@@ -52,7 +52,8 @@ module.exports = {
 			{
 				text: 'For Developers',
 				items: [
-					{ text: 'Plugin Architecture', link: '/developers/Plugin-Architecture' }
+					{ text: 'Plugin Architecture', link: '/developers/Plugin-Architecture' },
+					{ text: 'Persistence', link: '/developers/Database-Migrations' }
 				]
 			},
 			{
