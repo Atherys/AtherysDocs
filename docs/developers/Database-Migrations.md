@@ -41,11 +41,13 @@ in the database schema.
 ### Conventions for A'therys Database Migration Scripts
 
 1. All A'therys plugins have their migrations scripts saved under the `src/resources/sql/migrations` folder of the corresponding project, and they are included as part of the compiled jar.
+
 2. All migration scripts are placed in the same folder ( **not** sub-folders ), and use the following naming convention: `YYYY-MM-DD-N-{PROJECT_ID}-{DESCRIPTION}.sql` ( # )
     - `YYYY-MM-DD` is the date at which the script was created
     - `N` is the index of the script for this date, starting at `0`
     - `{PROJECT_ID}` is the ID of the plugin in `UpperCamelCase`
     - `{DESCRIPTION}` is a brief explanation of what the script does, in `Upper-Kebab-Case`
+
 3. All scripts should be able to be executed repeatedly without having compounding effects on the state of the database
 
 #### Name Examples
@@ -86,5 +88,5 @@ ALTER TABLE atherys.TeamMember ADD COLUMN rank_position INTEGER;
 ```
 
 The problem with the second script is that it will attempt to add the `rank_position` column 
-without regard for whether it exists already or not. This will produce an error ( or, with 
+without regard for whether it exists already or not. If it does exist, this will produce an error ( or, with 
 some database implementations, may even create a duplicate column ). 
