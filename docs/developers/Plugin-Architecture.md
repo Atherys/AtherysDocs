@@ -78,7 +78,7 @@ Thus, when a third-party wishes to do something lower level than a Facade might 
 The previous version of this architecture presents inherent flaws when attempting to work with asynchronous operations. It is for this reason that, with AtherysCore version
 2.0, the architecture of A'therys plugins will have to go through a radical and in-depth change. Most ( if not all ) business-level logic will likely be affected.
 
-## The Problems With Architecture 2.0
+## The Problems With Architecture 1.0
 
 Architecture 1.0.0 was modeled after standard backend architecture practices from enterprise server development. In that environment, accessing the database within the same
 thread as the business logic is not an issue, as such applications are not what would be considered "real-time". They do not need the responsiveness of a game, or its 
