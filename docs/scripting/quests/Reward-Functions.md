@@ -15,13 +15,13 @@ Reward commandReward(String command, Text description)
 
 **description**: A description of the reward.
 
-## singleItemReward
+## itemsReward
 
 A reward to give the player an item.
 
 ### Signature:
 ```groovy
-Reward singleItemReward(Text description, List items)
+Reward itemsReward(Text description, List items)
 ```
 ### Arguments:
 
