@@ -14,20 +14,6 @@ Boolean attachDialog(Entity entity, String dialogId)
 
 Returns a _**Boolean**_: Whether the attachment was successful.
 
-## dialogTree
-
-Creates a dialog tree.
-
-### Signature:
-```groovy
-DialogTree dialogTree(String id, DialogNode root)
-```
-### Arguments:
-
-**id**:   A unique string ID.
-
-**root**: The starting dialog node.
-
 ## dialogNode
 
 Returns a `DialogNodeBuilder`, which is used to create a `DialogNode`. See
@@ -42,6 +28,20 @@ DialogNodeBuilder dialogNode(Integer id)
 **id**: The numerical id of the node ( must be unique within the Dialog Tree )
 
 Returns a _**DialogNodeBuilder**_: A DialogNodeBuilder object
+
+## dialogTree
+
+Creates a dialog tree.
+
+### Signature:
+```groovy
+DialogTree dialogTree(String id, DialogNode root)
+```
+### Arguments:
+
+**id**:   A unique string ID.
+
+**root**: The starting dialog node.
 
 ## registerDialogTree
 

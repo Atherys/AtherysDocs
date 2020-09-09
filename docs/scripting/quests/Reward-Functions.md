@@ -1,19 +1,19 @@
 # Reward Functions
  Rewards are what the players are given in return for completing a quest. Currently, there are only three reward types.
 
-## moneyReward
+## commandReward
 
-A reward to give the player money.
+Performs a command as the reward for a quest.
 
 ### Signature:
 ```groovy
-Reward moneyReward(Double amount, Currency currency)
+Reward commandReward(String command, Text description)
 ```
 ### Arguments:
 
-**amount**:   The amount of money.
+**command**:     The command to perform.
 
-**currency**: The currency to use.
+**description**: A description of the reward.
 
 ## singleItemReward
 
@@ -29,17 +29,17 @@ Reward singleItemReward(Text description, List items)
 
 **items**: The items to reward the player.
 
-## commandReward
+## moneyReward
 
-Performs a command as the reward for a quest.
+A reward to give the player money.
 
 ### Signature:
 ```groovy
-Reward commandReward(String command, Text description)
+Reward moneyReward(Double amount, Currency currency)
 ```
 ### Arguments:
 
-**command**:     The command to perform.
+**amount**:   The amount of money.
 
-**description**: A description of the reward.
+**currency**: The currency to use.
 
