@@ -33,6 +33,6 @@ Returns a _**World**_:
 ### Example:
 
 ```groovy
-var world = getWorldByName("world");
+var world = getWorldFromName("world");
 ```
 
