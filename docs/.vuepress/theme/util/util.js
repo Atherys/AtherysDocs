@@ -102,10 +102,10 @@ export function loadSkillTree(contents, format) {
         edges.push(newEdge);
     });
 
-    return { skillNodes: nodes, skillLinks: edges };
+    return { skillNodes: nodes, skillLinks: edges, uniqueSkills: skillTree["unique-skills"] };
 }
 
-export function exportSkillTree(skillNodes, skillLinks) {
+export function exportSkillTree(skillNodes, skillLinks, uniqueSkills) {
     let nodeArray = skillNodes.map(node => Object.assign({}, node.raw));
     let nodeMap = {};
     let rootNode;
@@ -146,7 +146,13 @@ export function exportSkillTree(skillNodes, skillLinks) {
         linkArray.push(newLink);
     });
     
-    let config = JSON.stringify({ 'skill-nodes': nodeMap, 'skill-links': linkArray, 'root-skill': rootNode }, excludeId, 2);
+    let config = JSON.stringify({ 
+      'skill-nodes': nodeMap, 
+      'skill-links': linkArray, 
+      'root-skill': rootNode, 
+      'unique-skills': uniqueSkills
+    }, excludeId, 2);
+    
     config = config.replace(/skillId/g, "skill-id");
 
     return config;

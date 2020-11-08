@@ -48,6 +48,7 @@ export default {
       return {
          skillNodes: new Vis.DataSet([{ id: 'root-skill', raw: getEmptyNode('root-skill') }]),
          skillLinks: new Vis.DataSet(),
+         uniqueSkills: [],
          selectedSkillNode: { raw: {} },
          editingNode: false,
          copiedNode: null,
@@ -132,6 +133,7 @@ export default {
             if (skillTree) {
                this.skillNodes = new Vis.DataSet(skillTree.skillNodes);
                this.skillLinks = new Vis.DataSet(skillTree.skillLinks);
+               this.uniqueSkills = skillTree.uniqueSkills
                this.buildSkillTree();
             }
          }
@@ -140,7 +142,7 @@ export default {
       },
 
       downloadSkillTree() {
-         let contents = exportSkillTree(this.skillNodes, this.skillLinks);
+         let contents = exportSkillTree(this.skillNodes, this.skillLinks, this.uniqueSkills);
          downloadFile(contents, 'skill-graph.json', 'download-tree');
       },
 
