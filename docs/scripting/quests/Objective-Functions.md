@@ -2,20 +2,6 @@
  Objectives are what players must accomplish to complete quests. These are the functions
  that allow you to create them.
 
-## killEntityObjective
-
-An objective that requires killing a number of entities. The entity name is in the format "minecraft:entity".
-
-### Signature:
-```groovy
-Objective killEntityObjective(String entityName, Integer amount)
-```
-### Arguments:
-
-**entityName**: The name of the entity. ie: "minecraft:zombie".
-
-**amount**:     The number of entities to kill.
-
 ## dialogObjective
 
 An objective that requires the player to meet a specific dialog node in a dialog tree.
@@ -32,21 +18,17 @@ Objective dialogObjective(String treeId, Integer dialogNode, Text description)
 
 **description**: The objective's description.
 
-## reachLocationObjective
+## interactWithBlockObjective
 
-An objective that requires reaching a specific location, within a radius.
+An objective that requires interacting with a specific block.
 
 ### Signature:
 ```groovy
-Objective reachLocationObjective(Location location, Text name, Double radius)
+Objective interactWithBlockObjective(Location location)
 ```
 ### Arguments:
 
-**location**: The location to reach.
-
-**name**:     The name of the location.
-
-**radius**:   The radius around the location.
+**location**: The block the player has to interact with.
 
 ## itemDeliveryObjective
 
@@ -64,15 +46,33 @@ ItemDeliveryObjective itemDeliveryObjective(ItemStack itemStack, UUID targetUUID
 
 **targetName**: The name of the entity.
 
-## interactWithBlockObjective
+## killEntityObjective
 
-An objective that requires interacting with a specific block.
+An objective that requires killing a number of entities. The entity name is in the format "minecraft:entity".
 
 ### Signature:
 ```groovy
-Objective interactWithBlockObjective(Location location)
+Objective killEntityObjective(String entityName, Integer amount)
 ```
 ### Arguments:
 
-**location**: The block the player has to interact with.
+**entityName**: The name of the entity. ie: "minecraft:zombie".
+
+**amount**:     The number of entities to kill.
+
+## reachLocationObjective
+
+An objective that requires reaching a specific location, within a radius.
+
+### Signature:
+```groovy
+Objective reachLocationObjective(Location location, Text name, Double radius)
+```
+### Arguments:
+
+**location**: The location to reach.
+
+**name**:     The name of the location.
+
+**radius**:   The radius around the location.
 

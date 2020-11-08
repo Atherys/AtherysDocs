@@ -14,7 +14,7 @@ Location locationOf(World world, Double x, Double y, Double z)
 ### Example:
 
 ```groovy
-var world = getWorldByName("world");
+var world = getWorldFromName("world");
 var location = locationOf(world, 160, 50.3, -100.43);
 ```
 
@@ -33,6 +33,6 @@ Returns a _**World**_:
 ### Example:
 
 ```groovy
-var world = getWorldByName("world");
+var world = getWorldFromName("world");
 ```
 

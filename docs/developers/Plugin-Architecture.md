@@ -1,4 +1,4 @@
-# Plugin Architecture
+# Plugin Architecture 1.0
 
 A'therys plugins should all follow the same basic code architecture.
 
@@ -72,3 +72,55 @@ Thus, when a third-party wishes to do something lower level than a Facade might 
 
 3. Always write javadoc documentation for Facade, Service and Repository level methods where complex logical operations occur.
     * An exception to this is service methods which modify entities. For example, `setEntityField(Entity entity, Object value)`. In this case, the method name is explicit enough, and documentation would be unnecessary.
+
+# Plugin Architecture 2.0
+
+The previous version of this architecture presents inherent flaws when attempting to work with asynchronous operations. It is for this reason that, with AtherysCore version
+2.0, the architecture of A'therys plugins will have to go through a radical and in-depth change. Most ( if not all ) business-level logic will likely be affected.
+
+## The Problems With Architecture 1.0
+
+Architecture 1.0.0 was modeled after standard backend architecture practices from enterprise server development. In that environment, accessing the database within the same
+thread as the business logic is not an issue, as such applications are not what would be considered "real-time". They do not need the responsiveness of a game, or its 
+performance. 
+
+However, A'therys Architecture is aimed at guiding the creation of minecraft plugins, a game in which performance is vitally important. 1.0.0 was made performant via
+extensive use of in-memory caching, which has worked quite well, but is implementation specific. On paper, if one were to access the database directly for every command, 
+event or other request, performance could be sluggish at best.
+
+This is compounded by the fact that 1.0.0 does not favor multi-server setups, and in fact was not created with such a setup in mind. Because of its dependency on in-memory
+caching to meet performance requirements, it sacrifices the ability for multiple servers to share data. Therefore, the old architecture is not scalabale horizontally 
+in practice.
+
+## The Solution(s)
+
+1. All plugins will have to access the database directly and remove their dependency on in-memory caching.
+2. If caching is required, Redis can be used for such.
+3. To reach performance requirements, asynchronous operations will be utilized.
+
+### Remove In-Memory Caching
+
+In-memory caching has been utilized since the inception of A'therys plugins to ensure a steady performance. However, each minecraft server instance occupies its own
+memory space, and as such cannot share its cached objects with other servers. Presently, no requests are made to the database directly for querying. Instead, the database
+is only modified in real-time, but read from a cache. The cache is updated with every modification of the database.
+
+If 2 servers are running the same plugin, neither would be aware of the other's cache, and neither would be reading from the database to update their own. This presents 
+obvious issues when it comes to sharing data between server instances.
+
+For this reason, in-memory caching must be removed and replaced with an external caching system, like Redis.
+
+### Redis
+
+Redis is an external cache, which can be shared by multiple applications ( minecraft servers ). If all A'therys plugins used Redis for their caching, this would remove
+many of the issues mentioned in the last section.
+
+### Asynchronous Operations
+
+Because in-memory caching is being eliminated, an alternative is required for performance optimization. The database can always be accessed asynchronously, which frees up
+the minecraft server thread to continue its normal operation. Database access is often slow and unreliable in terms of performance, so this is always the preferred way to do
+so.
+
+AtherysCore 2 offers additional classes to be used by the implementation for queueing both asynchronous and synchronous operations. This is done via the use of the task
+scheduler and the `CompletableFuture` class from the java standard library.
+
+#### Examples ( TODO )

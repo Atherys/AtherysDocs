@@ -279,7 +279,7 @@ textarea
    flex-direction: column
    justify-content: space-between
 
-ul
+#item-list-element ul
    list-style-type: none
    height: 470px
    overflow: auto
