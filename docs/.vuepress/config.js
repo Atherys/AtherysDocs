@@ -2,7 +2,7 @@ const base = 'https://docs.atherys.com/';
 const plugins = [
 	'Core', 'Economy', 'Items', 'Parties', 'Quests', 'Roleplay', 'RPG', 'Script', 'Skills', 'Towns'
 ];
-const downloadItems = [];
+
 const javadocItems = [];
 
 function baseURL(path) {
@@ -13,12 +13,7 @@ function javadocs(path) {
 	return baseURL('javadocs/') + path;
 }
 
-function downloads(path) {
-	return baseURL('downloads/') + path;
-}
-
 plugins.forEach(plugin => {
-	downloadItems.push({text: plugin, link: downloads('Atherys' + plugin + '-all.jar')});
 	javadocItems.push({text: plugin, link: javadocs('Atherys' + plugin)});
 });
 
@@ -37,10 +32,7 @@ module.exports = {
 					{ text: 'AtherysRPG', link: '/plugins/AtherysRPG/' },
 				]
 			},
-			{ 
-				text: 'Downloads',  
-				items: downloadItems
-			},
+			{ text: 'Downloads', link: 'https://repo.atherys.com' },
 			{ 
 				text: 'Scripting',
 				items: [
